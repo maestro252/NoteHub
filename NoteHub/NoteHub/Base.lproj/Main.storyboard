@@ -210,6 +210,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Ajustes" id="zMZ-7f-A64"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="500" height="600"/>
                     <connections>
                         <outlet property="offline" destination="euY-Z1-BvL" id="rC4-gO-ZuA"/>
                     </connections>
