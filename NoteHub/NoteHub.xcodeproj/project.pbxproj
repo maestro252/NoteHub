@@ -15,6 +15,7 @@
 		203E3EFF19BF824A008C0379 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 203E3EFE19BF824A008C0379 /* Images.xcassets */; };
 		203E3F0B19BF824A008C0379 /* NoteHubTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 203E3F0A19BF824A008C0379 /* NoteHubTests.m */; };
 		20B5DCB219BF90E70041C4E1 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B5DCB119BF90E70041C4E1 /* SettingsTableViewController.m */; };
+		602D376C19C78D0F00C986A0 /* ColorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602D376B19C78D0F00C986A0 /* ColorTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		203E3F0A19BF824A008C0379 /* NoteHubTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteHubTests.m; sourceTree = "<group>"; };
 		20B5DCB019BF90E70041C4E1 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		20B5DCB119BF90E70041C4E1 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+		602D376A19C78D0F00C986A0 /* ColorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorTableViewController.h; sourceTree = "<group>"; };
+		602D376B19C78D0F00C986A0 /* ColorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,8 @@
 				203E3EEE19BF824A008C0379 /* Supporting Files */,
 				20B5DCB019BF90E70041C4E1 /* SettingsTableViewController.h */,
 				20B5DCB119BF90E70041C4E1 /* SettingsTableViewController.m */,
+				602D376A19C78D0F00C986A0 /* ColorTableViewController.h */,
+				602D376B19C78D0F00C986A0 /* ColorTableViewController.m */,
 			);
 			path = NoteHub;
 			sourceTree = "<group>";
@@ -228,6 +233,7 @@
 				20B5DCB219BF90E70041C4E1 /* SettingsTableViewController.m in Sources */,
 				203E3EFA19BF824A008C0379 /* ViewController.m in Sources */,
 				203E3EF719BF824A008C0379 /* NoteHub.xcdatamodeld in Sources */,
+				602D376C19C78D0F00C986A0 /* ColorTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
