@@ -58,15 +58,14 @@
     
     drawable = YES;
     
-    self.text = @"Hola?= Mundo";
-    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didTextChange:) name:UITextViewTextDidChangeNotification object:nil];
     
     [self updateStyle];
 }
 
 - (void)didTextChange:(id)sender {
-    [self updateStyle];
+    
+    //[self updateStyle];
 }
 
 - (void)updateStyle {
@@ -74,7 +73,6 @@
 }
 
 - (void)updateAttributedText:(NSAttributedString *) attributedString {
-    self.scrollEnabled = NO;
     NSRange selectedRange = self.selectedRange;
     self.attributedText = attributedString;
     self.selectedRange = selectedRange;
