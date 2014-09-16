@@ -16,6 +16,7 @@
 		203E3F0B19BF824A008C0379 /* NoteHubTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 203E3F0A19BF824A008C0379 /* NoteHubTests.m */; };
 		20B5DCB219BF90E70041C4E1 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B5DCB119BF90E70041C4E1 /* SettingsTableViewController.m */; };
 		602D376C19C78D0F00C986A0 /* ColorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602D376B19C78D0F00C986A0 /* ColorTableViewController.m */; };
+		60F7C34019C8DA7C003CE1BC /* NHAssistedNotebookView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F7C33F19C8DA7C003CE1BC /* NHAssistedNotebookView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 		20B5DCB119BF90E70041C4E1 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		602D376A19C78D0F00C986A0 /* ColorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorTableViewController.h; sourceTree = "<group>"; };
 		602D376B19C78D0F00C986A0 /* ColorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorTableViewController.m; sourceTree = "<group>"; };
+		60F7C33E19C8DA7C003CE1BC /* NHAssistedNotebookView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHAssistedNotebookView.h; sourceTree = "<group>"; };
+		60F7C33F19C8DA7C003CE1BC /* NHAssistedNotebookView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHAssistedNotebookView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +90,8 @@
 		203E3EED19BF824A008C0379 /* NoteHub */ = {
 			isa = PBXGroup;
 			children = (
+				60F7C33E19C8DA7C003CE1BC /* NHAssistedNotebookView.h */,
+				60F7C33F19C8DA7C003CE1BC /* NHAssistedNotebookView.m */,
 				203E3EF219BF824A008C0379 /* AppDelegate.h */,
 				203E3EF319BF824A008C0379 /* AppDelegate.m */,
 				203E3EF819BF824A008C0379 /* ViewController.h */,
@@ -228,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60F7C34019C8DA7C003CE1BC /* NHAssistedNotebookView.m in Sources */,
 				203E3EF419BF824A008C0379 /* AppDelegate.m in Sources */,
 				203E3EF119BF824A008C0379 /* main.m in Sources */,
 				20B5DCB219BF90E70041C4E1 /* SettingsTableViewController.m in Sources */,
