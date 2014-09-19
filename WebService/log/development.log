@@ -93,3 +93,294 @@ Migrating to CreateCourses (20140729004900)
   [1m[35mCourse Exists (0.2ms)[0m  SELECT  1 AS one FROM "courses"  WHERE "courses"."user_id" = ? LIMIT 1  [["user_id", 1]]
   [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "courses"  WHERE "courses"."user_id" = ?[0m  [["user_id", 1]]
   [1m[35mCourse Load (0.3ms)[0m  SELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = ?  [["user_id", 1]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateNotes (20140919150303)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "notes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "date" date, "words" text, "lines" text, "course_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "course_index" ON "notes" ("course_id")[0m
+SQLite3::SQLException: index course_index already exists: CREATE  INDEX "course_index" ON "notes" ("course_id")
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (9.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20140728192641)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "name" varchar(255), "active" boolean DEFAULT 't' NOT NULL, "password_encrypted" varchar(255), "salt" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX "index_unique_username_email" ON "users" ("username", "email")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140728192641"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateSchedules (20140729004524)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "schedules" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "course_id" varchar(255), "weekday" varchar(255), "time" time, "classroom" varchar(255), "recurrence" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "course_index" ON "schedules" ("course_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140729004524"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Migrating to CreateCourses (20140729004900)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "courses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" varchar(255), "start" date, "end" date, "user_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "c_user_index" ON "courses" ("user_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140729004900"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Migrating to CreateNotes (20140919150303)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "notes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "date" date, "words" text, "lines" text, "course_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "n_course_index" ON "notes" ("course_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140919150303"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to CreateReminders (20140919150503)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "reminders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "deadline" date, "user_id" integer, "priority" varchar(255), "done" boolean, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "r_user_index" ON "reminders" ("user_id", "priority")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140919150503"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateEvents (20140919150609)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "date" date, "description" text, "recurrence" varchar(255), "user_id" integer, "friend_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "user_index" ON "events" ("user_id", "date")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140919150609"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to CreateFriends (20140919150630)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "friends" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "event_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "f_user_index" ON "friends" ("user_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140919150630"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='c_user_index' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='c_user_index' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='user_index' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='user_index' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='f_user_index' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='f_user_index' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='n_course_index' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='n_course_index' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='r_user_index' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='r_user_index' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='course_index' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='course_index' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_unique_username_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_unique_username_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='c_user_index' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='c_user_index' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='user_index' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='user_index' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='f_user_index' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='f_user_index' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='n_course_index' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='n_course_index' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='r_user_index' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='r_user_index' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='course_index' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='course_index' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_unique_username_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_unique_username_email' AND type='index'
+[0m
+  [1m[36mCourse Load (1.8ms)[0m  [1mSELECT "courses".* FROM "courses"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."username") = LOWER('molayab') LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('molayab@eafit.edu.co') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."username") = LOWER('molayab') LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('molayab@eafit.edu.co') LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_encrypted", "salt", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-09-19 15:25:32.748349"], ["email", "molayab@eafit.edu.co"], ["name", "mateo olaya"], ["password_encrypted", "821948d9ce398508ab631829cb4aa5e04faced2ce018f1a524ec934a14b4d3f7"], ["salt", "aa8c1492c3b5fba20488e23a4105a0605b2dda1f30ea490ee05b7583c0b539e9"], ["updated_at", "2014-09-19 15:25:32.748349"], ["username", "molayab"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "courses" ("created_at", "description", "end", "name", "start", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-09-19 15:29:30.667338"], ["description", "Clase calculo diferencial dictado por Marinela"], ["end", "2014-09-26"], ["name", "Calculo I"], ["start", "2014-09-19"], ["updated_at", "2014-09-19 15:29:30.667338"], ["user_id", 1]]
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "notes" ("course_id", "created_at", "date", "title", "updated_at", "words") VALUES (?, ?, ?, ?, ?, ?)[0m  [["course_id", 1], ["created_at", "2014-09-19 15:32:52.620384"], ["date", "2014-09-19"], ["title", "Limites"], ["updated_at", "2014-09-19 15:32:52.620384"], ["words", "Los limites son una manera de representar el concepto abstracto de que las cosas se pueden aproximar indefinidamente sin tocarse. En matemática, el concepto de límite es una noción topológica que formaliza la noción intuitiva de aproximación hacia un punto concreto de una sucesión o una función, a medida que los parámetros de esa sucesión o función se acercan a determinado valor. "]]
+  [1m[35m (9.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "notes" ("course_id", "created_at", "date", "title", "updated_at", "words") VALUES (?, ?, ?, ?, ?, ?)  [["course_id", 1], ["created_at", "2014-09-19 15:35:58.354248"], ["date", "2014-09-19"], ["title", "Limites al infinito"], ["updated_at", "2014-09-19 15:35:58.354248"], ["words", "Los limites al infinito son limites que van al infinito"]]
+  [1m[36m (9.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mNote Load (0.4ms)[0m  SELECT "notes".* FROM "notes"  WHERE "notes"."course_id" = ?  [["course_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."username") = LOWER('santicarmo') LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('santicarmo31@eafit.edu.co') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "email", "name", "password_encrypted", "salt", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-09-19 15:38:32.396723"], ["email", "santicarmo31@eafit.edu.co"], ["name", "santiago carmona"], ["password_encrypted", "f6984cec5e5b9fdedac69462534eef0ceef3ac958043afd38983ed5c27780d29"], ["salt", "e2f669cd6016e8857ded6f6436e35c53ff46018038e13fb63a11490b7bfb393e"], ["updated_at", "2014-09-19 15:38:32.396723"], ["username", "santicarmo"]]
+  [1m[36m (9.2ms)[0m  [1mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to RemoveFriendFromEvent (20140919154434)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.1ms)[0m  [1mCREATE TEMPORARY TABLE "aevents" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "date" date, "description" text, "recurrence" varchar(255), "user_id" integer, "friend_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='user_index' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='user_index' AND type='index'
+
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "tuser_index" ON "aevents" ("user_id", "date")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "events"[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "events"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "date" date, "description" text, "recurrence" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='tuser_index' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tuser_index' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "user_index" ON "events" ("user_id", "date")[0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "aevents"
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "aevents"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140919154434"]]
+  [1m[36m (8.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='c_user_index' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='c_user_index' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='user_index' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='user_index' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='f_user_index' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='f_user_index' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='n_course_index' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='n_course_index' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='r_user_index' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='r_user_index' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='course_index' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='course_index' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_unique_username_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_unique_username_email' AND type='index'
+[0m
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "events" ("created_at", "date", "description", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-09-19 15:52:35.238544"], ["date", "2014-09-20"], ["description", "Mi description 1"], ["title", "Tarea 1"], ["updated_at", "2014-09-19 15:52:35.238544"], ["user_id", 1]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "friends" ("created_at", "event_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-09-19 15:52:51.696731"], ["event_id", 1], ["updated_at", "2014-09-19 15:52:51.696731"], ["user_id", 2]]
+  [1m[35m (8.6ms)[0m  commit transaction
+  [1m[36mFriend Load (0.2ms)[0m  [1mSELECT "friends".* FROM "friends"  WHERE "friends"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]

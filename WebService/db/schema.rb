@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140729004900) do
+ActiveRecord::Schema.define(version: 20140919154434) do
 
   create_table "courses", force: true do |t|
     t.string   "name"
@@ -23,7 +23,53 @@ ActiveRecord::Schema.define(version: 20140729004900) do
     t.datetime "updated_at"
   end
 
-  add_index "courses", ["user_id"], name: "user_index"
+  add_index "courses", ["user_id"], name: "c_user_index"
+
+  create_table "events", force: true do |t|
+    t.string   "title"
+    t.date     "date"
+    t.text     "description"
+    t.string   "recurrence"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "events", ["user_id", "date"], name: "user_index"
+
+  create_table "friends", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "friends", ["user_id"], name: "f_user_index"
+
+  create_table "notes", force: true do |t|
+    t.string   "title"
+    t.date     "date"
+    t.text     "words"
+    t.text     "lines"
+    t.integer  "course_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "notes", ["course_id"], name: "n_course_index"
+
+  create_table "reminders", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.date     "deadline"
+    t.integer  "user_id"
+    t.string   "priority"
+    t.boolean  "done"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reminders", ["user_id", "priority"], name: "r_user_index"
 
   create_table "schedules", force: true do |t|
     t.string   "course_id"

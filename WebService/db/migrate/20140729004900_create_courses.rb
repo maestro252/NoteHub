@@ -10,6 +10,6 @@ class CreateCourses < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :courses, ['user_id'], name: 'user_index'
+    add_index :courses, ['user_id'], name: 'c_user_index'
   end
 end

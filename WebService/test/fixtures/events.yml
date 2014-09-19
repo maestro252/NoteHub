@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  date: 2014-09-19
+  description: MyText
+  recurrence: MyString
+  user_id: 1
+  friend_id: 1
+
+two:
+  title: MyString
+  date: 2014-09-19
+  description: MyText
+  recurrence: MyString
+  user_id: 1
+  friend_id: 1

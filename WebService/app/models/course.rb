@@ -1,5 +1,7 @@
 class Course < ActiveRecord::Base
   has_many :schedules, dependent: :delete_all
+  has_many :notes, dependent: :delete_all
+  
   belongs_to :user
 
   validates_presence_of :user
