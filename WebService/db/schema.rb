@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140919154434) do
+ActiveRecord::Schema.define(version: 20140922184350) do
+
+  create_table "auths", force: true do |t|
+    t.string   "token"
+    t.date     "expires"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "auths", ["user_id"], name: "auths_index_user_id", unique: true
 
   create_table "courses", force: true do |t|
     t.string   "name"
