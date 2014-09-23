@@ -5,12 +5,31 @@ class Api::V1::NotesController < ApplicationController
 	before_action :authenticate!
 
 	def index
-		notes = Note.all
-		render json:notes
+		course = Course.find_by id: params[:id], user: current_user
+
+		if course
+			render json: course.notes
+		else
+			unauthorized
+		end
 	end
 
 	def create
+		course = Course.find_by id: params[:id], user: current_user
 
+		if course
+			@note = Note.new create_params
+
+			@note.course_id = course.id
+
+			if @note.save!
+				render json: { success: true, note: @note }
+			else
+				render json: { success: false, errors: @note.errors }
+			end
+		else
+			unauthorized
+		end
 	end
 
 	def update 
@@ -24,5 +43,14 @@ class Api::V1::NotesController < ApplicationController
 	def show
 
 	end
+
+	private 
+		def create_params
+			params.require("note").permit(:title, :date, :words, :lines)
+		end
+
+		def unauthorized
+			render json: { success: false, error: ['Solo puede ver sus notas'] }, status: 401
+		end
 
 end

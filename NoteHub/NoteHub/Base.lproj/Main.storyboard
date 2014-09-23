@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="6Fw-PQ-avn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="6Fw-PQ-avn">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
-        <!--Settings Table View Controller - Ajustes-->
+        <!--Ajustes-->
         <scene sceneID="VPa-kv-Piu">
             <objects>
                 <tableViewController id="8mt-Mb-vUI" customClass="SettingsTableViewController" sceneMemberID="viewController">
@@ -297,7 +296,7 @@
             </objects>
             <point key="canvasLocation" x="4702" y="118"/>
         </scene>
-        <!--View Controller - NoteHub-->
+        <!--NoteHub-->
         <scene sceneID="wnj-n0-2Ho">
             <objects>
                 <viewController id="IGq-XG-eZC" sceneMemberID="viewController">
@@ -311,7 +310,6 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b35-yE-Iuc">
                                 <rect key="frame" x="557" y="441" width="98" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Ir al Cuaderno">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -340,7 +338,7 @@
             </objects>
             <point key="canvasLocation" x="1787" y="621"/>
         </scene>
-        <!--Notebook View Controller - Mi Cuaderno-->
+        <!--Mi Cuaderno-->
         <scene sceneID="WBz-Vl-dWa">
             <objects>
                 <viewController id="C9A-mJ-qA6" customClass="NotebookViewController" sceneMemberID="viewController">
@@ -354,7 +352,6 @@
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hmT-Y2-FLO" customClass="NHAssistedNotebookView">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -377,12 +374,12 @@
             </objects>
             <point key="canvasLocation" x="2842" y="698"/>
         </scene>
-        <!--Table View Controller - Root View Controller-->
+        <!--Root View Controller-->
         <scene sceneID="ZTB-he-Qc9">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="aBT-BR-yjK" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Zwu-c1-0zY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="308" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>

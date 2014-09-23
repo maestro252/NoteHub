@@ -203,7 +203,10 @@ CGPoint midPoint(CGPoint p1, CGPoint p2) {
     // to represent the finger movement, create a new path segment,
     // a quadratic bezier path from mid1 to mid2, using previous as a control point
     CGMutablePathRef subpath = CGPathCreateMutable();
+    
     CGPathMoveToPoint(subpath, NULL, mid1.x, mid1.y);
+    
+    
     CGPathAddQuadCurveToPoint(subpath, NULL,
                               self.previousPoint.x, self.previousPoint.y,
                               mid2.x, mid2.y);

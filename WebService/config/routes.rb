@@ -2,7 +2,13 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
       resources :notes
+
+      resources :courses
+      get 'courses/:id/notes', to: 'notes#index'
+      post 'courses/:id/notes', to: 'notes#create'
+
       resources :users, only:[:index, :create, :update, :destroy, :show]
+
       match 'login', to: 'users#login', via: :post
     end
   end
