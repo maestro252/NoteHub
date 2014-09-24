@@ -25,6 +25,10 @@
 
 - (void)viewDidLoad
 {
+    NSTimer * timer = [NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(updateNote) userInfo:nil repeats:YES];
+    
+    [timer fire];
+    
     [self writing:nil];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -36,26 +40,30 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)createNote {
+- (void)updateNote {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
     [request setTimeoutInterval:10];
     [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [request setValue:@"Token token=15d0dafb0c5a1b9cd42ea0313d51214a8c494edac168fe8d6fd2eee726fd6de2121f32905e30231877b9238583ce2fa20419dc1c50d2e32d94479ec381774733" forHTTPHeaderField:@"Authorization"];
+    [request setValue:@"Token token=58bb049ac1932cbf128155dd343aa6f202b7cfb1cecb64f3578b0700da2bf4eb6c453c5f80030edc0d2ad1530ce1e835f819919e28d29c79e7a4f1e16c877b4" forHTTPHeaderField:@"Authorization"];
     
-    [request setURL:[NSURL URLWithString:@"http://localhost:3000/api/v1/courses/1/notes"]];
+    [request setURL:[NSURL URLWithString:@"http://localhost:3000/api/v1/courses/1/notes/8"]];
+    
+    NSDateFormatter * f = [[NSDateFormatter alloc] init];
+    [f setDateFormat:@"yyyy-MM-dd"];
+    
     
     NSDictionary * sender = @{
                               @"note": @{
                                       @"title": @"Title 1",
-                                      @"date": @"",
+                                      @"date": [f stringFromDate:[NSDate date]],
                                       @"words": assistedNotebook.text,
                                       @"lines": @""
                                       }
                               };
     
-    [request setHTTPMethod:@"POST"];
+    [request setHTTPMethod:@"PUT"];
     [request setHTTPBody:[NSJSONSerialization dataWithJSONObject:sender options:kNilOptions error:nil]];
     
     NSOperationQueue *queue = [NSOperationQueue mainQueue];
@@ -66,6 +74,14 @@
                                                               options:NSJSONReadingMutableContainers|NSJSONReadingAllowFragments
                                                                 error:nil];
         NSLog(@"%@", dict);
+        
+        if (dict) {
+            if ([dict objectForKey:@"errors"] != nil) {
+                for (NSString * error in [dict objectForKey:@"errors"]) {
+                    [[[UIAlertView alloc] initWithTitle:@"Error" message:error delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+                }
+            }
+        }
     }];
 }
 
@@ -88,8 +104,6 @@
         [assistedNotebook resignFirstResponder];
         [assistedNotebook endEditing:YES];
         [assistedNotebook setEditable:false];
-        
-        [self createNote];
     } else {
         pencilButton.title = @"Lapiz";
         [assistedNotebook setDrawable:false];

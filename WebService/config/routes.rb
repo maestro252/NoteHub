@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :courses
       get 'courses/:id/notes', to: 'notes#index'
       post 'courses/:id/notes', to: 'notes#create'
+      put 'courses/:id/notes/:note_id', to: 'notes#update'
 
       resources :users, only:[:index, :create, :update, :destroy, :show]
 

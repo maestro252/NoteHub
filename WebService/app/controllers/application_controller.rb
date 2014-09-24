@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate!
   		unless logged?
-  			render json: {success:false, error: 'Debe estar loggeado'}, status: 401
+  			render json: {success:false, errors: ['Debe estar loggeado']}, status: 401
   		end
   end
 
