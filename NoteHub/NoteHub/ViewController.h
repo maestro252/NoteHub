@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ViewController : UIViewController
+#import "CommunicationManager.h"
+@interface ViewController : UIViewController <CommunicationDelegate>
 
 
 @end

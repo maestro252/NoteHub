@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2009924719DDF94000EA9953 /* CommunicationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2009924619DDF94000EA9953 /* CommunicationManager.m */; };
 		203E3EF119BF824A008C0379 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 203E3EF019BF824A008C0379 /* main.m */; };
 		203E3EF419BF824A008C0379 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 203E3EF319BF824A008C0379 /* AppDelegate.m */; };
 		203E3EF719BF824A008C0379 /* NoteHub.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 203E3EF519BF824A008C0379 /* NoteHub.xcdatamodeld */; };
@@ -14,6 +15,7 @@
 		203E3EFD19BF824A008C0379 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 203E3EFB19BF824A008C0379 /* Main.storyboard */; };
 		203E3EFF19BF824A008C0379 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 203E3EFE19BF824A008C0379 /* Images.xcassets */; };
 		203E3F0B19BF824A008C0379 /* NoteHubTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 203E3F0A19BF824A008C0379 /* NoteHubTests.m */; };
+		20AEBDF319DCB79D0018F44F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AEBDF219DCB79D0018F44F /* LoginViewController.m */; };
 		20B5DCB219BF90E70041C4E1 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B5DCB119BF90E70041C4E1 /* SettingsTableViewController.m */; };
 		602D376C19C78D0F00C986A0 /* ColorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602D376B19C78D0F00C986A0 /* ColorTableViewController.m */; };
 		60F7C34019C8DA7C003CE1BC /* NHAssistedNotebookView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F7C33F19C8DA7C003CE1BC /* NHAssistedNotebookView.m */; };
@@ -31,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2009924519DDF94000EA9953 /* CommunicationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunicationManager.h; sourceTree = "<group>"; };
+		2009924619DDF94000EA9953 /* CommunicationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunicationManager.m; sourceTree = "<group>"; };
 		203E3EEB19BF824A008C0379 /* NoteHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		203E3EEF19BF824A008C0379 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		203E3EF019BF824A008C0379 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -44,6 +48,8 @@
 		203E3F0419BF824A008C0379 /* NoteHubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteHubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		203E3F0919BF824A008C0379 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		203E3F0A19BF824A008C0379 /* NoteHubTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteHubTests.m; sourceTree = "<group>"; };
+		20AEBDF119DCB79D0018F44F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		20AEBDF219DCB79D0018F44F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		20B5DCB019BF90E70041C4E1 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		20B5DCB119BF90E70041C4E1 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		602D376A19C78D0F00C986A0 /* ColorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorTableViewController.h; sourceTree = "<group>"; };
@@ -72,6 +78,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2009924819DDF94E00EA9953 /* Communication */ = {
+			isa = PBXGroup;
+			children = (
+				2009924519DDF94000EA9953 /* CommunicationManager.h */,
+				2009924619DDF94000EA9953 /* CommunicationManager.m */,
+			);
+			name = Communication;
+			sourceTree = "<group>";
+		};
 		203E3EE219BF824A008C0379 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +124,9 @@
 				602D376B19C78D0F00C986A0 /* ColorTableViewController.m */,
 				60F7C34119C8EC65003CE1BC /* NotebookViewController.h */,
 				60F7C34219C8EC65003CE1BC /* NotebookViewController.m */,
+				20AEBDF119DCB79D0018F44F /* LoginViewController.h */,
+				20AEBDF219DCB79D0018F44F /* LoginViewController.m */,
+				2009924819DDF94E00EA9953 /* Communication */,
 			);
 			path = NoteHub;
 			sourceTree = "<group>";
@@ -238,11 +256,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2009924719DDF94000EA9953 /* CommunicationManager.m in Sources */,
 				60F7C34019C8DA7C003CE1BC /* NHAssistedNotebookView.m in Sources */,
 				203E3EF419BF824A008C0379 /* AppDelegate.m in Sources */,
 				203E3EF119BF824A008C0379 /* main.m in Sources */,
 				60F7C34319C8EC65003CE1BC /* NotebookViewController.m in Sources */,
 				20B5DCB219BF90E70041C4E1 /* SettingsTableViewController.m in Sources */,
+				20AEBDF319DCB79D0018F44F /* LoginViewController.m in Sources */,
 				203E3EFA19BF824A008C0379 /* ViewController.m in Sources */,
 				203E3EF719BF824A008C0379 /* NoteHub.xcdatamodeld in Sources */,
 				602D376C19C78D0F00C986A0 /* ColorTableViewController.m in Sources */,

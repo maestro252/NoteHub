@@ -13,7 +13,16 @@
 @end
 
 @implementation ViewController
-            
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"isLogged"]) {
+        [self performSegueWithIdentifier:@"login_segue" sender:nil];
+    }
+    
+    [super viewDidAppear:animated];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
