@@ -17,6 +17,7 @@
 		203E3F0B19BF824A008C0379 /* NoteHubTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 203E3F0A19BF824A008C0379 /* NoteHubTests.m */; };
 		20AEBDF319DCB79D0018F44F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AEBDF219DCB79D0018F44F /* LoginViewController.m */; };
 		20B5DCB219BF90E70041C4E1 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B5DCB119BF90E70041C4E1 /* SettingsTableViewController.m */; };
+		20CE89C519E485A900D20DA9 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CE89C419E485A900D20DA9 /* RegisterViewController.m */; };
 		602D376C19C78D0F00C986A0 /* ColorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602D376B19C78D0F00C986A0 /* ColorTableViewController.m */; };
 		60F7C34019C8DA7C003CE1BC /* NHAssistedNotebookView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F7C33F19C8DA7C003CE1BC /* NHAssistedNotebookView.m */; };
 		60F7C34319C8EC65003CE1BC /* NotebookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F7C34219C8EC65003CE1BC /* NotebookViewController.m */; };
@@ -52,6 +53,8 @@
 		20AEBDF219DCB79D0018F44F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		20B5DCB019BF90E70041C4E1 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		20B5DCB119BF90E70041C4E1 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+		20CE89C319E485A900D20DA9 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		20CE89C419E485A900D20DA9 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		602D376A19C78D0F00C986A0 /* ColorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorTableViewController.h; sourceTree = "<group>"; };
 		602D376B19C78D0F00C986A0 /* ColorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorTableViewController.m; sourceTree = "<group>"; };
 		60F7C33E19C8DA7C003CE1BC /* NHAssistedNotebookView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHAssistedNotebookView.h; sourceTree = "<group>"; };
@@ -115,6 +118,8 @@
 				203E3EF819BF824A008C0379 /* ViewController.h */,
 				203E3EF919BF824A008C0379 /* ViewController.m */,
 				203E3EFB19BF824A008C0379 /* Main.storyboard */,
+				20CE89C319E485A900D20DA9 /* RegisterViewController.h */,
+				20CE89C419E485A900D20DA9 /* RegisterViewController.m */,
 				203E3EFE19BF824A008C0379 /* Images.xcassets */,
 				203E3EF519BF824A008C0379 /* NoteHub.xcdatamodeld */,
 				203E3EEE19BF824A008C0379 /* Supporting Files */,
@@ -256,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20CE89C519E485A900D20DA9 /* RegisterViewController.m in Sources */,
 				2009924719DDF94000EA9953 /* CommunicationManager.m in Sources */,
 				60F7C34019C8DA7C003CE1BC /* NHAssistedNotebookView.m in Sources */,
 				203E3EF419BF824A008C0379 /* AppDelegate.m in Sources */,

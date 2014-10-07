@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A361c" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="6Fw-PQ-avn">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
         <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
     </dependencies>
@@ -328,15 +327,16 @@
                     <navigationItem key="navigationItem" title="NoteHub" id="Iwl-5b-GRF">
                         <barButtonItem key="rightBarButtonItem" title="Ajustes" id="hg1-bp-lLA">
                             <connections>
-                                <segue destination="yE8-xY-y5C" kind="popover" popoverAnchorBarButtonItem="hg1-bp-lLA" id="r4H-r6-NIK">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
+                                <action selector="settings:" destination="IGq-XG-eZC" id="zQh-ea-fa7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="QJv-RZ-30u" kind="modal" identifier="login_segue" id="KCi-4B-k2r"/>
+                        <segue destination="yE8-xY-y5C" kind="popover" identifier="setting_segue" popoverAnchorBarButtonItem="hg1-bp-lLA" id="fje-a0-PN0">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Svh-hv-e1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -518,7 +518,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="muX-vo-TUP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2693" y="-429"/>
+            <point key="canvasLocation" x="1849" y="-437"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ra9-HO-wIA">
@@ -595,7 +595,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Bienvenido" id="UyM-lB-t8p">
-                        <barButtonItem key="rightBarButtonItem" title="Registro" id="rvs-dA-MyO"/>
+                        <barButtonItem key="rightBarButtonItem" title="Registro" id="rvs-dA-MyO">
+                            <connections>
+                                <segue destination="gCG-E9-rYZ" kind="push" id="gv2-HM-WCp"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="loginButton" destination="2JQ-rr-fsb" id="bYi-w1-CJ2"/>
@@ -606,6 +610,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ehD-VH-OC4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2716" y="-1677"/>
+        </scene>
+        <!--Register View Controller-->
+        <scene sceneID="Mgn-xE-71k">
+            <objects>
+                <viewController id="gCG-E9-rYZ" customClass="RegisterViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9JD-bN-biT"/>
+                        <viewControllerLayoutGuide type="bottom" id="qN1-Z2-qwY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bYj-hK-vqL">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aa9-H1-MXM">
+                                <rect key="frame" x="192" y="193" width="385" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre de Usuario" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nG0-yt-alg">
+                                <rect key="frame" x="192" y="231" width="385" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Adn-k5-ZcV">
+                                <rect key="frame" x="192" y="269" width="385" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pfk-sE-Ld7">
+                                <rect key="frame" x="192" y="307" width="385" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirme Contraseña" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ro5-2d-3Pa">
+                                <rect key="frame" x="192" y="345" width="385" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffd-ao-ipK">
+                                <rect key="frame" x="353" y="546" width="62" height="30"/>
+                                <state key="normal" title="Registrar">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="registerAction:" destination="gCG-E9-rYZ" eventType="touchUpInside" id="R7f-ru-tPA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fFq-kb-hst"/>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="ro5-2d-3Pa" id="iHJ-cW-5cl"/>
+                        <outlet property="emailTextField" destination="Adn-k5-ZcV" id="JSD-ll-eaC"/>
+                        <outlet property="nameTextField" destination="aa9-H1-MXM" id="PRc-cg-hiM"/>
+                        <outlet property="passwordTextField" destination="Pfk-sE-Ld7" id="ckU-3S-4Cm"/>
+                        <outlet property="usernameTextField" destination="nG0-yt-alg" id="fUR-rL-jJM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ztK-Xw-lFs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3667" y="-1677"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

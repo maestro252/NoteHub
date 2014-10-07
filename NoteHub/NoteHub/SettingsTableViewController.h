@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class SettingsTableViewController;
+@protocol SettingsDelegate <NSObject>
+- (void)didLogout;
+@end
 @interface SettingsTableViewController : UITableViewController
 {
     __weak IBOutlet UITableViewCell *offline;
     
 }
+@property (nonatomic, weak) id<SettingsDelegate> delgate;
 @end

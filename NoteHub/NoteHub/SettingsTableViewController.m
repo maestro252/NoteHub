@@ -34,8 +34,17 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 1 && indexPath.row == 0) {
+    if (indexPath.section == 4 && indexPath.row == 0) {
         
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isLogged"];
+        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"username"];
+        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"email"];
+        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"token"];
+        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"lifetime"];
+        
+        if ([self.delgate respondsToSelector:@selector(didLogout)]) {
+            [self.delgate didLogout];
+        }
     }
 }
 

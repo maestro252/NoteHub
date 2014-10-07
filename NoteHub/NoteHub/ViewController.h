@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "CommunicationManager.h"
-@interface ViewController : UIViewController <CommunicationDelegate>
+#import "SettingsTableViewController.h"
+
+@interface ViewController : UIViewController <CommunicationDelegate, SettingsDelegate>
 
 
+- (IBAction)settings:(id)sender;
 @end
 

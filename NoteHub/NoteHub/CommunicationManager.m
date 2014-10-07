@@ -36,7 +36,12 @@
 }
 
 - (void)createUser:(NSDictionary *)dict {
+    [self.request setURL:[self makeURLWithService:@"api/v1/users"]];
+    [self.request setHTTPMethod:@"POST"];
     
+    [self.request setHTTPBody:[self makeJSONWithDictionary:dict]];
+    
+    [self send];
 }
 
 #pragma mark - Metodos privados de la clase
