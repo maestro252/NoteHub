@@ -4837,3 +4837,116 @@ Processing by Api::V1::UsersController#login as JSON
   [1m[36m (9.1ms)[0m  [1mcommit transaction[0m
   [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
 Completed 200 OK in 17ms (Views: 0.9ms | ActiveRecord: 10.2ms)
+
+
+Started POST "/api/v1/users" for 10.0.48.175 at 2014-10-07 15:58:46 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"a", "password"=>"[FILTERED]", "username"=>"aa", "email"=>"", "password_confirmation"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 7ms
+
+ActiveRecord::UnknownAttributeError (unknown attribute: password_confirmation):
+  app/controllers/api/v1/users_controller.rb:7:in `create'
+
+
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.3ms)
+
+
+Started POST "/api/v1/users" for 10.0.48.175 at 2014-10-07 15:59:51 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"a", "password"=>"[FILTERED]", "username"=>"a", "email"=>"a"}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."username") = LOWER('a') LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('a') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."username") = LOWER('a') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('a') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 200 OK in 36ms (Views: 0.3ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/api/v1/users" for 10.0.48.175 at 2014-10-07 16:04:08 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"", "password"=>"[FILTERED]", "username"=>"", "email"=>""}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."username") = LOWER('') LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."username") = LOWER('') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/users" for 10.0.48.175 at 2014-10-07 16:05:36 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"", "password"=>"[FILTERED]", "username"=>"", "email"=>""}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."username") = LOWER('') LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."username") = LOWER('') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/users" for 10.0.48.175 at 2014-10-07 16:07:24 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"", "password"=>"[FILTERED]", "username"=>"", "email"=>""}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."username") = LOWER('') LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."username") = LOWER('') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/api/v1/users" for 10.0.48.175 at 2014-10-07 16:09:03 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"", "password"=>"[FILTERED]", "username"=>"", "email"=>""}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."username") = LOWER('') LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."username") = LOWER('') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/users" for 10.0.48.175 at 2014-10-07 16:11:08 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"Jonathan Eidelman", "password"=>"[FILTERED]", "username"=>"maestro252", "email"=>"jeidelma@eafit.edu.co"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."username") = LOWER('maestro252') LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('jeidelma@eafit.edu.co') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "email", "name", "password_encrypted", "salt", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-10-07 21:11:08.570226"], ["email", "jeidelma@eafit.edu.co"], ["name", "jonathan eidelman"], ["password_encrypted", "ce52ead01f366481a0b73504eb6a8183e71e43943080f39ad8278626ba22d3ad"], ["salt", "98d240a650330b41bcaa95ce59609a3da826681a49af386a0b2a8db32ca3ed88"], ["updated_at", "2014-10-07 21:11:08.570226"], ["username", "maestro252"]]
+  [1m[36m (9.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE (LOWER("users"."username") = LOWER('maestro252') AND "users"."id" != 3) LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE (LOWER("users"."email") = LOWER('jeidelma@eafit.edu.co') AND "users"."id" != 3) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 19ms (Views: 0.5ms | ActiveRecord: 10.5ms)
+
+
+Started POST "/api/v1/login" for 10.0.48.175 at 2014-10-07 16:11:18 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"maestro252", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'maestro252' LIMIT 1
+  [1m[36mAuth Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "auths"  WHERE "auths"."user_id" = 3 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAuth Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "auths"  WHERE "auths"."token" = 'c2bbd793b1247b4689cbfd9f5d8f28e75c0459abd0a5d52e1e520528b1fd7cb59b0d5210ef82c54079d34dada2bfdf79e35a8be4d18efa8a7504b38f733d40fb' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "auths" ("created_at", "expires", "token", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-10-07 21:11:18.208553"], ["expires", "2015-10-02"], ["token", "c2bbd793b1247b4689cbfd9f5d8f28e75c0459abd0a5d52e1e520528b1fd7cb59b0d5210ef82c54079d34dada2bfdf79e35a8be4d18efa8a7504b38f733d40fb"], ["updated_at", "2014-10-07 21:11:18.208553"], ["user_id", 3]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+Completed 200 OK in 29ms (Views: 0.9ms | ActiveRecord: 2.7ms)

@@ -40,7 +40,7 @@ class User < ActiveRecord::Base
             length: { minimum: 6 },
             # Confirmacion de pass, password_confirmation
             # field, no se usara.
-            confirmation: true
+            confirmation: false
 
   def self.authenticate(key, password)
     if @@email_regex.match key
