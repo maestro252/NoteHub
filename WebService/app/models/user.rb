@@ -40,7 +40,7 @@ class User < ActiveRecord::Base
             length: { minimum: 6 },
             # Confirmacion de pass, password_confirmation
             # field, no se usara.
-            confirmation: false
+            confirmation: true
 
   def self.authenticate(key, password)
     if @@email_regex.match key
@@ -60,7 +60,7 @@ class User < ActiveRecord::Base
     Digest::SHA2.hexdigest("$$#{salt} ?< #{password}!$")
   end
 
-	private 
+	private
 		def generate_salt
 			self.salt = Digest::SHA2.hexdigest("$#{SecureRandom.hex 32} >? #{Time.now.utc}$")
 		end

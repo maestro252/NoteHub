@@ -2819,3 +2819,2021 @@ Processing by Api::V1::NotesController#update as JSON
   [1m[36mAuth Load (0.1ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '58bb049ac1932cbf128155dd343aa6f202b7cfb1cecb64f3578b0700da2bf4eb6c453c5f80030edc0d2ad1530ce1e835f819919e28d29c79e7a4f1e16c877b4' LIMIT 1[0m
 Filter chain halted as :authenticate! rendered or redirected
 Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 13:39:33 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[35mAuth Load (2.8ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '58bb049ac1932cbf128155dd343aa6f202b7cfb1cecb64f3578b0700da2bf4eb6c453c5f80030edc0d2ad1530ce1e835f819919e28d29c79e7a4f1e16c877b4' LIMIT 1
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 24ms (Views: 0.4ms | ActiveRecord: 3.1ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 13:40:33 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '58bb049ac1932cbf128155dd343aa6f202b7cfb1cecb64f3578b0700da2bf4eb6c453c5f80030edc0d2ad1530ce1e835f819919e28d29c79e7a4f1e16c877b4' LIMIT 1[0m
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 13:41:33 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '58bb049ac1932cbf128155dd343aa6f202b7cfb1cecb64f3578b0700da2bf4eb6c453c5f80030edc0d2ad1530ce1e835f819919e28d29c79e7a4f1e16c877b4' LIMIT 1
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 13:42:33 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '58bb049ac1932cbf128155dd343aa6f202b7cfb1cecb64f3578b0700da2bf4eb6c453c5f80030edc0d2ad1530ce1e835f819919e28d29c79e7a4f1e16c877b4' LIMIT 1[0m
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 13:43:33 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '58bb049ac1932cbf128155dd343aa6f202b7cfb1cecb64f3578b0700da2bf4eb6c453c5f80030edc0d2ad1530ce1e835f819919e28d29c79e7a4f1e16c877b4' LIMIT 1
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 10.0.55.78 at 2014-09-30 13:44:10 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1[0m
+  [1m[35mAuth Exists (0.7ms)[0m  SELECT  1 AS one FROM "auths"  WHERE "auths"."user_id" = 1 LIMIT 1
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAuth Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "auths" SET "expires" = ?, "token" = ?, "updated_at" = ? WHERE "auths"."id" = 1  [["expires", "2015-09-25"], ["token", "4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553"], ["updated_at", "2014-09-30 18:44:10.614068"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 64ms (Views: 0.7ms | ActiveRecord: 3.9ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 13:44:33 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '58bb049ac1932cbf128155dd343aa6f202b7cfb1cecb64f3578b0700da2bf4eb6c453c5f80030edc0d2ad1530ce1e835f819919e28d29c79e7a4f1e16c877b4' LIMIT 1[0m
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 13:45:19 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.5ms)[0m  SELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1
+  [1m[36mNote Load (0.4ms)[0m  [1mSELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "notes" SET "date" = ?, "updated_at" = ?, "words" = ? WHERE "notes"."id" = 8[0m  [["date", "2014-09-30"], ["updated_at", "2014-09-30 18:45:19.097481"], ["words", ""]]
+  [1m[35m (2.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 36ms (Views: 0.5ms | ActiveRecord: 4.7ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 13:46:19 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"kjfgkljdflgjdlkjgflkfd\nfjgldjklfjg\n\n", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "notes" SET "updated_at" = ?, "words" = ? WHERE "notes"."id" = 8  [["updated_at", "2014-09-30 18:46:19.027401"], ["words", "kjfgkljdflgjdlkjgflkfd\nfjgldjklfjg\n\n"]]
+  [1m[36m (9.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 18ms (Views: 0.7ms | ActiveRecord: 10.1ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 13:47:19 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"kjfgkljdflgjdlkjgflkfd\nfjgldjklfjg\n\n", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.2ms)[0m  SELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 13:48:19 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"kjfgkljdflgjdlkjgflkfd\nfjgldjklfjg\n\n", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.2ms)[0m  SELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 13:49:18 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"kjfgkljdflgjdlkjgflkfd\nfjgldjklfjg\n\n", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 13:50:19 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"kjfgkljdflgjdlkjgflkfd\nfjgldjklfjg\n\n", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 13:51:18 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"kjfgkljdflgjdlkjgflkfd\nfjgldjklfjg\n\n", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 13:51:53 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "notes" SET "updated_at" = ?, "words" = ? WHERE "notes"."id" = 8[0m  [["updated_at", "2014-09-30 18:51:53.996928"], ["words", ""]]
+  [1m[35m (9.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Completed 200 OK in 17ms (Views: 0.8ms | ActiveRecord: 10.0ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 13:52:43 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 13:53:43 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 13:54:43 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 13:55:19 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 13:56:18 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 13:57:18 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 13:58:18 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 13:59:18 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:00:19 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:01:18 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:02:19 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.9ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:03:18 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:04:19 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:05:18 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 0.9ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:05:44 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:06:44 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:07:44 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:08:12 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:09:12 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:10:12 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:11:12 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Completed 200 OK in 15ms (Views: 0.4ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:12:06 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:13:06 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:14:06 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.9ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:15:06 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:16:06 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:17:07 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 0.9ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:18:06 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:19:06 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:20:01 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Completed 200 OK in 8ms (Views: 0.7ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:20:52 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 0.9ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:21:52 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.1ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:22:53 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:23:52 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:24:53 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:25:52 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:26:52 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:27:52 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:28:52 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:29:52 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.2ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:30:52 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:31:53 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:32:52 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:33:11 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:34:11 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:35:11 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 1.0ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:36:11 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:37:11 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:38:11 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:39:11 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:40:11 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:41:11 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:42:11 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:43:11 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:44:11 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:45:11 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:46:11 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:47:11 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 0.9ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:48:11 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 1.0ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:49:11 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:50:11 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:51:11 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:52:11 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:53:11 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:54:12 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:55:10 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:55:57 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.9ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:56:31 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:57:31 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 14:58:31 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 15:00:57 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 15:01:42 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 15:02:42 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 15:03:42 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 15:04:36 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 15:05:15 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 15:06:05 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.2ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Completed 200 OK in 11ms (Views: 0.8ms | ActiveRecord: 1.2ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 15:07:05 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 15:08:05 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 15:09:05 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 10.0.55.78 at 2014-09-30 15:10:05 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '4fa3688ada9006563b1a312030f4e8f665c4772b7e392c6bba11f194ddc38deffe899a3b5c204ed95cd1dce80a2bfff8125ef99a71f6bf20ac4603b820d09553' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 127.0.0.1 at 2014-09-30 19:04:21 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '58bb049ac1932cbf128155dd343aa6f202b7cfb1cecb64f3578b0700da2bf4eb6c453c5f80030edc0d2ad1530ce1e835f819919e28d29c79e7a4f1e16c877b4' LIMIT 1
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 21ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 127.0.0.1 at 2014-09-30 19:05:13 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '58bb049ac1932cbf128155dd343aa6f202b7cfb1cecb64f3578b0700da2bf4eb6c453c5f80030edc0d2ad1530ce1e835f819919e28d29c79e7a4f1e16c877b4' LIMIT 1[0m
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 127.0.0.1 at 2014-09-30 19:05:21 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"hjhjhj\njhjhjh\nkjkj", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '58bb049ac1932cbf128155dd343aa6f202b7cfb1cecb64f3578b0700da2bf4eb6c453c5f80030edc0d2ad1530ce1e835f819919e28d29c79e7a4f1e16c877b4' LIMIT 1
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 127.0.0.1 at 2014-09-30 19:06:13 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '58bb049ac1932cbf128155dd343aa6f202b7cfb1cecb64f3578b0700da2bf4eb6c453c5f80030edc0d2ad1530ce1e835f819919e28d29c79e7a4f1e16c877b4' LIMIT 1[0m
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 127.0.0.1 at 2014-09-30 19:06:21 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"hjhjhj\njhjhjh\nkjkj", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '58bb049ac1932cbf128155dd343aa6f202b7cfb1cecb64f3578b0700da2bf4eb6c453c5f80030edc0d2ad1530ce1e835f819919e28d29c79e7a4f1e16c877b4' LIMIT 1
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 127.0.0.1 at 2014-09-30 19:07:13 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '58bb049ac1932cbf128155dd343aa6f202b7cfb1cecb64f3578b0700da2bf4eb6c453c5f80030edc0d2ad1530ce1e835f819919e28d29c79e7a4f1e16c877b4' LIMIT 1[0m
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 127.0.0.1 at 2014-09-30 19:07:21 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"hjhjhj\njhjhjh\nkjkj", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '58bb049ac1932cbf128155dd343aa6f202b7cfb1cecb64f3578b0700da2bf4eb6c453c5f80030edc0d2ad1530ce1e835f819919e28d29c79e7a4f1e16c877b4' LIMIT 1
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 127.0.0.1 at 2014-09-30 19:07:55 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '58bb049ac1932cbf128155dd343aa6f202b7cfb1cecb64f3578b0700da2bf4eb6c453c5f80030edc0d2ad1530ce1e835f819919e28d29c79e7a4f1e16c877b4' LIMIT 1[0m
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 127.0.0.1 at 2014-09-30 19:08:13 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '58bb049ac1932cbf128155dd343aa6f202b7cfb1cecb64f3578b0700da2bf4eb6c453c5f80030edc0d2ad1530ce1e835f819919e28d29c79e7a4f1e16c877b4' LIMIT 1
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 127.0.0.1 at 2014-09-30 19:08:21 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"hjhjhj\njhjhjh\nkjkj", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '58bb049ac1932cbf128155dd343aa6f202b7cfb1cecb64f3578b0700da2bf4eb6c453c5f80030edc0d2ad1530ce1e835f819919e28d29c79e7a4f1e16c877b4' LIMIT 1[0m
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 127.0.0.1 at 2014-09-30 19:08:55 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[35mAuth Load (0.1ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '58bb049ac1932cbf128155dd343aa6f202b7cfb1cecb64f3578b0700da2bf4eb6c453c5f80030edc0d2ad1530ce1e835f819919e28d29c79e7a4f1e16c877b4' LIMIT 1
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 127.0.0.1 at 2014-09-30 19:09:13 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '58bb049ac1932cbf128155dd343aa6f202b7cfb1cecb64f3578b0700da2bf4eb6c453c5f80030edc0d2ad1530ce1e835f819919e28d29c79e7a4f1e16c877b4' LIMIT 1[0m
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/api/v1/courses/1/notes/8" for 127.0.0.1 at 2014-09-30 19:09:21 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"title"=>"Title 1", "words"=>"hjhjhj\njhjhjh\nkjkj", "lines"=>"", "date"=>"2014-09-30"}, "id"=>"1", "note_id"=>"8"}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '58bb049ac1932cbf128155dd343aa6f202b7cfb1cecb64f3578b0700da2bf4eb6c453c5f80030edc0d2ad1530ce1e835f819919e28d29c79e7a4f1e16c877b4' LIMIT 1
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 10.0.50.95 at 2014-10-06 15:10:33 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1
+Completed 401 Unauthorized in 37ms (Views: 0.3ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/api/v1/login" for 10.0.50.95 at 2014-10-06 15:15:05 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1[0m
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 10.0.50.95 at 2014-10-06 15:15:07 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1
+Completed 401 Unauthorized in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/login" for 10.0.50.95 at 2014-10-06 15:15:07 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1[0m
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 10.0.50.95 at 2014-10-06 15:15:08 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/login" for 10.0.50.95 at 2014-10-06 15:15:08 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1[0m
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 10.0.50.95 at 2014-10-06 15:15:09 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1
+Completed 401 Unauthorized in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/login" for 10.0.50.95 at 2014-10-06 15:17:43 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1[0m
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/v1/login" for 10.0.50.95 at 2014-10-06 15:17:44 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 10.0.50.95 at 2014-10-06 15:17:44 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1[0m
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 10.0.50.95 at 2014-10-06 15:17:46 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 10.0.50.95 at 2014-10-06 15:17:47 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1[0m
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 10.0.50.95 at 2014-10-06 15:17:48 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/login" for 10.0.50.95 at 2014-10-06 15:19:29 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1[0m
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 10.0.50.95 at 2014-10-06 15:20:17 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 10.0.50.95 at 2014-10-06 15:26:54 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1[0m
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 10.0.50.95 at 2014-10-06 15:26:54 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 10.0.50.95 at 2014-10-06 15:26:54 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1[0m
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 10.0.50.95 at 2014-10-06 15:26:54 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1
+Completed 401 Unauthorized in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 10.0.50.95 at 2014-10-06 15:26:55 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1[0m
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/login" for 10.0.50.95 at 2014-10-06 15:26:55 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/login" for 10.0.50.95 at 2014-10-06 15:26:55 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1[0m
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 10.0.50.95 at 2014-10-06 15:26:55 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 10.0.50.95 at 2014-10-06 15:26:56 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1[0m
+Completed 401 Unauthorized in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 10.0.50.95 at 2014-10-06 15:26:56 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 10.0.50.95 at 2014-10-06 15:26:56 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1[0m
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/login" for 10.0.50.95 at 2014-10-06 15:26:57 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/login" for 10.0.50.95 at 2014-10-06 15:26:57 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1[0m
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 10.0.48.175 at 2014-10-07 13:46:36 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"a", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'a' LIMIT 1
+Completed 401 Unauthorized in 24ms (Views: 0.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/v1/login" for 10.0.48.175 at 2014-10-07 13:46:40 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (7.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = '' LIMIT 1[0m
+Completed 401 Unauthorized in 10ms (Views: 0.3ms | ActiveRecord: 7.9ms)
+
+
+Started POST "/api/v1/login" for 10.0.48.175 at 2014-10-07 13:56:12 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"dsds", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'dsds' LIMIT 1
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 10.0.48.175 at 2014-10-07 13:56:17 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = '' LIMIT 1[0m
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 10.0.48.175 at 2014-10-07 13:56:20 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = '' LIMIT 1
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 10.0.48.175 at 2014-10-07 13:56:23 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = '' LIMIT 1[0m
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 10.0.48.175 at 2014-10-07 13:56:24 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = '' LIMIT 1
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/login" for 10.0.48.175 at 2014-10-07 14:06:43 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"a", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'a' LIMIT 1[0m
+Completed 401 Unauthorized in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 10.0.48.175 at 2014-10-07 14:06:59 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1
+Completed 401 Unauthorized in 18ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/login" for 10.0.48.175 at 2014-10-07 14:07:03 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = '' LIMIT 1[0m
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/login" for 10.0.48.175 at 2014-10-07 14:09:38 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1
+Completed 401 Unauthorized in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 10.0.48.175 at 2014-10-07 14:10:00 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1[0m
+  [1m[35mAuth Exists (0.7ms)[0m  SELECT  1 AS one FROM "auths"  WHERE "auths"."user_id" = 1 LIMIT 1
+  [1m[36mAuth Load (0.5ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAuth Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "auths"  WHERE "auths"."token" = '38368bbd96421ed9e19338d1b327ce2a321183d62da090e872e54e493ffcdb1af3cffb3f986926cd019422d42af91c0669e7dcd9ffeabbafbc8ff9feb3f5e850' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "auths" SET "expires" = ?, "token" = ?, "updated_at" = ? WHERE "auths"."id" = 1  [["expires", "2015-10-02"], ["token", "38368bbd96421ed9e19338d1b327ce2a321183d62da090e872e54e493ffcdb1af3cffb3f986926cd019422d42af91c0669e7dcd9ffeabbafbc8ff9feb3f5e850"], ["updated_at", "2014-10-07 19:10:00.176477"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 47ms (Views: 0.7ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/api/v1/login" for 10.0.48.175 at 2014-10-07 14:14:05 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"a", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'a' LIMIT 1[0m
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 10.0.48.175 at 2014-10-07 14:14:14 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/login" for 10.0.48.175 at 2014-10-07 14:14:19 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1[0m
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/login" for 10.0.48.175 at 2014-10-07 14:15:30 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1
+Completed 401 Unauthorized in 8ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/login" for 10.0.48.175 at 2014-10-07 14:15:52 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1[0m
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 10.0.48.175 at 2014-10-07 14:15:56 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1
+Completed 401 Unauthorized in 8ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/login" for 10.0.48.175 at 2014-10-07 14:16:01 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1[0m
+  [1m[35mAuth Exists (0.2ms)[0m  SELECT  1 AS one FROM "auths"  WHERE "auths"."user_id" = 1 LIMIT 1
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAuth Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "auths"  WHERE "auths"."token" = 'c05587a3e8ec379bdb5758dd21128d255c8a5c4d6efd7bfadb8d9f5d88c447c031c50144481b8779480478b463c934a795bac708d764df46fe39ef18b317b0a7' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "auths" SET "token" = ?, "updated_at" = ? WHERE "auths"."id" = 1  [["token", "c05587a3e8ec379bdb5758dd21128d255c8a5c4d6efd7bfadb8d9f5d88c447c031c50144481b8779480478b463c934a795bac708d764df46fe39ef18b317b0a7"], ["updated_at", "2014-10-07 19:16:01.762564"]]
+  [1m[36m (9.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 24ms (Views: 0.8ms | ActiveRecord: 10.7ms)
+
+
+Started POST "/api/v1/login" for 10.0.48.175 at 2014-10-07 14:47:30 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"a", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'a' LIMIT 1
+Completed 401 Unauthorized in 22ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/login" for 10.0.48.175 at 2014-10-07 14:47:39 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1[0m
+  [1m[35mAuth Exists (0.2ms)[0m  SELECT  1 AS one FROM "auths"  WHERE "auths"."user_id" = 1 LIMIT 1
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAuth Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "auths"  WHERE "auths"."token" = 'eecd7a943741cc6e6c3732ddf6748bb47663d6d6b5cbfc709733dd0e228d672c4895776578b2732e3fe4e464706211401c64f9abfeb31ddff1b35918558aeeba' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "auths" SET "token" = ?, "updated_at" = ? WHERE "auths"."id" = 1  [["token", "eecd7a943741cc6e6c3732ddf6748bb47663d6d6b5cbfc709733dd0e228d672c4895776578b2732e3fe4e464706211401c64f9abfeb31ddff1b35918558aeeba"], ["updated_at", "2014-10-07 19:47:39.575084"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 57ms (Views: 0.7ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/api/v1/login" for 10.0.48.175 at 2014-10-07 14:49:15 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"a", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'a' LIMIT 1[0m
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 10.0.48.175 at 2014-10-07 14:49:26 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1
+  [1m[36mAuth Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "auths"  WHERE "auths"."user_id" = 1 LIMIT 1[0m
+  [1m[35mAuth Load (0.1ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."user_id" = 1 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mAuth Exists (0.1ms)[0m  SELECT  1 AS one FROM "auths"  WHERE "auths"."token" = '07ad388d17575ea9171cc97155996141a48a962540c5945125ec3dd7ebd7457b516212c77e61e23a2db624b3edda92b61b3cbd9a12e5c9a56fef3daaf495c7f3' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "auths" SET "token" = ?, "updated_at" = ? WHERE "auths"."id" = 1[0m  [["token", "07ad388d17575ea9171cc97155996141a48a962540c5945125ec3dd7ebd7457b516212c77e61e23a2db624b3edda92b61b3cbd9a12e5c9a56fef3daaf495c7f3"], ["updated_at", "2014-10-07 19:49:26.518674"]]
+  [1m[35m (8.4ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 15ms (Views: 0.6ms | ActiveRecord: 9.2ms)
+
+
+Started POST "/api/v1/login" for 10.0.48.175 at 2014-10-07 14:50:42 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1
+  [1m[36mAuth Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "auths"  WHERE "auths"."user_id" = 1 LIMIT 1[0m
+  [1m[35mAuth Load (0.1ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."user_id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mAuth Exists (0.1ms)[0m  SELECT  1 AS one FROM "auths"  WHERE "auths"."token" = '4872d6bb9081de2693a8505389bfcc7fc7a0be535ab8226911e3abb07582bc9e671a6ec2d4f2e5d8835b35783cd69419441b240542c5756e79c3d240da466734' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "auths" SET "token" = ?, "updated_at" = ? WHERE "auths"."id" = 1[0m  [["token", "4872d6bb9081de2693a8505389bfcc7fc7a0be535ab8226911e3abb07582bc9e671a6ec2d4f2e5d8835b35783cd69419441b240542c5756e79c3d240da466734"], ["updated_at", "2014-10-07 19:50:42.253030"]]
+  [1m[35m (8.9ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 16ms (Views: 0.6ms | ActiveRecord: 9.8ms)
+
+
+Started POST "/api/v1/login" for 10.0.48.175 at 2014-10-07 15:04:37 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"lollipop", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'lollipop' LIMIT 1
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 10.0.48.175 at 2014-10-07 15:05:00 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1[0m
+  [1m[35mAuth Exists (0.1ms)[0m  SELECT  1 AS one FROM "auths"  WHERE "auths"."user_id" = 1 LIMIT 1
+  [1m[36mAuth Load (0.1ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAuth Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "auths"  WHERE "auths"."token" = '587ff6f707c05044a2f190b6e948777965b95f7022d01545dffc9b197dd53a517332cde5011ffe54c082554b3f7658fdbfe3e38f9fa562f9a5eba8692535c146' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "auths" SET "token" = ?, "updated_at" = ? WHERE "auths"."id" = 1  [["token", "587ff6f707c05044a2f190b6e948777965b95f7022d01545dffc9b197dd53a517332cde5011ffe54c082554b3f7658fdbfe3e38f9fa562f9a5eba8692535c146"], ["updated_at", "2014-10-07 20:05:00.618682"]]
+  [1m[36m (9.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 17ms (Views: 0.9ms | ActiveRecord: 10.2ms)

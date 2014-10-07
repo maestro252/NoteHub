@@ -26,7 +26,6 @@
 - (void)viewDidLoad
 {
     NSTimer * timer = [NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(updateNote) userInfo:nil repeats:YES];
-    
     [timer fire];
     
     [self writing:nil];
