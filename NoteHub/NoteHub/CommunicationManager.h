@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define ADDRESS @"molayab.com"
+#define ADDRESS @"162.243.159.78"
 
 @class CommunicationManager;
 @protocol CommunicationDelegate <NSObject>

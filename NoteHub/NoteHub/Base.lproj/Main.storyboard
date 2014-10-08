@@ -380,7 +380,7 @@
             </objects>
             <point key="canvasLocation" x="2842" y="698"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Navegador-->
         <scene sceneID="ZTB-he-Qc9">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="aBT-BR-yjK" sceneMemberID="viewController">
@@ -450,7 +450,9 @@
                             <outlet property="delegate" destination="aBT-BR-yjK" id="zIK-qv-TGU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="0Zg-QS-kIl"/>
+                    <navigationItem key="navigationItem" title="Navegador" id="0Zg-QS-kIl">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="19X-5f-KKg"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X5u-f2-hp4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -612,7 +614,7 @@
             </objects>
             <point key="canvasLocation" x="2716" y="-1677"/>
         </scene>
-        <!--Register View Controller-->
+        <!--Registro-->
         <scene sceneID="Mgn-xE-71k">
             <objects>
                 <viewController id="gCG-E9-rYZ" customClass="RegisterViewController" sceneMemberID="viewController">
@@ -624,33 +626,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aa9-H1-MXM">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aa9-H1-MXM">
                                 <rect key="frame" x="192" y="193" width="385" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1T5-cc-QRp"/>
+                                    <constraint firstAttribute="width" constant="385" id="oP7-sF-g2g"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre de Usuario" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nG0-yt-alg">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre de Usuario" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nG0-yt-alg">
                                 <rect key="frame" x="192" y="231" width="385" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="385" id="g1y-od-tGo"/>
+                                    <constraint firstAttribute="height" constant="30" id="xkB-41-Aip"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Adn-k5-ZcV">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Adn-k5-ZcV">
                                 <rect key="frame" x="192" y="269" width="385" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="385" id="KqC-9Z-e7J"/>
+                                    <constraint firstAttribute="height" constant="30" id="YVI-2H-S19"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pfk-sE-Ld7">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pfk-sE-Ld7">
                                 <rect key="frame" x="192" y="307" width="385" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1JZ-AC-wgv"/>
+                                    <constraint firstAttribute="width" constant="385" id="xFL-cT-lIF"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirme Contraseña" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ro5-2d-3Pa">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirme Contraseña" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ro5-2d-3Pa">
                                 <rect key="frame" x="192" y="345" width="385" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="385" id="3U5-SO-z1e"/>
+                                    <constraint firstAttribute="height" constant="30" id="A56-4J-zBl"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffd-ao-ipK">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffd-ao-ipK">
                                 <rect key="frame" x="353" y="546" width="62" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="FnM-7C-t8r"/>
+                                    <constraint firstAttribute="width" constant="62" id="cHr-ar-1lV"/>
+                                </constraints>
                                 <state key="normal" title="Registrar">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -660,13 +686,34 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aa9-H1-MXM" firstAttribute="top" secondItem="9JD-bN-biT" secondAttribute="bottom" constant="129" id="6Qy-wv-IrU"/>
+                            <constraint firstItem="ro5-2d-3Pa" firstAttribute="leading" secondItem="bYj-hK-vqL" secondAttribute="leadingMargin" constant="176" id="Jj6-Jb-l8N"/>
+                            <constraint firstItem="ffd-ao-ipK" firstAttribute="top" secondItem="ro5-2d-3Pa" secondAttribute="bottom" constant="171" id="LMm-IW-voz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aa9-H1-MXM" secondAttribute="trailing" constant="175" id="O4a-4s-YpU"/>
+                            <constraint firstItem="nG0-yt-alg" firstAttribute="top" secondItem="aa9-H1-MXM" secondAttribute="bottom" constant="8" id="Pan-xh-baa"/>
+                            <constraint firstItem="Pfk-sE-Ld7" firstAttribute="leading" secondItem="bYj-hK-vqL" secondAttribute="leadingMargin" constant="176" id="QRH-3u-LWZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nG0-yt-alg" secondAttribute="trailing" constant="175" id="Tim-cK-CmQ"/>
+                            <constraint firstItem="Adn-k5-ZcV" firstAttribute="top" secondItem="nG0-yt-alg" secondAttribute="bottom" constant="8" id="Wec-20-4IA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Adn-k5-ZcV" secondAttribute="trailing" constant="175" id="d3i-bM-3YT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ffd-ao-ipK" secondAttribute="trailing" constant="337" id="eCc-nK-tcD"/>
+                            <constraint firstItem="ffd-ao-ipK" firstAttribute="leading" secondItem="bYj-hK-vqL" secondAttribute="leadingMargin" constant="337" id="f0s-Z4-1kV"/>
+                            <constraint firstItem="nG0-yt-alg" firstAttribute="leading" secondItem="bYj-hK-vqL" secondAttribute="leadingMargin" constant="176" id="h9z-Vx-ehq"/>
+                            <constraint firstItem="Adn-k5-ZcV" firstAttribute="leading" secondItem="bYj-hK-vqL" secondAttribute="leadingMargin" constant="176" id="kOm-oJ-vTy"/>
+                            <constraint firstItem="aa9-H1-MXM" firstAttribute="leading" secondItem="bYj-hK-vqL" secondAttribute="leadingMargin" constant="176" id="lkg-GZ-UDs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ro5-2d-3Pa" secondAttribute="trailing" constant="175" id="o6h-Ah-g9Z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Pfk-sE-Ld7" secondAttribute="trailing" constant="175" id="ueP-lN-0dW"/>
+                            <constraint firstItem="Pfk-sE-Ld7" firstAttribute="top" secondItem="Adn-k5-ZcV" secondAttribute="bottom" constant="8" id="wz9-Vg-Wwv"/>
+                            <constraint firstItem="ro5-2d-3Pa" firstAttribute="top" secondItem="Pfk-sE-Ld7" secondAttribute="bottom" constant="8" id="zDg-Qw-C1o"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="fFq-kb-hst"/>
+                    <navigationItem key="navigationItem" title="Registro" id="fFq-kb-hst"/>
                     <connections>
                         <outlet property="confirmPasswordTextField" destination="ro5-2d-3Pa" id="iHJ-cW-5cl"/>
                         <outlet property="emailTextField" destination="Adn-k5-ZcV" id="JSD-ll-eaC"/>
                         <outlet property="nameTextField" destination="aa9-H1-MXM" id="PRc-cg-hiM"/>
                         <outlet property="passwordTextField" destination="Pfk-sE-Ld7" id="ckU-3S-4Cm"/>
+                        <outlet property="registerButton" destination="ffd-ao-ipK" id="dHp-Vk-Kkh"/>
                         <outlet property="usernameTextField" destination="nG0-yt-alg" id="fUR-rL-jJM"/>
                     </connections>
                 </viewController>

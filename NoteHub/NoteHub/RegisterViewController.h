@@ -16,6 +16,7 @@
     __weak IBOutlet UITextField *emailTextField;
     __weak IBOutlet UITextField *passwordTextField;
     __weak IBOutlet UITextField *confirmPasswordTextField;
+    __weak IBOutlet UIButton *registerButton;
 }
 
 - (IBAction)registerAction:(id)sender;
