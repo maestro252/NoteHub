@@ -4,7 +4,7 @@ class Api::V1::CoursesController < ApplicationController
 
 	before_action :authenticate!
 
-	def index 
+	def index
 		@courses = Course.find_by user: current_user
 
 		render json: @courses
@@ -19,9 +19,24 @@ class Api::V1::CoursesController < ApplicationController
 	def update
 	end
 
-	def create 
+	def create
+		@course = Course.new create_params
+		@course.user = current_user
+
+		if @course.save
+			render json:{success: true, course: @course}
+		else
+			render json:{success: false, errors: @course.errors}
+		end
 	end
 
 	def notes
 	end
+
+	private
+
+	def create_params
+			params.require(:course).permit(:name, :description, :start, :end)
+	end
+
 end

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define ADDRESS @"162.243.159.78"
+#define ADDRESS @"localhost:3000"
 
 @class CommunicationManager;
 @protocol CommunicationDelegate <NSObject>
@@ -24,5 +24,6 @@
 
 - (void)loginWithKey:(NSString *)key password:(NSString *)passwd;
 - (void)createUser:(NSDictionary *)dict;
+- (void)createCourse:(NSDictionary *)dict;
 
 @end

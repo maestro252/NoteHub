@@ -44,6 +44,17 @@
     [self send];
 }
 
+- (void)createCourse:(NSDictionary *)dict {
+    [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
+    
+    [self.request setURL:[self makeURLWithService:@"api/v1/courses"]];
+    [self.request setHTTPMethod:@"POST"];
+    
+    [self.request setHTTPBody:[self makeJSONWithDictionary:dict]];
+    
+    [self send];
+}
+
 #pragma mark - Metodos privados de la clase
 
 - (NSData *)makeJSONWithDictionary:(NSDictionary *)dict {

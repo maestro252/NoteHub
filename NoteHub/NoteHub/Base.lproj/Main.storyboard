@@ -451,12 +451,73 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Navegador" id="0Zg-QS-kIl">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="19X-5f-KKg"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="19X-5f-KKg">
+                            <connections>
+                                <segue destination="caD-XM-gOt" kind="push" id="fJX-Z6-Qa2"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X5u-f2-hp4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="977" y="-465"/>
+        </scene>
+        <!--New Course View Controller-->
+        <scene sceneID="2q1-7d-8lJ">
+            <objects>
+                <viewController id="caD-XM-gOt" customClass="NewCourseViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="m5B-nl-dZc"/>
+                        <viewControllerLayoutGuide type="bottom" id="OZ8-9x-HKW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IAt-H9-j7z">
+                        <rect key="frame" x="0.0" y="0.0" width="308" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre del curso" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oM0-gk-pRo">
+                                <rect key="frame" x="73" y="128" width="163" height="30"/>
+                                <color key="textColor" red="0.63325832201086962" green="0.63325832201086962" blue="0.63325832201086962" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Descripción del curso" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hl9-ts-fUZ">
+                                <rect key="frame" x="73" y="166" width="163" height="30"/>
+                                <color key="textColor" red="0.68221382472826086" green="0.68221382472826086" blue="0.68221382472826086" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Fecha de inicio" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pBg-qf-nge">
+                                <rect key="frame" x="73" y="204" width="163" height="30"/>
+                                <color key="textColor" red="0.62860903532608692" green="0.62860903532608692" blue="0.62860903532608692" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Fecha de culminación" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AaV-h8-oXt">
+                                <rect key="frame" x="73" y="242" width="163" height="30"/>
+                                <color key="textColor" red="0.64030655570652173" green="0.64030655570652173" blue="0.64030655570652173" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FEa-jg-tnv">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="GZV-3i-mFk">
+                            <connections>
+                                <action selector="saveButton:" destination="caD-XM-gOt" id="FtM-6H-Qa3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="courseDescriptionTextField" destination="hl9-ts-fUZ" id="osp-XO-wBe"/>
+                        <outlet property="courseNameTextField" destination="oM0-gk-pRo" id="sJD-D8-Ejh"/>
+                        <outlet property="endDateTextField" destination="AaV-h8-oXt" id="dLk-ht-agA"/>
+                        <outlet property="startDateTextField" destination="pBg-qf-nge" id="Etl-XG-Sjd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XB6-Rs-btT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="863" y="-1760"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jlY-04-3tt">

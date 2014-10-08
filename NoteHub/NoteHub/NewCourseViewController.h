@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface NewCourseViewController : UIViewController
+#import "CommunicationManager.h"
+@interface NewCourseViewController : UIViewController <CommunicationDelegate>
+{
+    __weak IBOutlet UITextField *courseNameTextField;
+    
+    __weak IBOutlet UITextField *courseDescriptionTextField;
+    __weak IBOutlet UITextField *startDateTextField;
+    __weak IBOutlet UITextField *endDateTextField;
+}
+- (IBAction)saveButton:(id)sender;
 
 @end

@@ -24,6 +24,40 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction)saveButton:(id)sender{
+    CommunicationManager * cm = [[CommunicationManager alloc] init];
+    cm.delegate = self;
+    NSDictionary * dict = @{@"course": @{@"name":courseNameTextField.text,
+                                       @"description":courseDescriptionTextField.text,
+                                       @"start":startDateTextField.text,
+                                       @"end":endDateTextField.text}};
+    
+    [cm createCourse:dict];
+}
+
+- (void)communication:(CommunicationManager *)comm didReceiveData:(NSDictionary *)dict {
+    
+    if ([[dict objectForKey:@"success"] integerValue] == 1) {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    } else {
+        for (NSString * e in [dict objectForKey:@"errors"]) {
+            NSMutableString * str = [NSMutableString new];
+            
+            for (NSString * s in [[dict objectForKey:@"errors"] objectForKey:e]) {
+                [str appendString:[NSString stringWithFormat:@"%@ ", s]];
+            }
+            
+            [[[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Error en %@", e]
+                                        message:str
+                                       delegate:nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles: nil] show];
+            
+        }
+        
+    }
+}
+
 /*
 #pragma mark - Navigation
 
@@ -33,5 +67,6 @@
     // Pass the selected object to the new view controller.
 }
 */
+
 
 @end
