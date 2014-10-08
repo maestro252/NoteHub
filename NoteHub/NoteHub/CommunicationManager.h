@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define ADDRESS @"localhost:3000"
+#define ADDRESS @"molayab.com"
 
 @class CommunicationManager;
 @protocol CommunicationDelegate <NSObject>

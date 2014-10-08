@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   has_many :courses
 
 	alias_attribute :password, :password_encrypted
+	alias_attribute :password_confirmation, :password_encrypted_confirmation
+
 	before_save :encrypt_password
   before_save :formatter
 
