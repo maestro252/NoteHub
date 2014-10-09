@@ -5,7 +5,7 @@ class Api::V1::CoursesController < ApplicationController
 	before_action :authenticate!
 
 	def index
-		@courses = Course.find_by user: current_user
+		@courses = Course.where user: current_user
 
 		render json: @courses
 	end

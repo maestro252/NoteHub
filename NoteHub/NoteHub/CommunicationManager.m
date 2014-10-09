@@ -44,6 +44,24 @@
     [self send];
 }
 
+- (void)getCourses {
+    [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
+    
+    [self.request setURL:[self makeURLWithService:@"api/v1/courses"]];
+    [self.request setHTTPMethod:@"GET"];
+    
+    [self send];
+}
+
+- (void)getNotes {
+    [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
+    
+    [self.request setURL:[self makeURLWithService:@"api/v1/notes"]];
+    [self.request setHTTPMethod:@"GET"];
+    
+    [self send];
+}
+
 - (void)createCourse:(NSDictionary *)dict {
     [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
     

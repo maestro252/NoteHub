@@ -1,11 +1,11 @@
 class Api::V1::NotesController < ApplicationController
-	
+
 	skip_before_filter :verify_authenticity_token
 	respond_to :json
 	before_action :authenticate!
 
 	def index
-		course = Course.find_by id: params[:id], user: current_user
+		course = Course.where id: params[:id], user: current_user
 
 		if course
 			render json: course.notes
@@ -32,7 +32,7 @@ class Api::V1::NotesController < ApplicationController
 		end
 	end
 
-	def update 
+	def update
 		course = Course.find_by id: params[:id], user: current_user
 
 		if course
@@ -59,7 +59,7 @@ class Api::V1::NotesController < ApplicationController
 
 	end
 
-	private 
+	private
 		def create_params
 			params.require("note").permit(:title, :date, :words, :lines)
 		end

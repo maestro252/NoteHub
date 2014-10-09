@@ -25,5 +25,7 @@
 - (void)loginWithKey:(NSString *)key password:(NSString *)passwd;
 - (void)createUser:(NSDictionary *)dict;
 - (void)createCourse:(NSDictionary *)dict;
+- (void)getCourses;
+- (void)getNotes;
 
 @end

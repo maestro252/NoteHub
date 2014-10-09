@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CommunicationManager.h"
+#import "courseTableViewController.h"
 @interface NewCourseViewController : UIViewController <CommunicationDelegate>
 {
     __weak IBOutlet UITextField *courseNameTextField;

@@ -20,6 +20,8 @@
 		20CE89C519E485A900D20DA9 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CE89C419E485A900D20DA9 /* RegisterViewController.m */; };
 		602D376C19C78D0F00C986A0 /* ColorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602D376B19C78D0F00C986A0 /* ColorTableViewController.m */; };
 		603B357B19E5D37A00392105 /* NewCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 603B357A19E5D37A00392105 /* NewCourseViewController.m */; };
+		60EDDF3919E7286900746FD2 /* courseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EDDF3819E7286900746FD2 /* courseTableViewController.m */; };
+		60EDDF3C19E73E4700746FD2 /* notebookListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EDDF3B19E73E4700746FD2 /* notebookListTableViewController.m */; };
 		60F7C34019C8DA7C003CE1BC /* NHAssistedNotebookView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F7C33F19C8DA7C003CE1BC /* NHAssistedNotebookView.m */; };
 		60F7C34319C8EC65003CE1BC /* NotebookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F7C34219C8EC65003CE1BC /* NotebookViewController.m */; };
 /* End PBXBuildFile section */
@@ -60,6 +62,10 @@
 		602D376B19C78D0F00C986A0 /* ColorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorTableViewController.m; sourceTree = "<group>"; };
 		603B357919E5D37A00392105 /* NewCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewCourseViewController.h; sourceTree = "<group>"; };
 		603B357A19E5D37A00392105 /* NewCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewCourseViewController.m; sourceTree = "<group>"; };
+		60EDDF3719E7286900746FD2 /* courseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = courseTableViewController.h; sourceTree = "<group>"; };
+		60EDDF3819E7286900746FD2 /* courseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = courseTableViewController.m; sourceTree = "<group>"; };
+		60EDDF3A19E73E4700746FD2 /* notebookListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = notebookListTableViewController.h; sourceTree = "<group>"; };
+		60EDDF3B19E73E4700746FD2 /* notebookListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = notebookListTableViewController.m; sourceTree = "<group>"; };
 		60F7C33E19C8DA7C003CE1BC /* NHAssistedNotebookView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHAssistedNotebookView.h; sourceTree = "<group>"; };
 		60F7C33F19C8DA7C003CE1BC /* NHAssistedNotebookView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHAssistedNotebookView.m; sourceTree = "<group>"; };
 		60F7C34119C8EC65003CE1BC /* NotebookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotebookViewController.h; sourceTree = "<group>"; };
@@ -121,6 +127,10 @@
 				203E3EF819BF824A008C0379 /* ViewController.h */,
 				203E3EF919BF824A008C0379 /* ViewController.m */,
 				203E3EFB19BF824A008C0379 /* Main.storyboard */,
+				60EDDF3719E7286900746FD2 /* courseTableViewController.h */,
+				60EDDF3819E7286900746FD2 /* courseTableViewController.m */,
+				60EDDF3A19E73E4700746FD2 /* notebookListTableViewController.h */,
+				60EDDF3B19E73E4700746FD2 /* notebookListTableViewController.m */,
 				20CE89C319E485A900D20DA9 /* RegisterViewController.h */,
 				20CE89C419E485A900D20DA9 /* RegisterViewController.m */,
 				203E3EFE19BF824A008C0379 /* Images.xcassets */,
@@ -266,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60EDDF3919E7286900746FD2 /* courseTableViewController.m in Sources */,
 				20CE89C519E485A900D20DA9 /* RegisterViewController.m in Sources */,
 				2009924719DDF94000EA9953 /* CommunicationManager.m in Sources */,
 				60F7C34019C8DA7C003CE1BC /* NHAssistedNotebookView.m in Sources */,
@@ -277,6 +288,7 @@
 				203E3EFA19BF824A008C0379 /* ViewController.m in Sources */,
 				203E3EF719BF824A008C0379 /* NoteHub.xcdatamodeld in Sources */,
 				603B357B19E5D37A00392105 /* NewCourseViewController.m in Sources */,
+				60EDDF3C19E73E4700746FD2 /* notebookListTableViewController.m in Sources */,
 				602D376C19C78D0F00C986A0 /* ColorTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

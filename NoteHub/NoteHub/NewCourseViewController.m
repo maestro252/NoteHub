@@ -38,6 +38,10 @@
 - (void)communication:(CommunicationManager *)comm didReceiveData:(NSDictionary *)dict {
     
     if ([[dict objectForKey:@"success"] integerValue] == 1) {
+        courseTableViewController * c = (courseTableViewController *)[[self.navigationController viewControllers] objectAtIndex:0];
+        
+        [c reload];
+        
         [self.navigationController popToRootViewControllerAnimated:YES];
     } else {
         for (NSString * e in [dict objectForKey:@"errors"]) {
@@ -57,6 +61,8 @@
         
     }
 }
+
+
 
 /*
 #pragma mark - Navigation
