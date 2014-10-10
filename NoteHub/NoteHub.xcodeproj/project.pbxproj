@@ -120,33 +120,20 @@
 		203E3EED19BF824A008C0379 /* NoteHub */ = {
 			isa = PBXGroup;
 			children = (
-				60F7C33E19C8DA7C003CE1BC /* NHAssistedNotebookView.h */,
-				60F7C33F19C8DA7C003CE1BC /* NHAssistedNotebookView.m */,
 				203E3EF219BF824A008C0379 /* AppDelegate.h */,
-				203E3EF319BF824A008C0379 /* AppDelegate.m */,
 				203E3EF819BF824A008C0379 /* ViewController.h */,
 				203E3EF919BF824A008C0379 /* ViewController.m */,
 				203E3EFB19BF824A008C0379 /* Main.storyboard */,
-				60EDDF3719E7286900746FD2 /* courseTableViewController.h */,
-				60EDDF3819E7286900746FD2 /* courseTableViewController.m */,
-				60EDDF3A19E73E4700746FD2 /* notebookListTableViewController.h */,
-				60EDDF3B19E73E4700746FD2 /* notebookListTableViewController.m */,
-				20CE89C319E485A900D20DA9 /* RegisterViewController.h */,
-				20CE89C419E485A900D20DA9 /* RegisterViewController.m */,
+				203E3EF319BF824A008C0379 /* AppDelegate.m */,
+				6EF686CE19E78281007EEFB1 /* Course */,
+				6EF686D019E7831D007EEFB1 /* Register */,
+				6EF686D419E783BE007EEFB1 /* LOGIN */,
+				6EF686D319E783A3007EEFB1 /* TableThings */,
+				6EF686CF19E782DD007EEFB1 /* NoteBook */,
+				203E3EEE19BF824A008C0379 /* Supporting Files */,
+				2009924819DDF94E00EA9953 /* Communication */,
 				203E3EFE19BF824A008C0379 /* Images.xcassets */,
 				203E3EF519BF824A008C0379 /* NoteHub.xcdatamodeld */,
-				203E3EEE19BF824A008C0379 /* Supporting Files */,
-				20B5DCB019BF90E70041C4E1 /* SettingsTableViewController.h */,
-				20B5DCB119BF90E70041C4E1 /* SettingsTableViewController.m */,
-				602D376A19C78D0F00C986A0 /* ColorTableViewController.h */,
-				602D376B19C78D0F00C986A0 /* ColorTableViewController.m */,
-				60F7C34119C8EC65003CE1BC /* NotebookViewController.h */,
-				60F7C34219C8EC65003CE1BC /* NotebookViewController.m */,
-				20AEBDF119DCB79D0018F44F /* LoginViewController.h */,
-				20AEBDF219DCB79D0018F44F /* LoginViewController.m */,
-				603B357919E5D37A00392105 /* NewCourseViewController.h */,
-				603B357A19E5D37A00392105 /* NewCourseViewController.m */,
-				2009924819DDF94E00EA9953 /* Communication */,
 			);
 			path = NoteHub;
 			sourceTree = "<group>";
@@ -175,6 +162,59 @@
 				203E3F0919BF824A008C0379 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6EF686CE19E78281007EEFB1 /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				603B357919E5D37A00392105 /* NewCourseViewController.h */,
+				603B357A19E5D37A00392105 /* NewCourseViewController.m */,
+				60EDDF3719E7286900746FD2 /* courseTableViewController.h */,
+				60EDDF3819E7286900746FD2 /* courseTableViewController.m */,
+			);
+			name = Course;
+			sourceTree = "<group>";
+		};
+		6EF686CF19E782DD007EEFB1 /* NoteBook */ = {
+			isa = PBXGroup;
+			children = (
+				60F7C33E19C8DA7C003CE1BC /* NHAssistedNotebookView.h */,
+				60F7C33F19C8DA7C003CE1BC /* NHAssistedNotebookView.m */,
+				60EDDF3A19E73E4700746FD2 /* notebookListTableViewController.h */,
+				60EDDF3B19E73E4700746FD2 /* notebookListTableViewController.m */,
+				60F7C34119C8EC65003CE1BC /* NotebookViewController.h */,
+				60F7C34219C8EC65003CE1BC /* NotebookViewController.m */,
+			);
+			name = NoteBook;
+			sourceTree = "<group>";
+		};
+		6EF686D019E7831D007EEFB1 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				20CE89C319E485A900D20DA9 /* RegisterViewController.h */,
+				20CE89C419E485A900D20DA9 /* RegisterViewController.m */,
+			);
+			name = Register;
+			sourceTree = "<group>";
+		};
+		6EF686D319E783A3007EEFB1 /* TableThings */ = {
+			isa = PBXGroup;
+			children = (
+				602D376A19C78D0F00C986A0 /* ColorTableViewController.h */,
+				602D376B19C78D0F00C986A0 /* ColorTableViewController.m */,
+				20B5DCB019BF90E70041C4E1 /* SettingsTableViewController.h */,
+				20B5DCB119BF90E70041C4E1 /* SettingsTableViewController.m */,
+			);
+			name = TableThings;
+			sourceTree = "<group>";
+		};
+		6EF686D419E783BE007EEFB1 /* LOGIN */ = {
+			isa = PBXGroup;
+			children = (
+				20AEBDF119DCB79D0018F44F /* LoginViewController.h */,
+				20AEBDF219DCB79D0018F44F /* LoginViewController.m */,
+			);
+			name = LOGIN;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
