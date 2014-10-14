@@ -5,7 +5,9 @@ class Api::V1::NotesController < ApplicationController
 	before_action :authenticate!
 
 	def index
-		course = Course.where id: params[:id], user: current_user
+		course = Course.find_by id: params[:id], user: current_user
+
+		puts course
 
 		if course
 			render json: course.notes
