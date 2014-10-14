@@ -92,7 +92,19 @@
     [self send];
 }
 
-
+- (void) updateUser:(NSDictionary *)dict{
+    
+    [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
+    
+    [self.request setURL:[self makeURLWithService:[NSString stringWithFormat: @"api/v1/users/%ld", (long)[[[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"] integerValue]]]];
+    
+    [self.request setHTTPMethod:@"PATCH"];
+    
+    
+    [self.request setHTTPBody:[self makeJSONWithDictionary:dict]];
+    
+    [self send];
+}
 
 #pragma mark - Metodos privados de la clase
 
@@ -133,6 +145,8 @@
                     [[NSUserDefaults standardUserDefaults] setObject:[[auth objectForKey:@"user"] objectForKey:@"username"] forKey:@"username"];
                     
                     [[NSUserDefaults standardUserDefaults] setObject:[[auth objectForKey:@"user"] objectForKey:@"email"] forKey:@"email"];
+                    
+                    [[NSUserDefaults standardUserDefaults] setObject:[[auth objectForKey:@"user"] objectForKey:@"id"] forKey:@"user_id"];
                     
                     [[NSUserDefaults standardUserDefaults] setObject:token forKey:@"token"];
                     

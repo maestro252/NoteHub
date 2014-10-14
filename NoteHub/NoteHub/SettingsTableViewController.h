@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommunicationManager.h"
 @class SettingsTableViewController;
 @protocol SettingsDelegate <NSObject>
 - (void)didLogout;
 @end
-@interface SettingsTableViewController : UITableViewController
+@interface SettingsTableViewController : UITableViewController <CommunicationDelegate>
 {
     __weak IBOutlet UITableViewCell *offline;
     

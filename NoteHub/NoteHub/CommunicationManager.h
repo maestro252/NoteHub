@@ -28,5 +28,6 @@
 - (void)getCourses;
 - (void)getNotesForCourse:(NSInteger)course;
 - (void)createNoteForCourse:(NSInteger)course withTitle:(NSString *)title;
+- (void) updateUser:(NSDictionary *)dict;
 
 @end

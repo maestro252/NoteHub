@@ -45,8 +45,43 @@
         if ([self.delgate respondsToSelector:@selector(didLogout)]) {
             [self.delgate didLogout];
         }
+    }else if(indexPath.section == 0 && indexPath.row == 0){
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Editar Descripcion"
+                                                         message:nil
+                                                        delegate:self
+                                               cancelButtonTitle:@"Cancelar"
+                                               otherButtonTitles:@"Guardar", nil];
+        
+        
+        [alert setAlertViewStyle:UIAlertViewStylePlainTextInput];
+        
+        UITextField * field = [alert textFieldAtIndex:0];
+        [field setPlaceholder:@"Descripcion del usuario"];
+        
+        [alert show];
+
     }
 }
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        NSString * title = [[alertView textFieldAtIndex:0] text];
+        
+        if (![title isEqual:@""]) {
+            CommunicationManager * c = [CommunicationManager new];
+            [c updateUser:@{
+                            @"user": @{
+                                    @"description": title
+                                    }
+                            }];
+        } else {
+            [[[UIAlertView alloc] initWithTitle:@"Error" message:@"No es posible crear una nota sin titulo." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+        }
+        
+        NSLog(@"Se crea %@", title);
+    }
+}
+
 
 /*
 // Override to support conditional editing of the table view.

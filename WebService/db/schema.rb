@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140922184350) do
+ActiveRecord::Schema.define(version: 20141014213810) do
 
   create_table "auths", force: true do |t|
     t.string   "token"
@@ -102,6 +102,7 @@ ActiveRecord::Schema.define(version: 20140922184350) do
     t.string   "salt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "description"
   end
 
   add_index "users", ["username", "email"], name: "index_unique_username_email", unique: true

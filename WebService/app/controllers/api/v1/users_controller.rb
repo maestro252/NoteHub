@@ -14,6 +14,21 @@ class Api::V1::UsersController < ApplicationController
 
 	end
 
+	def update
+		if true
+			@user = User.find_by id: current_user.id
+			@user.update update_params
+
+			if @user.save
+				render json: {success:true, user: @user}
+			else
+				render json: {success: false, errors: @user.errors}
+			end
+		else
+			render json: {success:false, errors:["Solo puede cambiar SU descripcion"]}, status: 401
+		end
+	end
+
 	def login
 		login = Auth.authenticate(login_params[:key], login_params[:password])
 		if login
@@ -23,8 +38,6 @@ class Api::V1::UsersController < ApplicationController
 			render json:{succes:false, errors: ['Nombre de usuario o contraseña inválido']},
 						status:401
 		end
-
-
 	end
 
 	private
@@ -35,5 +48,9 @@ class Api::V1::UsersController < ApplicationController
 		def register_params
 			params.require(:user).permit(:name, :username,
 				:email, :password)
+		end
+
+		def update_params
+			params.require(:user).permit(:description)
 		end
 end
