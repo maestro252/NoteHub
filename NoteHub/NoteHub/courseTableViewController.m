@@ -18,7 +18,6 @@
 - (void)viewDidLoad {
     data = [NSMutableArray new];
     
-    
     [self reload];
     [super viewDidLoad];
     
@@ -29,6 +28,10 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -55,20 +58,24 @@
     // Configure the cell...
     
     cell.textLabel.text = [data objectAtIndex:indexPath.row];
-    
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
 
 - (void)communication:(CommunicationManager *)comm didReceiveData:(NSDictionary *)dict {
-    NSLog(@"%@", dict);
-    
-    database = dict;
-    
-    for (NSDictionary * inner in dict) {
-        [data addObject:[inner objectForKey:@"name"]];
+    @try {
+        NSLog(@"%@", dict);
+        
+        database = dict;
+        
+        for (NSDictionary * inner in dict) {
+            [data addObject:[inner objectForKey:@"name"]];
+        }
+        
+        [self.tableView reloadData];
     }
-    
-    [self.tableView reloadData];
+    @catch (NSException *exception) { }
+    @finally { }
 }
 
 - (void)reload {

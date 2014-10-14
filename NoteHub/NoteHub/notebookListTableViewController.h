@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "CommunicationManager.h"
 
-@interface notebookListTableViewController : UITableViewController <CommunicationDelegate>
+@interface notebookListTableViewController : UITableViewController <CommunicationDelegate, UIAlertViewDelegate> {
+    NSMutableArray * data;
+    NSDictionary * database;
+}
 @property (nonatomic, strong) NSDictionary * course;
+- (IBAction)createNote:(id)sender;
 @end

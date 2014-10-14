@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define ADDRESS @"localhost:3000"
+#define ADDRESS @"10.0.48.251:3000"
 
 @class CommunicationManager;
 @protocol CommunicationDelegate <NSObject>
@@ -26,6 +26,7 @@
 - (void)createUser:(NSDictionary *)dict;
 - (void)createCourse:(NSDictionary *)dict;
 - (void)getCourses;
-- (void)getNotes;
+- (void)getNotesForCourse:(NSInteger)course;
+- (void)createNoteForCourse:(NSInteger)course withTitle:(NSString *)title;
 
 @end

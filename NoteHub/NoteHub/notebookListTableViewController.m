@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    data = [NSMutableArray new];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -29,13 +30,28 @@
     self.navigationItem.title = [self.course objectForKey:@"name"];
     
     CommunicationManager * c = [CommunicationManager new];
-    [c getCourses];
+    [c setDelegate:self];
+    [c getNotesForCourse:[[self.course objectForKey:@"id"] integerValue]];
     
     [super viewWillAppear:animated];
 
 }
 
 - (void)communication:(CommunicationManager *)comm didReceiveData:(NSDictionary *)dict {
+    
+    @try {
+        NSLog(@"%@", dict);
+        
+        database = dict;
+        
+        for (NSDictionary * inner in dict) {
+            [data addObject:[inner objectForKey:@"title"]];
+        }
+        
+        [self.tableView reloadData];
+    }
+    @catch (NSException *exception) { }
+    @finally { }
     
 }
 
@@ -53,7 +69,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 1;
+    return [data count];
 }
 
 
@@ -61,6 +77,12 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     // Configure the cell...
+    @try {
+        cell.textLabel.text = [data objectAtIndex:indexPath.row];
+    }
+    @catch (NSException *exception) { }
+    @finally { }
+    
     
     return cell;
 }
@@ -110,4 +132,33 @@
 }
 */
 
+- (IBAction)createNote:(id)sender {
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Nueva nota:"
+                                                     message:nil
+                                                    delegate:self
+                                           cancelButtonTitle:@"Cancelar"
+                                           otherButtonTitles:@"Crear", nil];
+    
+    
+    [alert setAlertViewStyle:UIAlertViewStylePlainTextInput];
+    
+    UITextField * field = [alert textFieldAtIndex:0];
+    [field setPlaceholder:@"Titulo de nota"];
+    
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        NSString * title = [[alertView textFieldAtIndex:0] text];
+        
+        if (![title isEqual:@""]) {
+            [[CommunicationManager new] createNoteForCourse:[[self.course objectForKey:@"id"] integerValue] withTitle:title];
+        } else {
+            [[[UIAlertView alloc] initWithTitle:@"Error" message:@"No es posible crear una nota sin titulo." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+        }
+        
+        NSLog(@"Se crea %@", title);
+    }
+}
 @end

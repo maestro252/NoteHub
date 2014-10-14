@@ -53,10 +53,12 @@
     [self send];
 }
 
-- (void)getNotes {
+- (void)getNotesForCourse:(NSInteger)course {
     [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
     
-    [self.request setURL:[self makeURLWithService:@"api/v1/notes"]];
+    NSLog(@"URL: %@", [[NSUserDefaults standardUserDefaults] objectForKey:@"token"]);
+    
+    [self.request setURL:[self makeURLWithService:[NSString stringWithFormat: @"api/v1/courses/%ld/notes", (long)course]]];
     [self.request setHTTPMethod:@"GET"];
     
     [self send];
@@ -72,6 +74,25 @@
     
     [self send];
 }
+
+- (void)createNoteForCourse:(NSInteger)course withTitle:(NSString *)title {
+    [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
+    
+    [self.request setURL:[self makeURLWithService:[NSString stringWithFormat: @"api/v1/courses/%ld/notes", (long)course]]];
+    
+    [self.request setHTTPMethod:@"POST"];
+    
+    
+    [self.request setHTTPBody:[self makeJSONWithDictionary:@{
+                                                             @"note": @{
+                                                                     @"title": title
+                                                                     }
+                                                             }]];
+    
+    [self send];
+}
+
+
 
 #pragma mark - Metodos privados de la clase
 

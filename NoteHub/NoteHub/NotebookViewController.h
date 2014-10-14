@@ -12,8 +12,7 @@
 @interface NotebookViewController : UIViewController
 {
     __weak IBOutlet UIBarButtonItem *pencilButton;
-    __weak IBOutlet NHAssistedNotebookView *assistedNotebook;
-    
+    __weak IBOutlet NHAssistedNotebookView *assistedNotebook;    
 }
 - (IBAction)writing:(id)sender;
 @end
