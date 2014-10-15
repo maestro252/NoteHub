@@ -94,7 +94,7 @@
         CGContextSetLineWidth(context, 1.0f);
         CGContextSetLineCap(context, kCGLineCapSquare);
         
-        for (int i = 0; i < self.bounds.size.height; i += 35) {
+        for (int i = 3; i < self.bounds.size.height; i += 35) {
             CGContextSetStrokeColorWithColor(context, [UIColor whiteColor].CGColor);
             CGContextMoveToPoint(context, 0 - _margins.left, (i + 1) - _margins.left);
             CGContextAddLineToPoint(context, self.bounds.size.width, (i + 1) - _margins.left);

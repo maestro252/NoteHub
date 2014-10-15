@@ -75,7 +75,7 @@
     [self send];
 }
 
-- (void)createNoteForCourse:(NSInteger)course withTitle:(NSString *)title {
+- (void)createNoteForCourse:(NSInteger)course withTitle:(NSString *)title pattern: (NSString *)pattern {
     [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
     
     [self.request setURL:[self makeURLWithService:[NSString stringWithFormat: @"api/v1/courses/%ld/notes", (long)course]]];
@@ -85,10 +85,25 @@
     
     [self.request setHTTPBody:[self makeJSONWithDictionary:@{
                                                              @"note": @{
-                                                                     @"title": title
+                                                                     @"title": title,
+                                           @"pattern": pattern,
+                                            @"words": @""
                                                                      }
                                                              }]];
     
+    [self send];
+}
+
+- (void)updateNote:(NSDictionary *)dict noteID: (NSInteger) id_note courseID: (NSInteger) id_course{
+    
+    [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
+    
+    [self.request setURL:[self makeURLWithService:[NSString stringWithFormat: @"api/v1/courses/%ld/notes/%ld", (long)id_course, (long)id_note]]];
+    
+    [self.request setHTTPMethod:@"PUT"];
+    
+    
+    [self.request setHTTPBody:[self makeJSONWithDictionary:dict]];
     [self send];
 }
 

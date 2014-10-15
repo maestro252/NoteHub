@@ -15,9 +15,10 @@
 @implementation notebookListTableViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    
     data = [NSMutableArray new];
+    database = [NSDictionary new];
+    
+    [super viewDidLoad];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -29,12 +30,14 @@
 {
     self.navigationItem.title = [self.course objectForKey:@"name"];
     
+    [self reload];
+    [super viewWillAppear:animated];
+}
+
+- (void)reload {
     CommunicationManager * c = [CommunicationManager new];
     [c setDelegate:self];
     [c getNotesForCourse:[[self.course objectForKey:@"id"] integerValue]];
-    
-    [super viewWillAppear:animated];
-
 }
 
 - (void)communication:(CommunicationManager *)comm didReceiveData:(NSDictionary *)dict {
@@ -43,9 +46,9 @@
         NSLog(@"%@", dict);
         
         database = dict;
-        
+        [data removeAllObjects];
         for (NSDictionary * inner in dict) {
-            [data addObject:[inner objectForKey:@"title"]];
+            [data addObject:inner];
         }
         
         [self.tableView reloadData];
@@ -78,7 +81,7 @@
     
     // Configure the cell...
     @try {
-        cell.textLabel.text = [data objectAtIndex:indexPath.row];
+        cell.textLabel.text = [[data objectAtIndex:indexPath.row] objectForKey:@"title"];
     }
     @catch (NSException *exception) { }
     @finally { }
@@ -87,6 +90,26 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    @try {
+        NSLog(@"%@", [data objectAtIndex:indexPath.row]);
+        
+        UIStoryboard * sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        
+        UINavigationController * nav = (UINavigationController *)[sb instantiateViewControllerWithIdentifier:@"notebook_storyboard"];
+        
+        NotebookViewController * n = (NotebookViewController *)[nav topViewController];
+        
+        [n setText:[[data objectAtIndex:indexPath.row] objectForKey:@"words"]];
+        [n setPattern:[[data objectAtIndex:indexPath.row] objectForKey:@"pattern"]];
+        [n setNote_id:[[[data objectAtIndex:indexPath.row]objectForKey:@"id"] integerValue]];
+        [n setCourse_id:[[self.course objectForKey:@"id"] integerValue]];
+        
+        [[self splitViewController] showDetailViewController:nav sender:nil];
+    }
+    @catch (NSException *exception) { }
+    @finally { }
+}
 
 /*
 // Override to support conditional editing of the table view.
@@ -144,21 +167,41 @@
     
     UITextField * field = [alert textFieldAtIndex:0];
     [field setPlaceholder:@"Titulo de nota"];
-    
+    [alert setTag:2];
     [alert show];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 1) {
-        NSString * title = [[alertView textFieldAtIndex:0] text];
-        
-        if (![title isEqual:@""]) {
-            [[CommunicationManager new] createNoteForCourse:[[self.course objectForKey:@"id"] integerValue] withTitle:title];
-        } else {
-            [[[UIAlertView alloc] initWithTitle:@"Error" message:@"No es posible crear una nota sin titulo." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+    if (alertView.tag == 2) {
+        if (buttonIndex == 1) {
+            title = [[alertView textFieldAtIndex:0] text];
+            
+            if (![title isEqual:@""]) {
+                UIAlertView * patternChoice = [[UIAlertView alloc]initWithTitle:@"Tipo de cuaderno" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"Rayado", @"Cuadriculado", @"Blanco", nil];
+                [patternChoice setTag:3];
+                [patternChoice show];
+            } else {
+                [[[UIAlertView alloc] initWithTitle:@"Error" message:@"No es posible crear una nota sin titulo." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+            }
+            
+            NSLog(@"Se crea %@", title);
         }
+    }else if(alertView.tag == 3){
+        NSString * toSend = [NSString new];
+        if (buttonIndex == 0) {
+            toSend = @"stripped";
+        }
+        else if (buttonIndex == 1) {
+            toSend = @"gridded";
+        }
+        else {
+            toSend = @"plain";
+        }
+       [[CommunicationManager new] createNoteForCourse:[[self.course objectForKey:@"id"] integerValue] withTitle:title pattern:toSend];
+        CommunicationManager * c = [CommunicationManager new];
+        [c setDelegate:self];
+        [c getNotesForCourse:[[self.course objectForKey:@"id"] integerValue]];
         
-        NSLog(@"Se crea %@", title);
     }
 }
 @end

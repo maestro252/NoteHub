@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "CommunicationManager.h"
+#import "NotebookViewController.h"
 
 @interface notebookListTableViewController : UITableViewController <CommunicationDelegate, UIAlertViewDelegate> {
     NSMutableArray * data;
     NSDictionary * database;
+    NSString * title;
 }
 @property (nonatomic, strong) NSDictionary * course;
 - (IBAction)createNote:(id)sender;
+
+- (void)reload;
 @end

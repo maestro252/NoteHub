@@ -25,12 +25,33 @@
 
 - (void)viewDidLoad
 {
-    NSTimer * timer = [NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(updateNote) userInfo:nil repeats:YES];
-    [timer fire];
     
+    assistedNotebook.text = self.text;
+    if ([self.pattern isEqualToString:@"stripped"]) {
+        assistedNotebook.style = NHAssistedNotebookPatternStriped;
+    }else if([self.pattern isEqualToString:@"gridded"]){
+        assistedNotebook.style = NHAssistedNotebookPatternGridded;
+    }else{
+        assistedNotebook.style = NHAssistedNotebookPatternFlat;
+    }
     [self writing:nil];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    CommunicationManager * c = [CommunicationManager new];
+    [c updateNote:@{
+                                                  @"note": @{
+                                                          @"words": assistedNotebook.text,
+                                                          @"lines": @""
+                                                          }
+                                                  } noteID:self.note_id courseID:self.course_id];
+    
+    
+    notebookListTableViewController * n = (notebookListTableViewController *)[[self.splitViewController viewControllers] objectAtIndex:0];
+    
+    [n reload];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,48 +61,48 @@
 }
 
 - (void)updateNote {
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    
-    [request setTimeoutInterval:10];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [request setValue:@"Token token=58bb049ac1932cbf128155dd343aa6f202b7cfb1cecb64f3578b0700da2bf4eb6c453c5f80030edc0d2ad1530ce1e835f819919e28d29c79e7a4f1e16c877b4" forHTTPHeaderField:@"Authorization"];
-    
-    [request setURL:[NSURL URLWithString:@"http://localhost:3000/api/v1/courses/1/notes/8"]];
-    
-    NSDateFormatter * f = [[NSDateFormatter alloc] init];
-    [f setDateFormat:@"yyyy-MM-dd"];
-    
-    
-    NSDictionary * sender = @{
-                              @"note": @{
-                                      @"title": @"Title 1",
-                                      @"date": [f stringFromDate:[NSDate date]],
-                                      @"words": assistedNotebook.text,
-                                      @"lines": @""
-                                      }
-                              };
-    
-    [request setHTTPMethod:@"PUT"];
-    [request setHTTPBody:[NSJSONSerialization dataWithJSONObject:sender options:kNilOptions error:nil]];
-    
-    NSOperationQueue *queue = [NSOperationQueue mainQueue];
-    
-    [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        
-        NSDictionary * dict = [NSJSONSerialization JSONObjectWithData:data
-                                                              options:NSJSONReadingMutableContainers|NSJSONReadingAllowFragments
-                                                                error:nil];
-        NSLog(@"%@", dict);
-        
-        if (dict) {
-            if ([dict objectForKey:@"errors"] != nil) {
-                for (NSString * error in [dict objectForKey:@"errors"]) {
-                    [[[UIAlertView alloc] initWithTitle:@"Error" message:error delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-                }
-            }
-        }
-    }];
+//    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+//    
+//    [request setTimeoutInterval:10];
+//    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+//    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+//    [request setValue:@"Token token=58bb049ac1932cbf128155dd343aa6f202b7cfb1cecb64f3578b0700da2bf4eb6c453c5f80030edc0d2ad1530ce1e835f819919e28d29c79e7a4f1e16c877b4" forHTTPHeaderField:@"Authorization"];
+//    
+//    [request setURL:[NSURL URLWithString:@"http://localhost:3000/api/v1/courses/1/notes/8"]];
+//    
+//    NSDateFormatter * f = [[NSDateFormatter alloc] init];
+//    [f setDateFormat:@"yyyy-MM-dd"];
+//    
+//    
+//    NSDictionary * sender = @{
+//                              @"note": @{
+//                                      @"title": @"Title 1",
+//                                      @"date": [f stringFromDate:[NSDate date]],
+//                                      @"words": assistedNotebook.text,
+//                                      @"lines": @""
+//                                      }
+//                              };
+//    
+//    [request setHTTPMethod:@"PUT"];
+//    [request setHTTPBody:[NSJSONSerialization dataWithJSONObject:sender options:kNilOptions error:nil]];
+//    
+//    NSOperationQueue *queue = [NSOperationQueue mainQueue];
+//    
+//    [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+//        
+//        NSDictionary * dict = [NSJSONSerialization JSONObjectWithData:data
+//                                                              options:NSJSONReadingMutableContainers|NSJSONReadingAllowFragments
+//                                                                error:nil];
+//        NSLog(@"%@", dict);
+//        
+//        if (dict) {
+//            if ([dict objectForKey:@"errors"] != nil) {
+//                for (NSString * error in [dict objectForKey:@"errors"]) {
+//                    [[[UIAlertView alloc] initWithTitle:@"Error" message:error delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+//                }
+//            }
+//        }
+//    }];
 }
 
 /*

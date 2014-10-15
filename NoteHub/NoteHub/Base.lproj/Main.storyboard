@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A386a" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="6Fw-PQ-avn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="6Fw-PQ-avn">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
-        <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Ajustes-->
@@ -344,6 +344,22 @@
             </objects>
             <point key="canvasLocation" x="798" y="703"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fle-cy-trW">
+            <objects>
+                <navigationController storyboardIdentifier="notebook_storyboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Tgf-ij-3xo" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RFj-dO-SiO">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="C9A-mJ-qA6" kind="relationship" relationship="rootViewController" id="Jsp-Gb-vHL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="flj-dW-3rI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1961" y="1280"/>
+        </scene>
         <!--Mi Cuaderno-->
         <scene sceneID="WBz-Vl-dWa">
             <objects>
@@ -380,7 +396,7 @@
             </objects>
             <point key="canvasLocation" x="2842" y="698"/>
         </scene>
-        <!--Navegador-->
+        <!--Cursos-->
         <scene sceneID="ZTB-he-Qc9">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="aBT-BR-yjK" customClass="courseTableViewController" sceneMemberID="viewController">
@@ -402,7 +418,7 @@
                             <outlet property="delegate" destination="aBT-BR-yjK" id="zIK-qv-TGU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Navegador" id="0Zg-QS-kIl">
+                    <navigationItem key="navigationItem" title="Cursos" id="0Zg-QS-kIl">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="19X-5f-KKg">
                             <connections>
                                 <segue destination="caD-XM-gOt" kind="push" id="fJX-Z6-Qa2"/>
@@ -774,9 +790,9 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination">
-            <size key="portraitSize" width="768" height="1024"/>
-            <size key="landscapeSize" width="1024" height="768"/>
-        </simulatedScreenMetrics>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="Jsp-Gb-vHL"/>
+    </inferredMetricsTieBreakers>
 </document>
