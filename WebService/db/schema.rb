@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141015192829) do
+ActiveRecord::Schema.define(version: 20141016215304) do
 
   create_table "auths", force: true do |t|
     t.string   "token"
@@ -65,9 +65,11 @@ ActiveRecord::Schema.define(version: 20141015192829) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "pattern"
+    t.string   "tags"
   end
 
   add_index "notes", ["course_id"], name: "n_course_index"
+  add_index "notes", ["tags"], name: "tags_index"
 
   create_table "reminders", force: true do |t|
     t.string   "title"
@@ -93,6 +95,13 @@ ActiveRecord::Schema.define(version: 20141015192829) do
   end
 
   add_index "schedules", ["course_id"], name: "course_index"
+
+  create_table "shares", force: true do |t|
+    t.integer  "note_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "username"
