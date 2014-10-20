@@ -3568,3 +3568,826 @@ Migrating to CreateShares (20141016215304)
             FROM sqlite_temp_master
             WHERE name='index_unique_username_email' AND type='index'
 
+  [1m[36mNote Load (3.0ms)[0m  [1mSELECT "notes".* FROM "notes"[0m
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 5]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mNote Load (0.4ms)[0m  [1mSELECT "notes".* FROM "notes"  WHERE "notes"."user_id" = 5[0m
+SQLite3::SQLException: no such column: notes.user_id: SELECT "notes".* FROM "notes"  WHERE "notes"."user_id" = 5
+
+
+Started GET "/api/v1/notes?search=hello" for 127.0.0.1 at 2014-10-20 14:18:26 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"search"=>"hello"}
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 17ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "notes" ("course_id", "created_at", "date", "pattern", "tags", "title", "updated_at", "words") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["course_id", 1], ["created_at", "2014-10-20 19:21:18.128893"], ["date", "2014-10-20"], ["pattern", "gridded"], ["tags", "hell world"], ["title", "Notica"], ["updated_at", "2014-10-20 19:21:18.128893"], ["words", "sdkfjksjdf"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/api/v1/notes?search=hello" for 127.0.0.1 at 2014-10-20 14:21:25 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"search"=>"hello"}
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/notes?search=hello" for 127.0.0.1 at 2014-10-20 14:21:30 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"search"=>"hello"}
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/notes?search=hello" for 127.0.0.1 at 2014-10-20 14:21:45 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"search"=>"hello"}
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/notes?search=hell" for 127.0.0.1 at 2014-10-20 14:21:45 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"search"=>"hell"}
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/users" for 127.0.0.1 at 2014-10-20 14:26:09 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+Unpermitted parameters: key
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."username" IS NULL LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."username" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 200 OK in 72ms (Views: 0.4ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2014-10-20 14:26:24 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1
+  [1m[36mAuth Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "auths"  WHERE "auths"."user_id" = 1 LIMIT 1[0m
+  [1m[35mAuth Load (0.8ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."user_id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mAuth Exists (0.4ms)[0m  SELECT  1 AS one FROM "auths"  WHERE "auths"."token" = 'fded7cc3851bd84fd1deb6bd5499f9932ec85acdc7c19092f44d868d40986a45fab77823b502cb1b504660a447f72d7d31c59b26e288b36fda05ec6c9b34d850' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "auths" SET "expires" = ?, "token" = ?, "updated_at" = ? WHERE "auths"."id" = 1[0m  [["expires", "2015-10-15"], ["token", "fded7cc3851bd84fd1deb6bd5499f9932ec85acdc7c19092f44d868d40986a45fab77823b502cb1b504660a447f72d7d31c59b26e288b36fda05ec6c9b34d850"], ["updated_at", "2014-10-20 19:26:24.315590"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 69ms (Views: 0.8ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/api/v1/notes?search=hell" for 127.0.0.1 at 2014-10-20 14:27:08 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"search"=>"hell"}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'fded7cc3851bd84fd1deb6bd5499f9932ec85acdc7c19092f44d868d40986a45fab77823b502cb1b504660a447f72d7d31c59b26e288b36fda05ec6c9b34d850' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 14ms
+
+NameError (undefined local variable or method `param' for #<Api::V1::NotesController:0x007fc0d99a5e10>):
+  app/controllers/api/v1/notes_controller.rb:9:in `index'
+
+
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (30.6ms)
+
+
+Started GET "/api/v1/notes?search=hell" for 127.0.0.1 at 2014-10-20 14:27:40 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"search"=>"hell"}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'fded7cc3851bd84fd1deb6bd5499f9932ec85acdc7c19092f44d868d40986a45fab77823b502cb1b504660a447f72d7d31c59b26e288b36fda05ec6c9b34d850' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.5ms)[0m  SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+SQLite3::SQLException: no such column: tags: SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+Completed 500 Internal Server Error in 31ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: tags: SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')):
+  app/controllers/api/v1/notes_controller.rb:13:in `puts'
+  app/controllers/api/v1/notes_controller.rb:13:in `puts'
+  app/controllers/api/v1/notes_controller.rb:13:in `index'
+
+
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.7ms)
+
+
+Started GET "/api/v1/notes?search=hell" for 127.0.0.1 at 2014-10-20 14:29:09 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"search"=>"hell"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'fded7cc3851bd84fd1deb6bd5499f9932ec85acdc7c19092f44d868d40986a45fab77823b502cb1b504660a447f72d7d31c59b26e288b36fda05ec6c9b34d850' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')[0m
+SQLite3::SQLException: no such column: tags: SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+Completed 500 Internal Server Error in 37ms
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+SQLite3::SQLException: no such column: tags: SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+
+NoMethodError (undefined method `notes' for #<Course::ActiveRecord_Relation:0x007fc0df171b30>):
+  app/controllers/api/v1/notes_controller.rb:16:in `index'
+
+
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')[0m
+SQLite3::SQLException: no such column: tags: SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.9ms)
+
+
+Started GET "/api/v1/notes?search=hell" for 127.0.0.1 at 2014-10-20 14:29:18 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"search"=>"hell"}
+  [1m[35mAuth Load (0.1ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'fded7cc3851bd84fd1deb6bd5499f9932ec85acdc7c19092f44d868d40986a45fab77823b502cb1b504660a447f72d7d31c59b26e288b36fda05ec6c9b34d850' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.7ms)[0m  SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+SQLite3::SQLException: no such column: tags: SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+Completed 500 Internal Server Error in 43ms
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')[0m
+SQLite3::SQLException: no such column: tags: SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+
+NoMethodError (undefined method `notes' for #<Course::ActiveRecord_Relation:0x007fc0df2420c8>):
+  app/controllers/api/v1/notes_controller.rb:16:in `index'
+
+
+  [1m[35mCourse Load (0.3ms)[0m  SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+SQLite3::SQLException: no such column: tags: SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.2ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.6ms)
+
+
+Started GET "/api/v1/notes?search=hell" for 127.0.0.1 at 2014-10-20 14:32:57 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"search"=>"hell"}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'fded7cc3851bd84fd1deb6bd5499f9932ec85acdc7c19092f44d868d40986a45fab77823b502cb1b504660a447f72d7d31c59b26e288b36fda05ec6c9b34d850' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')[0m
+SQLite3::SQLException: no such column: tags: SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+Completed 500 Internal Server Error in 31ms
+  [1m[35mCourse Load (0.3ms)[0m  SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+SQLite3::SQLException: no such column: tags: SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+
+NoMethodError (undefined method `kind?' for #<Course::ActiveRecord_Relation:0x007fc0d9f9c468>):
+  app/controllers/api/v1/notes_controller.rb:16:in `index'
+
+
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')[0m
+SQLite3::SQLException: no such column: tags: SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.3ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.1ms)
+
+
+Started GET "/api/v1/notes?search=hell" for 127.0.0.1 at 2014-10-20 14:33:57 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"search"=>"hell"}
+  [1m[35mAuth Load (0.1ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'fded7cc3851bd84fd1deb6bd5499f9932ec85acdc7c19092f44d868d40986a45fab77823b502cb1b504660a447f72d7d31c59b26e288b36fda05ec6c9b34d850' LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.3ms)[0m  SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+SQLite3::SQLException: no such column: tags: SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+Completed 500 Internal Server Error in 34ms
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')[0m
+SQLite3::SQLException: no such column: tags: SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+
+NoMethodError (undefined method `notes' for #<Course::ActiveRecord_Relation:0x007fc0ddb89250>):
+  app/controllers/api/v1/notes_controller.rb:17:in `index'
+
+
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+SQLite3::SQLException: no such column: tags: SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.1ms)
+
+
+Started GET "/api/v1/notes?search=hell" for 127.0.0.1 at 2014-10-20 14:35:26 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"search"=>"hell"}
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/notes?search=hell" for 127.0.0.1 at 2014-10-20 14:35:34 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"search"=>"hell"}
+  [1m[36mAuth Load (0.5ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'fded7cc3851bd84fd1deb6bd5499f9932ec85acdc7c19092f44d868d40986a45fab77823b502cb1b504660a447f72d7d31c59b26e288b36fda05ec6c9b34d850' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 42ms
+
+NameError (uninitialized constant Api::V1::NotesController::ActiveRecord_Relation):
+  app/controllers/api/v1/notes_controller.rb:16:in `index'
+
+
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.9ms)
+
+
+Started GET "/api/v1/notes?search=hell" for 127.0.0.1 at 2014-10-20 14:36:53 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"search"=>"hell"}
+  [1m[36mAuth Load (0.1ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'fded7cc3851bd84fd1deb6bd5499f9932ec85acdc7c19092f44d868d40986a45fab77823b502cb1b504660a447f72d7d31c59b26e288b36fda05ec6c9b34d850' LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')[0m
+SQLite3::SQLException: no such column: tags: SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+Completed 500 Internal Server Error in 36ms
+  [1m[35mCourse Load (0.3ms)[0m  SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+SQLite3::SQLException: no such column: tags: SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+
+NoMethodError (undefined method `has_many?' for #<Course::ActiveRecord_Relation:0x007fc0ddbf2d68>):
+  app/controllers/api/v1/notes_controller.rb:16:in `index'
+
+
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')[0m
+SQLite3::SQLException: no such column: tags: SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.5ms)
+
+
+Started GET "/api/v1/notes?search=hell" for 127.0.0.1 at 2014-10-20 14:38:04 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"search"=>"hell"}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'fded7cc3851bd84fd1deb6bd5499f9932ec85acdc7c19092f44d868d40986a45fab77823b502cb1b504660a447f72d7d31c59b26e288b36fda05ec6c9b34d850' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+SQLite3::SQLException: no such column: tags: SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+Completed 500 Internal Server Error in 32ms
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')[0m
+SQLite3::SQLException: no such column: tags: SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+
+NoMethodError (undefined method `notes' for #<Course::ActiveRecord_Relation:0x007fc0dda40998>):
+  app/controllers/api/v1/notes_controller.rb:20:in `index'
+
+
+  [1m[35mCourse Load (0.4ms)[0m  SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+SQLite3::SQLException: no such column: tags: SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (20.4ms)
+
+
+Started GET "/api/v1/notes?search=hell" for 127.0.0.1 at 2014-10-20 14:39:17 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"search"=>"hell"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'fded7cc3851bd84fd1deb6bd5499f9932ec85acdc7c19092f44d868d40986a45fab77823b502cb1b504660a447f72d7d31c59b26e288b36fda05ec6c9b34d850' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')[0m
+SQLite3::SQLException: no such column: tags: SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+Completed 500 Internal Server Error in 8ms
+  [1m[35mCourse Load (0.5ms)[0m  SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+SQLite3::SQLException: no such column: tags: SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+
+NoMethodError (undefined method `notes' for #<Course::ActiveRecord_Relation:0x007fc0d9ed4b98>):
+  app/controllers/api/v1/notes_controller.rb:20:in `index'
+
+
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')[0m
+SQLite3::SQLException: no such column: tags: SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.6ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.9ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (30.0ms)
+
+
+Started GET "/api/v1/notes?search=hell" for 127.0.0.1 at 2014-10-20 14:39:58 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"search"=>"hell"}
+  [1m[35mAuth Load (0.1ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'fded7cc3851bd84fd1deb6bd5499f9932ec85acdc7c19092f44d868d40986a45fab77823b502cb1b504660a447f72d7d31c59b26e288b36fda05ec6c9b34d850' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+SQLite3::SQLException: no such column: tags: SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+Completed 500 Internal Server Error in 31ms
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')[0m
+SQLite3::SQLException: no such column: tags: SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+
+NoMethodError (undefined method `notes' for #<Course::ActiveRecord_Relation:0x007fc0ddbc1da8>):
+  app/controllers/api/v1/notes_controller.rb:20:in `index'
+
+
+  [1m[35mCourse Load (0.3ms)[0m  SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+SQLite3::SQLException: no such column: tags: SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (20.5ms)
+
+
+Started GET "/api/v1/notes?search=hell" for 127.0.0.1 at 2014-10-20 14:41:13 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"search"=>"hell"}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'fded7cc3851bd84fd1deb6bd5499f9932ec85acdc7c19092f44d868d40986a45fab77823b502cb1b504660a447f72d7d31c59b26e288b36fda05ec6c9b34d850' LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.3ms)[0m  SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+SQLite3::SQLException: no such column: tags: SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+Completed 500 Internal Server Error in 130ms
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')[0m
+SQLite3::SQLException: no such column: tags: SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+
+NoMethodError (undefined method `notes' for #<Course::ActiveRecord_Relation:0x007f8c14bbd080>):
+  app/controllers/api/v1/notes_controller.rb:20:in `index'
+
+
+  [1m[35mCourse Load (0.3ms)[0m  SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+SQLite3::SQLException: no such column: tags: SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.4ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (42.4ms)
+
+
+Started GET "/api/v1/notes?search=hell" for 127.0.0.1 at 2014-10-20 14:42:21 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"search"=>"hell"}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'fded7cc3851bd84fd1deb6bd5499f9932ec85acdc7c19092f44d868d40986a45fab77823b502cb1b504660a447f72d7d31c59b26e288b36fda05ec6c9b34d850' LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')[0m
+SQLite3::SQLException: no such column: tags: SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')
+Completed 500 Internal Server Error in 31ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: tags: SELECT "courses".* FROM "courses"  WHERE (tags LIKE '%hell%')):
+  app/controllers/api/v1/notes_controller.rb:22:in `index'
+
+
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/jonathaneidelman/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.7ms)
+
+
+Started GET "/api/v1/notes?search=hell" for 127.0.0.1 at 2014-10-20 14:42:54 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"search"=>"hell"}
+  [1m[35mAuth Load (0.1ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'fded7cc3851bd84fd1deb6bd5499f9932ec85acdc7c19092f44d868d40986a45fab77823b502cb1b504660a447f72d7d31c59b26e288b36fda05ec6c9b34d850' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mNote Load (0.3ms)[0m  SELECT "notes".* FROM "notes"  WHERE (tags LIKE '%hell%')
+Completed 200 OK in 39ms (Views: 5.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/api/v1/notes?search=hel" for 127.0.0.1 at 2014-10-20 14:43:03 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"search"=>"hel"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'fded7cc3851bd84fd1deb6bd5499f9932ec85acdc7c19092f44d868d40986a45fab77823b502cb1b504660a447f72d7d31c59b26e288b36fda05ec6c9b34d850' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mNote Load (0.2ms)[0m  [1mSELECT "notes".* FROM "notes"  WHERE (tags LIKE '%hel%')[0m
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/notes?search=h" for 127.0.0.1 at 2014-10-20 14:43:10 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"search"=>"h"}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'fded7cc3851bd84fd1deb6bd5499f9932ec85acdc7c19092f44d868d40986a45fab77823b502cb1b504660a447f72d7d31c59b26e288b36fda05ec6c9b34d850' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mNote Load (0.3ms)[0m  SELECT "notes".* FROM "notes"  WHERE (tags LIKE '%h%')
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.7ms)
+  [1m[35mNote Load (0.3ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  UPDATE "notes" SET "tags" = ?, "updated_at" = ? WHERE "notes"."id" = 1  [["tags", "Hello"], ["updated_at", "2014-10-20 19:44:37.423896"]]
+  [1m[36m (8.7ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/api/v1/notes?search=h" for 127.0.0.1 at 2014-10-20 14:44:41 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"search"=>"h"}
+  [1m[36mAuth Load (0.6ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'fded7cc3851bd84fd1deb6bd5499f9932ec85acdc7c19092f44d868d40986a45fab77823b502cb1b504660a447f72d7d31c59b26e288b36fda05ec6c9b34d850' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mNote Load (0.3ms)[0m  [1mSELECT "notes".* FROM "notes"  WHERE (tags LIKE '%h%')[0m
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 1.1ms)
+  [1m[35mNote Load (1.5ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = 2 LIMIT 1
+  [1m[36mNote Load (0.3ms)[0m  [1mSELECT  "notes".* FROM "notes"  WHERE "notes"."id" = 2 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "notes" SET "tags" = ?, "updated_at" = ? WHERE "notes"."id" = 2[0m  [["tags", "hacer"], ["updated_at", "2014-10-20 19:47:21.329193"]]
+  [1m[35m (8.7ms)[0m  commit transaction
+  [1m[36mNote Load (0.3ms)[0m  [1mSELECT  "notes".* FROM "notes"  WHERE "notes"."id" = 3 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "notes" SET "tags" = ?, "updated_at" = ? WHERE "notes"."id" = 3[0m  [["tags", "herir"], ["updated_at", "2014-10-20 19:47:39.789943"]]
+  [1m[35m (8.8ms)[0m  commit transaction
+
+
+Started GET "/api/v1/notes?search=h" for 127.0.0.1 at 2014-10-20 14:47:44 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"search"=>"h"}
+  [1m[35mAuth Load (0.4ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'fded7cc3851bd84fd1deb6bd5499f9932ec85acdc7c19092f44d868d40986a45fab77823b502cb1b504660a447f72d7d31c59b26e288b36fda05ec6c9b34d850' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mNote Load (0.8ms)[0m  SELECT "notes".* FROM "notes"  WHERE (tags LIKE '%h%')
+Completed 200 OK in 9ms (Views: 3.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-20 15:03:23 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '(null)' LIMIT 1[0m
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 36ms (Views: 0.3ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-20 15:04:07 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (2.9ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '(null)' LIMIT 1
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 5ms (Views: 0.4ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2014-10-20 15:04:25 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1[0m
+  [1m[35mAuth Exists (0.3ms)[0m  SELECT  1 AS one FROM "auths"  WHERE "auths"."user_id" = 1 LIMIT 1
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAuth Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "auths"  WHERE "auths"."token" = 'b4091e47bce006b4878871c478dc0de553569b585c155b8f1c94078fc6bead8fe8898568cde6f86e87bd3c4a84b40a5a52219b67c37778f684e05de262787cfb' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "auths" SET "token" = ?, "updated_at" = ? WHERE "auths"."id" = 1  [["token", "b4091e47bce006b4878871c478dc0de553569b585c155b8f1c94078fc6bead8fe8898568cde6f86e87bd3c4a84b40a5a52219b67c37778f684e05de262787cfb"], ["updated_at", "2014-10-20 20:04:25.645362"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 60ms (Views: 1.0ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-20 15:05:38 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'token' LIMIT 1[0m
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2014-10-20 15:05:49 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2014-10-20 15:05:53 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1[0m
+  [1m[35mAuth Exists (0.1ms)[0m  SELECT  1 AS one FROM "auths"  WHERE "auths"."user_id" = 1 LIMIT 1
+  [1m[36mAuth Load (0.1ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAuth Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "auths"  WHERE "auths"."token" = '301b927aa5c508d9ba099373d2a530fc429f970207d042e4f5f904ff785cb55a156f8c024dec2e7a7aac5957f5a733689bd2b7401a4ef7d79fa8cea49f8f091f' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "auths" SET "token" = ?, "updated_at" = ? WHERE "auths"."id" = 1  [["token", "301b927aa5c508d9ba099373d2a530fc429f970207d042e4f5f904ff785cb55a156f8c024dec2e7a7aac5957f5a733689bd2b7401a4ef7d79fa8cea49f8f091f"], ["updated_at", "2014-10-20 20:05:53.741854"]]
+  [1m[36m (9.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 16ms (Views: 1.0ms | ActiveRecord: 10.2ms)
+
+
+Started POST "/api/v1/courses" for 127.0.0.1 at 2014-10-20 15:06:35 -0500
+Processing by Api::V1::CoursesController#create as JSON
+  Parameters: {"course"=>{"name"=>"hola mundo", "end"=>"2015-10-10", "description"=>"hola mundiar", "start"=>"2014-10-10"}}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '301b927aa5c508d9ba099373d2a530fc429f970207d042e4f5f904ff785cb55a156f8c024dec2e7a7aac5957f5a733689bd2b7401a4ef7d79fa8cea49f8f091f' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '301b927aa5c508d9ba099373d2a530fc429f970207d042e4f5f904ff785cb55a156f8c024dec2e7a7aac5957f5a733689bd2b7401a4ef7d79fa8cea49f8f091f' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (8.9ms)[0m  INSERT INTO "courses" ("created_at", "description", "end", "name", "start", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-10-20 20:06:35.640423"], ["description", "hola mundiar"], ["end", "2015-10-10"], ["name", "hola mundo"], ["start", "2014-10-10"], ["updated_at", "2014-10-20 20:06:35.640423"], ["user_id", 1]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 25ms (Views: 0.5ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-20 15:06:35 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (0.4ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '301b927aa5c508d9ba099373d2a530fc429f970207d042e4f5f904ff785cb55a156f8c024dec2e7a7aac5957f5a733689bd2b7401a4ef7d79fa8cea49f8f091f' LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '301b927aa5c508d9ba099373d2a530fc429f970207d042e4f5f904ff785cb55a156f8c024dec2e7a7aac5957f5a733689bd2b7401a4ef7d79fa8cea49f8f091f' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.4ms)[0m  SELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1
+Completed 200 OK in 14ms (Views: 6.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-20 15:07:22 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.4ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '301b927aa5c508d9ba099373d2a530fc429f970207d042e4f5f904ff785cb55a156f8c024dec2e7a7aac5957f5a733689bd2b7401a4ef7d79fa8cea49f8f091f' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '301b927aa5c508d9ba099373d2a530fc429f970207d042e4f5f904ff785cb55a156f8c024dec2e7a7aac5957f5a733689bd2b7401a4ef7d79fa8cea49f8f091f' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1[0m
+Completed 200 OK in 13ms (Views: 6.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-20 15:07:40 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'token' LIMIT 1
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2014-10-20 15:07:48 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1[0m
+  [1m[35mAuth Exists (0.1ms)[0m  SELECT  1 AS one FROM "auths"  WHERE "auths"."user_id" = 1 LIMIT 1
+  [1m[36mAuth Load (0.1ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAuth Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "auths" SET "token" = ?, "updated_at" = ? WHERE "auths"."id" = 1  [["token", "8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac"], ["updated_at", "2014-10-20 20:07:48.455069"]]
+  [1m[36m (9.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 18ms (Views: 1.3ms | ActiveRecord: 11.1ms)
+
+
+Started POST "/api/v1/courses" for 127.0.0.1 at 2014-10-20 15:08:59 -0500
+Processing by Api::V1::CoursesController#create as JSON
+  Parameters: {"course"=>{"name"=>"wwssss", "end"=>"2014-12-12", "description"=>"sss", "start"=>"2013-12-12"}}
+  [1m[36mAuth Load (0.5ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "courses" ("created_at", "description", "end", "name", "start", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-10-20 20:08:59.272405"], ["description", "sss"], ["end", "2014-12-12"], ["name", "wwssss"], ["start", "2013-12-12"], ["updated_at", "2014-10-20 20:08:59.272405"], ["user_id", 1]]
+  [1m[36m (10.2ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 19ms (Views: 0.6ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-20 15:08:59 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (0.4ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.4ms)[0m  SELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1
+Completed 200 OK in 15ms (Views: 8.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/courses/1/notes" for 127.0.0.1 at 2014-10-20 15:09:01 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"id"=>"1", "note"=>{}}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.6ms)[0m  SELECT "notes".* FROM "notes"  WHERE "notes"."course_id" = ?  [["course_id", 1]]
+Completed 200 OK in 31ms (Views: 14.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/v1/courses/3/notes" for 127.0.0.1 at 2014-10-20 15:09:30 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"id"=>"3", "note"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 3 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.2ms)[0m  SELECT "notes".* FROM "notes"  WHERE "notes"."course_id" = ?  [["course_id", 3]]
+Completed 200 OK in 7ms (Views: 0.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/courses/1/notes" for 127.0.0.1 at 2014-10-20 15:12:43 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"id"=>"1", "note"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.2ms)[0m  SELECT "notes".* FROM "notes"  WHERE "notes"."course_id" = ?  [["course_id", 1]]
+Completed 200 OK in 18ms (Views: 10.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/courses/1/notes" for 127.0.0.1 at 2014-10-20 15:13:37 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"id"=>"1", "note"=>{}}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.2ms)[0m  SELECT "notes".* FROM "notes"  WHERE "notes"."course_id" = ?  [["course_id", 1]]
+Completed 200 OK in 17ms (Views: 10.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/courses/1/notes" for 127.0.0.1 at 2014-10-20 15:13:47 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"id"=>"1", "note"=>{}}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.3ms)[0m  SELECT "notes".* FROM "notes"  WHERE "notes"."course_id" = ?  [["course_id", 1]]
+Completed 200 OK in 19ms (Views: 11.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/courses/3/notes" for 127.0.0.1 at 2014-10-20 15:16:41 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"id"=>"3", "note"=>{}}
+  [1m[36mAuth Load (0.5ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 3 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT "notes".* FROM "notes"  WHERE "notes"."course_id" = ?  [["course_id", 3]]
+Completed 200 OK in 9ms (Views: 0.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/v1/courses/1/notes" for 127.0.0.1 at 2014-10-20 15:16:54 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"id"=>"1", "note"=>{}}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.2ms)[0m  SELECT "notes".* FROM "notes"  WHERE "notes"."course_id" = ?  [["course_id", 1]]
+Completed 200 OK in 20ms (Views: 14.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/courses/1/notes" for 127.0.0.1 at 2014-10-20 15:17:26 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"id"=>"1", "note"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.3ms)[0m  SELECT "notes".* FROM "notes"  WHERE "notes"."course_id" = ?  [["course_id", 1]]
+Completed 200 OK in 17ms (Views: 11.0ms | ActiveRecord: 1.0ms)
+
+
+Started PUT "/api/v1/courses/1/notes/1" for 127.0.0.1 at 2014-10-20 15:17:28 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"lines"=>"", "words"=>"Los limites son una manera de representar el concepto abstracto de que las cosas se pueden aproximar indefinidamente sin tocarse. En matemática, el concepto de límite es una noción topológica que formaliza la noción intuitiva de aproximación hacia un punto concreto de una sucesión o una función, a medida que los parámetros de esa sucesión o función se acercan a determinado valor. "}, "id"=>"1", "note_id"=>"1"}
+  [1m[36mAuth Load (0.4ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 12ms (Views: 0.8ms | ActiveRecord: 1.1ms)
+
+
+Started PUT "/api/v1/courses/1/notes/2" for 127.0.0.1 at 2014-10-20 15:17:57 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"lines"=>"", "words"=>"Los limites al infinito son limites que van al infinito\nBOBO!!!!"}, "id"=>"1", "note_id"=>"2"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Completed 200 OK in 11ms (Views: 0.6ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/api/v1/courses/1/notes/5" for 127.0.0.1 at 2014-10-20 15:17:59 -0500
+Processing by Api::V1::NotesController#update as JSON
+  Parameters: {"note"=>{"lines"=>"", "words"=>""}, "id"=>"1", "note_id"=>"5"}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.2ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Completed 200 OK in 9ms (Views: 0.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-20 15:18:07 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1[0m
+Completed 200 OK in 15ms (Views: 11.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/courses/15/notes" for 127.0.0.1 at 2014-10-20 15:18:09 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"id"=>"15", "note"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.2ms)[0m  SELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 15 AND "courses"."user_id" = 1 LIMIT 1
+  [1m[36mNote Load (0.2ms)[0m  [1mSELECT "notes".* FROM "notes"  WHERE "notes"."course_id" = ?[0m  [["course_id", 15]]
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/courses/15/notes" for 127.0.0.1 at 2014-10-20 15:18:21 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"id"=>"15", "note"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.2ms)[0m  SELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 15 AND "courses"."user_id" = 1 LIMIT 1
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT "notes".* FROM "notes"  WHERE "notes"."course_id" = ?[0m  [["course_id", 15]]
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/courses/1/notes" for 127.0.0.1 at 2014-10-20 15:18:26 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"id"=>"1", "note"=>{}}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.3ms)[0m  SELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1
+  [1m[36mNote Load (0.2ms)[0m  [1mSELECT "notes".* FROM "notes"  WHERE "notes"."course_id" = ?[0m  [["course_id", 1]]
+Completed 200 OK in 17ms (Views: 9.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/courses/1/notes" for 127.0.0.1 at 2014-10-20 15:20:51 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"id"=>"1", "note"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.3ms)[0m  SELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1
+  [1m[36mNote Load (0.2ms)[0m  [1mSELECT "notes".* FROM "notes"  WHERE "notes"."course_id" = ?[0m  [["course_id", 1]]
+Completed 200 OK in 18ms (Views: 11.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-20 16:03:50 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.3ms)[0m  SELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1
+Completed 200 OK in 16ms (Views: 8.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/courses/1/notes" for 127.0.0.1 at 2014-10-20 16:05:03 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"id"=>"1", "note"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.2ms)[0m  SELECT "notes".* FROM "notes"  WHERE "notes"."course_id" = ?  [["course_id", 1]]
+Completed 200 OK in 17ms (Views: 10.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-20 16:05:15 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.6ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1[0m
+Completed 200 OK in 14ms (Views: 9.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/courses/6/notes" for 127.0.0.1 at 2014-10-20 16:05:29 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"id"=>"6", "note"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.3ms)[0m  SELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 6 AND "courses"."user_id" = 1 LIMIT 1
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT "notes".* FROM "notes"  WHERE "notes"."course_id" = ?[0m  [["course_id", 6]]
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/courses/1/notes" for 127.0.0.1 at 2014-10-20 16:05:32 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"id"=>"1", "note"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '8b644f84b610f8650bf7970282dc370fbe55dafa156203460fbb0eb118118e8dde9fffc501e88762c40dcaa20a11747bc42fe02c9418728a33d375d992beefac' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.2ms)[0m  SELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 1 AND "courses"."user_id" = 1 LIMIT 1
+  [1m[36mNote Load (0.3ms)[0m  [1mSELECT "notes".* FROM "notes"  WHERE "notes"."course_id" = ?[0m  [["course_id", 1]]
+Completed 200 OK in 16ms (Views: 9.9ms | ActiveRecord: 1.0ms)

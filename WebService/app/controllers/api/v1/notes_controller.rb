@@ -5,12 +5,22 @@ class Api::V1::NotesController < ApplicationController
 	before_action :authenticate!
 
 	def index
-		course = Course.find_by id: params[:id], user: current_user
+		has_many = false
 
-		puts course
+		if params[:search]
+			course = Note.where ["tags LIKE ?", "%#{params[:search]}%"]
+			has_many = true
+		else
+			course = Course.find_by id: params[:id], user: current_user
+		end
+	  #	puts course
 
 		if course
-			render json: course.notes
+			unless has_many
+				render json: course.notes
+			else
+				render json: course
+			end
 		else
 			unauthorized
 		end
