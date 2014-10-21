@@ -30,5 +30,7 @@
 - (void)createNoteForCourse:(NSInteger)course withTitle:(NSString *)title pattern: (NSString *)pattern;
 - (void) updateUser:(NSDictionary *)dict;
 - (void)updateNote:(NSDictionary *)dict noteID: (NSInteger) id_note courseID: (NSInteger) id_course;
+- (void)searchNotes: (NSString *) searchPattern;
+- (void)createSharedNotes:(NSString *) id_note id_user: (NSString *) id_user;
 
 @end

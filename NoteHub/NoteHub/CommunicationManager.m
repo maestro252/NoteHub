@@ -121,6 +121,34 @@
     [self send];
 }
 
+- (void)searchNotes:(NSString *)searchPattern{
+    [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
+    
+    [self.request setURL:[self makeURLWithService:[NSString stringWithFormat: @"api/v1/notes?search=%@", searchPattern]]];
+    
+    [self.request setHTTPMethod:@"GET"];
+    
+    [self send];
+}
+
+- (void)createSharedNotes:(NSString *) id_note id_user: (NSString *) id_user{
+    
+    [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
+    
+    [self.request setURL:[self makeURLWithService:[NSString stringWithFormat: @"api/v1/shares"]]];
+    [self.request setHTTPBody:[self makeJSONWithDictionary: @{
+                                                             @"share":
+                                                                 @{
+                                                                     @"user_id": id_user,
+                                                                     @"note_id": id_note
+                                                                     }
+                                                             }]];
+    
+    [self.request setHTTPMethod:@"POST"];
+    
+    [self send];
+}
+
 #pragma mark - Metodos privados de la clase
 
 - (NSData *)makeJSONWithDictionary:(NSDictionary *)dict {

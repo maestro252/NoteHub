@@ -295,12 +295,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZOp-0a-fR5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4702" y="118"/>
+            <point key="canvasLocation" x="5682" y="118"/>
         </scene>
         <!--NoteHub-->
         <scene sceneID="wnj-n0-2Ho">
             <objects>
-                <viewController id="IGq-XG-eZC" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="IGq-XG-eZC" customClass="HomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zNc-XH-cUS"/>
                         <viewControllerLayoutGuide type="bottom" id="avi-hh-oCW"/>
@@ -309,15 +309,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b35-yE-Iuc">
-                                <rect key="frame" x="557" y="441" width="98" height="30"/>
-                                <state key="normal" title="Ir al Cuaderno">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sYF-0L-9UC">
+                                <rect key="frame" x="527" y="111" width="30" height="30"/>
+                                <state key="normal" title="Ir">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="C9A-mJ-qA6" kind="push" id="xe8-HT-wPQ"/>
+                                    <action selector="searchAction:" destination="IGq-XG-eZC" eventType="touchUpInside" id="FCO-Fd-43u"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Buscar Nota" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M5L-zR-mGc">
+                                <rect key="frame" x="212" y="111" width="307" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -333,8 +338,12 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="searchTextField" destination="M5L-zR-mGc" id="4s4-Nn-Vb7"/>
                         <segue destination="QJv-RZ-30u" kind="modal" identifier="login_segue" id="KCi-4B-k2r"/>
                         <segue destination="yE8-xY-y5C" kind="popover" identifier="setting_segue" popoverAnchorBarButtonItem="hg1-bp-lLA" id="fje-a0-PN0">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
+                        <segue destination="E7l-kU-Niv" kind="popover" identifier="search_segue" popoverAnchorView="M5L-zR-mGc" id="cjB-Rm-y91">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
                     </connections>
@@ -342,6 +351,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Svh-hv-e1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="798" y="703"/>
+        </scene>
+        <!--Search Table Table View Controller-->
+        <scene sceneID="sfi-0y-k6L">
+            <objects>
+                <tableViewController id="vlT-Kj-lDt" customClass="searchTableTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="a8W-Zj-BWt">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="U93-hv-KL8">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U93-hv-KL8" id="S4R-QB-ece">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="vlT-Kj-lDt" id="0NO-Mh-5HG"/>
+                            <outlet property="delegate" destination="vlT-Kj-lDt" id="RbE-OO-uWQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="uKM-nP-PeV"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="400" height="840"/>
+                    <connections>
+                        <segue destination="C9A-mJ-qA6" kind="push" id="lJA-bK-wxG"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H7a-Sy-RT1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2752" y="703"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fle-cy-trW">
@@ -357,7 +397,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="flj-dW-3rI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1961" y="1280"/>
+            <point key="canvasLocation" x="2941" y="1280"/>
         </scene>
         <!--Mi Cuaderno-->
         <scene sceneID="WBz-Vl-dWa">
@@ -393,7 +433,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTz-CJ-V0E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2842" y="698"/>
+            <point key="canvasLocation" x="3822" y="698"/>
         </scene>
         <!--Cursos-->
         <scene sceneID="ZTB-he-Qc9">
@@ -785,6 +825,24 @@
             </objects>
             <point key="canvasLocation" x="3667" y="-1677"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="J92-nX-29q">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E7l-kU-Niv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uSV-rY-rsH">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vlT-Kj-lDt" kind="relationship" relationship="rootViewController" id="9ei-Ny-G8F"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LjJ-nL-JdX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1772" y="703"/>
+        </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -792,6 +850,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Jsp-Gb-vHL"/>
+        <segue reference="lJA-bK-wxG"/>
     </inferredMetricsTieBreakers>
 </document>

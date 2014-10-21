@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       put 'courses/:id/notes/:note_id', to: 'notes#update'
 
       resources :users, only:[:index, :create, :update, :destroy, :show]
+      resources :shares
 
       match 'login', to: 'users#login', via: :post
     end

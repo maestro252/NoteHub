@@ -20,11 +20,25 @@
 		20CE89C519E485A900D20DA9 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CE89C419E485A900D20DA9 /* RegisterViewController.m */; };
 		602D376C19C78D0F00C986A0 /* ColorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602D376B19C78D0F00C986A0 /* ColorTableViewController.m */; };
 		603B357B19E5D37A00392105 /* NewCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 603B357A19E5D37A00392105 /* NewCourseViewController.m */; };
+		6051675319F6E556008AB5AE /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6051675219F6E556008AB5AE /* HomeViewController.m */; };
+		6051675619F6EECD008AB5AE /* searchTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6051675519F6EECD008AB5AE /* searchTableTableViewController.m */; };
 		60EDDF3919E7286900746FD2 /* courseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EDDF3819E7286900746FD2 /* courseTableViewController.m */; };
 		60EDDF3C19E73E4700746FD2 /* notebookListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EDDF3B19E73E4700746FD2 /* notebookListTableViewController.m */; };
 		60F7C34019C8DA7C003CE1BC /* NHAssistedNotebookView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F7C33F19C8DA7C003CE1BC /* NHAssistedNotebookView.m */; };
 		60F7C34319C8EC65003CE1BC /* NotebookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F7C34219C8EC65003CE1BC /* NotebookViewController.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		601F4A3319F6E11D00E2BE21 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = sourcecode.swift;
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# $(SWIFT_EXEC)\n";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
 		203E3F0519BF824A008C0379 /* PBXContainerItemProxy */ = {
@@ -62,6 +76,10 @@
 		602D376B19C78D0F00C986A0 /* ColorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorTableViewController.m; sourceTree = "<group>"; };
 		603B357919E5D37A00392105 /* NewCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewCourseViewController.h; sourceTree = "<group>"; };
 		603B357A19E5D37A00392105 /* NewCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewCourseViewController.m; sourceTree = "<group>"; };
+		6051675119F6E556008AB5AE /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		6051675219F6E556008AB5AE /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		6051675419F6EECD008AB5AE /* searchTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchTableTableViewController.h; sourceTree = "<group>"; };
+		6051675519F6EECD008AB5AE /* searchTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchTableTableViewController.m; sourceTree = "<group>"; };
 		60EDDF3719E7286900746FD2 /* courseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = courseTableViewController.h; sourceTree = "<group>"; };
 		60EDDF3819E7286900746FD2 /* courseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = courseTableViewController.m; sourceTree = "<group>"; };
 		60EDDF3A19E73E4700746FD2 /* notebookListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = notebookListTableViewController.h; sourceTree = "<group>"; };
@@ -102,6 +120,8 @@
 		203E3EE219BF824A008C0379 = {
 			isa = PBXGroup;
 			children = (
+				6051675119F6E556008AB5AE /* HomeViewController.h */,
+				6051675219F6E556008AB5AE /* HomeViewController.m */,
 				203E3EED19BF824A008C0379 /* NoteHub */,
 				203E3F0719BF824A008C0379 /* NoteHubTests */,
 				203E3EEC19BF824A008C0379 /* Products */,
@@ -124,6 +144,8 @@
 				203E3EF819BF824A008C0379 /* ViewController.h */,
 				203E3EF919BF824A008C0379 /* ViewController.m */,
 				203E3EFB19BF824A008C0379 /* Main.storyboard */,
+				6051675419F6EECD008AB5AE /* searchTableTableViewController.h */,
+				6051675519F6EECD008AB5AE /* searchTableTableViewController.m */,
 				203E3EF319BF824A008C0379 /* AppDelegate.m */,
 				6EF686CE19E78281007EEFB1 /* Course */,
 				6EF686D019E7831D007EEFB1 /* Register */,
@@ -229,6 +251,7 @@
 				203E3EE919BF824A008C0379 /* Resources */,
 			);
 			buildRules = (
+				601F4A3319F6E11D00E2BE21 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -316,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6051675619F6EECD008AB5AE /* searchTableTableViewController.m in Sources */,
 				60EDDF3919E7286900746FD2 /* courseTableViewController.m in Sources */,
 				20CE89C519E485A900D20DA9 /* RegisterViewController.m in Sources */,
 				2009924719DDF94000EA9953 /* CommunicationManager.m in Sources */,
@@ -324,6 +348,7 @@
 				203E3EF119BF824A008C0379 /* main.m in Sources */,
 				60F7C34319C8EC65003CE1BC /* NotebookViewController.m in Sources */,
 				20B5DCB219BF90E70041C4E1 /* SettingsTableViewController.m in Sources */,
+				6051675319F6E556008AB5AE /* HomeViewController.m in Sources */,
 				20AEBDF319DCB79D0018F44F /* LoginViewController.m in Sources */,
 				203E3EFA19BF824A008C0379 /* ViewController.m in Sources */,
 				203E3EF719BF824A008C0379 /* NoteHub.xcdatamodeld in Sources */,
