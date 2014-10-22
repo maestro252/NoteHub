@@ -11,7 +11,6 @@
 		203E3EF119BF824A008C0379 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 203E3EF019BF824A008C0379 /* main.m */; };
 		203E3EF419BF824A008C0379 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 203E3EF319BF824A008C0379 /* AppDelegate.m */; };
 		203E3EF719BF824A008C0379 /* NoteHub.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 203E3EF519BF824A008C0379 /* NoteHub.xcdatamodeld */; };
-		203E3EFA19BF824A008C0379 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 203E3EF919BF824A008C0379 /* ViewController.m */; };
 		203E3EFD19BF824A008C0379 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 203E3EFB19BF824A008C0379 /* Main.storyboard */; };
 		203E3EFF19BF824A008C0379 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 203E3EFE19BF824A008C0379 /* Images.xcassets */; };
 		203E3F0B19BF824A008C0379 /* NoteHubTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 203E3F0A19BF824A008C0379 /* NoteHubTests.m */; };
@@ -59,8 +58,6 @@
 		203E3EF219BF824A008C0379 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		203E3EF319BF824A008C0379 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		203E3EF619BF824A008C0379 /* NoteHub.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NoteHub.xcdatamodel; sourceTree = "<group>"; };
-		203E3EF819BF824A008C0379 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		203E3EF919BF824A008C0379 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		203E3EFC19BF824A008C0379 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		203E3EFE19BF824A008C0379 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		203E3F0419BF824A008C0379 /* NoteHubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteHubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,8 +117,6 @@
 		203E3EE219BF824A008C0379 = {
 			isa = PBXGroup;
 			children = (
-				6051675119F6E556008AB5AE /* HomeViewController.h */,
-				6051675219F6E556008AB5AE /* HomeViewController.m */,
 				203E3EED19BF824A008C0379 /* NoteHub */,
 				203E3F0719BF824A008C0379 /* NoteHubTests */,
 				203E3EEC19BF824A008C0379 /* Products */,
@@ -141,12 +136,10 @@
 			isa = PBXGroup;
 			children = (
 				203E3EF219BF824A008C0379 /* AppDelegate.h */,
-				203E3EF819BF824A008C0379 /* ViewController.h */,
-				203E3EF919BF824A008C0379 /* ViewController.m */,
 				203E3EFB19BF824A008C0379 /* Main.storyboard */,
-				6051675419F6EECD008AB5AE /* searchTableTableViewController.h */,
-				6051675519F6EECD008AB5AE /* searchTableTableViewController.m */,
 				203E3EF319BF824A008C0379 /* AppDelegate.m */,
+				6089E3BB19F8280B000D85A9 /* Home */,
+				6089E3BA19F827C2000D85A9 /* Search */,
 				6EF686CE19E78281007EEFB1 /* Course */,
 				6EF686D019E7831D007EEFB1 /* Register */,
 				6EF686D419E783BE007EEFB1 /* LOGIN */,
@@ -184,6 +177,25 @@
 				203E3F0919BF824A008C0379 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6089E3BA19F827C2000D85A9 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				6051675419F6EECD008AB5AE /* searchTableTableViewController.h */,
+				6051675519F6EECD008AB5AE /* searchTableTableViewController.m */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		6089E3BB19F8280B000D85A9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				6051675119F6E556008AB5AE /* HomeViewController.h */,
+				6051675219F6E556008AB5AE /* HomeViewController.m */,
+			);
+			name = Home;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		6EF686CE19E78281007EEFB1 /* Course */ = {
@@ -350,7 +362,6 @@
 				20B5DCB219BF90E70041C4E1 /* SettingsTableViewController.m in Sources */,
 				6051675319F6E556008AB5AE /* HomeViewController.m in Sources */,
 				20AEBDF319DCB79D0018F44F /* LoginViewController.m in Sources */,
-				203E3EFA19BF824A008C0379 /* ViewController.m in Sources */,
 				203E3EF719BF824A008C0379 /* NoteHub.xcdatamodeld in Sources */,
 				603B357B19E5D37A00392105 /* NewCourseViewController.m in Sources */,
 				60EDDF3C19E73E4700746FD2 /* notebookListTableViewController.m in Sources */,

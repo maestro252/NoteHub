@@ -4,6 +4,7 @@ class Api::V1::SharesController < ApplicationController
   respond_to :json
 
   def index
+    
 
   end
   def create

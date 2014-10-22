@@ -40,6 +40,10 @@
     [cm searchNotes:self.searchTextField.text];
 }
 
+- (IBAction)settingsAction:(id)sender {
+    [self performSegueWithIdentifier:@"setting_segue" sender:nil];
+}
+
 - (void)communication:(CommunicationManager *)comm didReceiveData:(NSDictionary *)dict{
     NSLog(@"%@",dict);
     [self performSegueWithIdentifier:@"search_segue" sender:dict];
@@ -53,6 +57,8 @@
         searchTableTableViewController * stvc = (searchTableTableViewController *)u.topViewController;
         
         [stvc setDict:sender];
+    }else if([segue.identifier isEqual:@"setting_segue"]){
+        
     }
 }
 @end
