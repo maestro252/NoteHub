@@ -15,6 +15,10 @@
 @implementation HomeViewController
 
 - (void)viewDidLoad {
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"isLogged"]) {
+        [self performSegueWithIdentifier:@"login_segue" sender:nil];
+    }
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
