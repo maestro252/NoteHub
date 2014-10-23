@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="6Fw-PQ-avn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="6Fw-PQ-avn">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -421,6 +420,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Mi Cuaderno" id="nCX-sP-CGq">
+                        <barButtonItem key="leftBarButtonItem" title="Publicar" id="5nJ-lz-OWf">
+                            <connections>
+                                <action selector="published_action:" destination="C9A-mJ-qA6" id="Htm-Vg-6ae"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Lapiz" id="8Rb-kq-Adb">
                             <connections>
                                 <action selector="writing:" destination="C9A-mJ-qA6" id="Rl6-lC-6as"/>
@@ -595,7 +599,7 @@
         <!--Navigation Controller-->
         <scene sceneID="UaC-om-g5e">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jV4-z0-l6k" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="home_view" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jV4-z0-l6k" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7uP-LF-Rve">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>

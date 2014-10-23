@@ -34,6 +34,13 @@
     [super viewWillAppear:animated];
 }
 
+- (void)viewWillDisappear:(BOOL)animated{
+    UIStoryboard * sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    UINavigationController * nav = (UINavigationController *)[sb instantiateViewControllerWithIdentifier:@"home_view"];
+    [[self splitViewController] showDetailViewController:nav sender:nil];
+}
+
 - (void)reload {
     CommunicationManager * c = [CommunicationManager new];
     [c setDelegate:self];
@@ -92,15 +99,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     @try {
-        NSLog(@"%@", [data objectAtIndex:indexPath.row]);
-        
         UIStoryboard * sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         
         UINavigationController * nav = (UINavigationController *)[sb instantiateViewControllerWithIdentifier:@"notebook_storyboard"];
         
         NotebookViewController * n = (NotebookViewController *)[nav topViewController];
         
-        [n setText:[[data objectAtIndex:indexPath.row] objectForKey:@"words"]];
+        //[n setText:[[data objectAtIndex:indexPath.row] objectForKey:@"words"]];
         [n setPattern:[[data objectAtIndex:indexPath.row] objectForKey:@"pattern"]];
         [n setNote_id:[[[data objectAtIndex:indexPath.row]objectForKey:@"id"] integerValue]];
         [n setCourse_id:[[self.course objectForKey:@"id"] integerValue]];

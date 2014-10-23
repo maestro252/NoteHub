@@ -33,7 +33,7 @@ class Api::V1::NotesController < ApplicationController
 			@note = Note.new create_params
 
 			@note.course_id = course.id
-
+			@note.published = false
 			if @note.save!
 				render json: { success: true, note: @note }
 			else
@@ -68,12 +68,14 @@ class Api::V1::NotesController < ApplicationController
 	end
 
 	def show
+			@note = Note.find params[:id]
 
+			render json:{success: true, note: @note}
 	end
 
 	private
 		def create_params
-			params.require(:note).permit(:title, :date, :words, :lines, :pattern)
+			params.require(:note).permit(:title, :date, :words, :lines, :pattern, :tags)
 		end
 
 		def unauthorized

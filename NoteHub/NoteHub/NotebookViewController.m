@@ -39,6 +39,11 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)communication:(CommunicationManager *)comm didReceiveData:(NSDictionary *)dict{
+    assistedNotebook.text = [[dict objectForKey:@"note"] objectForKey:@"words"];
+    NSLog(@"%@", dict);
+}
+
 - (void)viewWillDisappear:(BOOL)animated{
     CommunicationManager * c = [CommunicationManager new];
     [c updateNote:@{
@@ -47,11 +52,12 @@
                                                           @"lines": @""
                                                           }
                                                   } noteID:self.note_id courseID:self.course_id];
-    
-    
-    notebookListTableViewController * n = (notebookListTableViewController *)[[self.splitViewController viewControllers] objectAtIndex:0];
-    
-    [n reload];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    CommunicationManager * cm = [CommunicationManager new];
+    [cm setDelegate:self];
+    [cm getNoteById:self.note_id];
 }
 
 - (void)didReceiveMemoryWarning
@@ -133,6 +139,36 @@
         
         [assistedNotebook setEditable:YES];
         
+    }
+    
+}
+- (IBAction)published_action:(id)sender {
+    UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Publicar nota" message: nil delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Publicar Nota", @"Volver Privada", @"Compartir nota", nil];
+    [alert setTag:99999];
+    [alert show];
+}
+
+- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (alertView.tag == 99999) {
+        if (buttonIndex == 0) {
+            //cancelar
+        }else if (buttonIndex == 1){
+            //publicar
+            UIAlertView * al = [[UIAlertView alloc] initWithTitle:@"Agregar etiquetas" message:@"Ingrese las etiquetas separadas por espacios, limite de caracteres: 256" delegate:self cancelButtonTitle:@"cancelar" otherButtonTitles:@"Publicar", nil];
+            [al setTag:12];
+            [al setAlertViewStyle:UIAlertViewStylePlainTextInput];
+            [al show];
+        }else if(buttonIndex == 3){
+            UIAlertView * a = [[UIAlertView alloc] initWithTitle:@"compartir nota" message:@"Ingrese el nombre de usuario con el que quiere compartir la nota" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Compartir", nil];
+            [a setAlertViewStyle:UIAlertViewStylePlainTextInput];
+            [a show];
+        }
+    } else if (alertView.tag == 12) {
+        if (buttonIndex == 1) {
+            NSLog(@"%@", [alertView textFieldAtIndex:0].text);
+            CommunicationManager * cm = [CommunicationManager new];
+            [cm updateTagsByNoteId:self.note_id tags:[alertView textFieldAtIndex:0].text id_course:self.course_id];
+        }
     }
     
 }

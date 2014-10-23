@@ -11,7 +11,7 @@
 #import "CommunicationManager.h"
 #import "notebookListTableViewController.h"
 
-@interface NotebookViewController : UIViewController <UISplitViewControllerDelegate, CommunicationDelegate>
+@interface NotebookViewController : UIViewController <UISplitViewControllerDelegate, CommunicationDelegate, UIAlertViewDelegate>
 {
     __weak IBOutlet UIBarButtonItem *pencilButton;
     __weak IBOutlet NHAssistedNotebookView *assistedNotebook;    
@@ -20,6 +20,7 @@
 @property (nonatomic, weak) NSString * text;
 @property (nonatomic, weak) NSString * pattern;
 @property (nonatomic) NSInteger note_id;
+- (IBAction)published_action:(id)sender;
 @property (nonatomic) NSInteger course_id;
 - (IBAction)writing:(id)sender;
 @end

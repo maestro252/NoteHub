@@ -62,6 +62,10 @@
     return cell;
 }
 
+- (void)gesture {
+    [[[UIAlertView alloc] initWithTitle:@":)" message:@"ESOOOOOO" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     CommunicationManager * cm = [CommunicationManager new];
     [cm createSharedNotes:[[database objectAtIndex:indexPath.row ] objectForKey:@"id"] id_user:[[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"]];

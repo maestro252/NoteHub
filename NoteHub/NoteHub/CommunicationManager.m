@@ -149,6 +149,35 @@
     [self send];
 }
 
+- (void) getNoteById:(NSInteger) id_note{
+    [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
+    
+    [self.request setURL:[self makeURLWithService:[NSString stringWithFormat: @"api/v1/notes/%ld", (long)id_note]]];
+    
+    [self.request setHTTPMethod:@"GET"];
+    
+    [self send];
+}
+
+- (void) updateTagsByNoteId:(NSInteger) id_note tags:(NSString *) tags id_course:(NSInteger) id_course{
+    [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
+    
+    [self.request setURL:[self makeURLWithService:[NSString stringWithFormat: @"api/v1/courses/%ld/notes/%ld", (long)id_note, (long)id_course]]];
+    
+    [self.request setHTTPMethod:@"PUT"];
+    
+    
+    [self.request setHTTPBody:[self makeJSONWithDictionary:@{
+                                                             @"note":@{
+                                                                     @"tags":tags
+                                                                     }
+    }
+                                                             
+                                                             ]];
+    
+    [self send];
+}
+
 #pragma mark - Metodos privados de la clase
 
 - (NSData *)makeJSONWithDictionary:(NSDictionary *)dict {

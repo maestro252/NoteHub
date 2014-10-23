@@ -18,7 +18,6 @@
 - (void)viewDidLoad {
     data = [NSMutableArray new];
     
-    [self reload];
     [super viewDidLoad];
     
     // Uncomment the following line to preserve selection between presentations.
@@ -30,6 +29,7 @@
 
 
 - (void)viewWillAppear:(BOOL)animated {
+    [self reload];
     [super viewWillAppear:animated];
 }
 
