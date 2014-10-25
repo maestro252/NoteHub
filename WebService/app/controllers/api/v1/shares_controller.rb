@@ -4,9 +4,13 @@ class Api::V1::SharesController < ApplicationController
   respond_to :json
 
   def index
-    
+    @shares = Share.where user: current_user
 
+    render json: {succes: true, share: @shares},
+          include: :note, 
+          except: [:user_id, :note_id, :id]
   end
+
   def create
     @share = Share.new create_params
     if @share.save

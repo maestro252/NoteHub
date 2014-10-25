@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="6Fw-PQ-avn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="6Fw-PQ-avn">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -352,6 +353,33 @@
             </objects>
             <point key="canvasLocation" x="-106" y="1223"/>
         </scene>
+        <!--Compartidas-->
+        <scene sceneID="4Ej-f7-qqi">
+            <objects>
+                <tableViewController id="aeR-kE-SMe" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="aDz-Fv-Awd">
+                        <rect key="frame" x="0.0" y="0.0" width="308" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="wCo-iF-QKi">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wCo-iF-QKi" id="whq-x5-Jsm">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="aeR-kE-SMe" id="1Kk-YF-faL"/>
+                            <outlet property="delegate" destination="aeR-kE-SMe" id="asn-C3-Tx1"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Compartidas" id="CEf-0A-BHm"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Twi-x6-w7K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-295" y="-1650"/>
+        </scene>
         <!--Search Table Table View Controller-->
         <scene sceneID="sfi-0y-k6L">
             <objects>
@@ -471,6 +499,7 @@
                     </navigationItem>
                     <connections>
                         <segue destination="vOt-bD-Q2D" kind="push" identifier="notebooks_segue" id="SLX-KY-2OH"/>
+                        <segue destination="aeR-kE-SMe" kind="push" identifier="shared_segue" id="JTJ-pc-0G2"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X5u-f2-hp4" userLabel="First Responder" sceneMemberID="firstResponder"/>

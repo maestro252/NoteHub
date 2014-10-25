@@ -21,6 +21,7 @@
 		603B357B19E5D37A00392105 /* NewCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 603B357A19E5D37A00392105 /* NewCourseViewController.m */; };
 		6051675319F6E556008AB5AE /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6051675219F6E556008AB5AE /* HomeViewController.m */; };
 		6051675619F6EECD008AB5AE /* searchTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6051675519F6EECD008AB5AE /* searchTableTableViewController.m */; };
+		60BC889219FC60F200173D89 /* shareTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BC889119FC60F200173D89 /* shareTableViewController.m */; };
 		60EDDF3919E7286900746FD2 /* courseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EDDF3819E7286900746FD2 /* courseTableViewController.m */; };
 		60EDDF3C19E73E4700746FD2 /* notebookListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EDDF3B19E73E4700746FD2 /* notebookListTableViewController.m */; };
 		60F7C34019C8DA7C003CE1BC /* NHAssistedNotebookView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F7C33F19C8DA7C003CE1BC /* NHAssistedNotebookView.m */; };
@@ -77,6 +78,8 @@
 		6051675219F6E556008AB5AE /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		6051675419F6EECD008AB5AE /* searchTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchTableTableViewController.h; sourceTree = "<group>"; };
 		6051675519F6EECD008AB5AE /* searchTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchTableTableViewController.m; sourceTree = "<group>"; };
+		60BC889019FC60F200173D89 /* shareTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shareTableViewController.h; sourceTree = "<group>"; };
+		60BC889119FC60F200173D89 /* shareTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shareTableViewController.m; sourceTree = "<group>"; };
 		60EDDF3719E7286900746FD2 /* courseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = courseTableViewController.h; sourceTree = "<group>"; };
 		60EDDF3819E7286900746FD2 /* courseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = courseTableViewController.m; sourceTree = "<group>"; };
 		60EDDF3A19E73E4700746FD2 /* notebookListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = notebookListTableViewController.h; sourceTree = "<group>"; };
@@ -137,6 +140,7 @@
 			children = (
 				203E3EF219BF824A008C0379 /* AppDelegate.h */,
 				203E3EFB19BF824A008C0379 /* Main.storyboard */,
+				60BC889319FC610900173D89 /* shareTable */,
 				203E3EF319BF824A008C0379 /* AppDelegate.m */,
 				6089E3BB19F8280B000D85A9 /* Home */,
 				6089E3BA19F827C2000D85A9 /* Search */,
@@ -196,6 +200,15 @@
 			);
 			name = Home;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		60BC889319FC610900173D89 /* shareTable */ = {
+			isa = PBXGroup;
+			children = (
+				60BC889019FC60F200173D89 /* shareTableViewController.h */,
+				60BC889119FC60F200173D89 /* shareTableViewController.m */,
+			);
+			name = shareTable;
 			sourceTree = "<group>";
 		};
 		6EF686CE19E78281007EEFB1 /* Course */ = {
@@ -366,6 +379,7 @@
 				603B357B19E5D37A00392105 /* NewCourseViewController.m in Sources */,
 				60EDDF3C19E73E4700746FD2 /* notebookListTableViewController.m in Sources */,
 				602D376C19C78D0F00C986A0 /* ColorTableViewController.m in Sources */,
+				60BC889219FC60F200173D89 /* shareTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

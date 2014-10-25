@@ -159,17 +159,48 @@
     [self send];
 }
 
-- (void) updateTagsByNoteId:(NSInteger) id_note tags:(NSString *) tags id_course:(NSInteger) id_course{
+-(void) getShareNote{
     [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
     
-    [self.request setURL:[self makeURLWithService:[NSString stringWithFormat: @"api/v1/courses/%ld/notes/%ld", (long)id_note, (long)id_course]]];
+    [self.request setURL:[self makeURLWithService:[NSString stringWithFormat: @"api/v1/shares"]]];
+    [self.request setHTTPMethod:@"GET"];
+    
+    [self send];
+}
+
+-(void) setPrivate:(NSInteger) id_note id_course:(NSInteger)id_course{
+    [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
+    
+    [self.request setURL:[self makeURLWithService:[NSString stringWithFormat: @"api/v1/courses/%ld/notes/%ld", (long)id_course, (long)id_note]]];
     
     [self.request setHTTPMethod:@"PUT"];
     
     
     [self.request setHTTPBody:[self makeJSONWithDictionary:@{
                                                              @"note":@{
-                                                                     @"tags":tags
+                                                                     @"tags":@"",
+                                                                     @"published":@false
+                                                                     }
+                                                             }
+                               
+                               ]];
+    
+    [self send];
+
+}
+
+- (void) updateTagsByNoteId:(NSInteger) id_note tags:(NSString *) tags id_course:(NSInteger) id_course{
+    [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
+    
+    [self.request setURL:[self makeURLWithService:[NSString stringWithFormat: @"api/v1/courses/%ld/notes/%ld", (long)id_course, (long)id_note]]];
+    
+    [self.request setHTTPMethod:@"PUT"];
+    
+    
+    [self.request setHTTPBody:[self makeJSONWithDictionary:@{
+                                                             @"note":@{
+                                                                     @"tags":tags,
+                                                                @"published":@true
                                                                      }
     }
                                                              

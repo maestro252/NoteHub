@@ -93,7 +93,6 @@
     @catch (NSException *exception) { }
     @finally { }
     
-    
     return cell;
 }
 

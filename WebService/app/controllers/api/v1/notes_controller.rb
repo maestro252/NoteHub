@@ -75,7 +75,7 @@ class Api::V1::NotesController < ApplicationController
 
 	private
 		def create_params
-			params.require(:note).permit(:title, :date, :words, :lines, :pattern, :tags)
+			params.require(:note).permit(:title, :date, :words, :lines, :pattern, :tags, :published)
 		end
 
 		def unauthorized

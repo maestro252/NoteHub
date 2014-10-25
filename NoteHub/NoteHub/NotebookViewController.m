@@ -159,9 +159,16 @@
             [al setAlertViewStyle:UIAlertViewStylePlainTextInput];
             [al show];
         }else if(buttonIndex == 3){
+            //compartir
             UIAlertView * a = [[UIAlertView alloc] initWithTitle:@"compartir nota" message:@"Ingrese el nombre de usuario con el que quiere compartir la nota" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Compartir", nil];
             [a setAlertViewStyle:UIAlertViewStylePlainTextInput];
             [a show];
+        }else if(buttonIndex == 2){
+            //Volver privada
+            CommunicationManager * cm = [CommunicationManager new];
+            [cm setPrivate:self.note_id id_course:self.course_id];
+            UIAlertView * al = [[UIAlertView alloc] initWithTitle:@"Nota privada" message:@"La nota ya no es publica" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+            [al show];
         }
     } else if (alertView.tag == 12) {
         if (buttonIndex == 1) {

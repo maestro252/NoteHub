@@ -34,5 +34,7 @@
 - (void)createSharedNotes:(NSString *) id_note id_user: (NSString *) id_user;
 - (void) getNoteById:(NSInteger) id_note;
 - (void) updateTagsByNoteId:(NSInteger) id_note tags:(NSString *) tags id_course:(NSInteger) id_course;
+-(void) setPrivate:(NSInteger) id_note id_course:(NSInteger)id_course;
+-(void) getShareNote;
 
 @end
