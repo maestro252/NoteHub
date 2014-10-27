@@ -68,7 +68,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     CommunicationManager * cm = [CommunicationManager new];
-    NSLog(@"El USERNAME ES!!!:  %@", [[NSUserDefaults standardUserDefaults] objectForKey:@"User_id"]);
+    NSLog(@"El USERNAME ES!!!:  %@", [[NSUserDefaults standardUserDefaults] objectForKey:@"username"]);
     [cm createSharedNotes:[[database objectAtIndex:indexPath.row ] objectForKey:@"id"] id_user:[NSString stringWithFormat:@"%@", [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"]]];
     //id_user:[[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"]];
     
