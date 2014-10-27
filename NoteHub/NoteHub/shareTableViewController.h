@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "CommunicationManager.h"
-@interface shareTableViewController : UITableViewController<CommunicationDelegate>
+
+@interface shareTableViewController : UITableViewController <CommunicationDelegate>
 {
     NSDictionary * database;
     NSMutableArray * data;

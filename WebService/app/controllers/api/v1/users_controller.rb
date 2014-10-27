@@ -40,6 +40,13 @@ class Api::V1::UsersController < ApplicationController
 		end
 	end
 
+	def user_id_by_username
+		x = User.find_by username: params[:id]
+		render json:{success: true, user: x }, except: [:username, :email, :name, :active, :password_encrypted, :salt,
+		:created_at, :updated_at, :description]
+
+	end
+
 	private
 		def login_params
 			params.require(:user).permit(:key, :password)

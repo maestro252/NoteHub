@@ -21,6 +21,7 @@
 @property (nonatomic, strong) NSMutableURLRequest * request;
 @property (nonatomic, strong, readonly) NSString * auth;
 @property (nonatomic, strong, readonly) NSDate * expires;
+@property (nonatomic) NSInteger tag;
 
 - (void)loginWithKey:(NSString *)key password:(NSString *)passwd;
 - (void)createUser:(NSDictionary *)dict;
@@ -36,5 +37,5 @@
 - (void) updateTagsByNoteId:(NSInteger) id_note tags:(NSString *) tags id_course:(NSInteger) id_course;
 -(void) setPrivate:(NSInteger) id_note id_course:(NSInteger)id_course;
 -(void) getShareNote;
-
+-(void)getUserIdByUsername:(NSString *) username;
 @end

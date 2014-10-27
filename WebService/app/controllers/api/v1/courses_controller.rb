@@ -12,7 +12,6 @@ class Api::V1::CoursesController < ApplicationController
 
 	def show
 	end
-
 	def destroy
 	end
 

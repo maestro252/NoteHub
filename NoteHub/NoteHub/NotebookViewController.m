@@ -40,8 +40,18 @@
 }
 
 - (void)communication:(CommunicationManager *)comm didReceiveData:(NSDictionary *)dict{
-    assistedNotebook.text = [[dict objectForKey:@"note"] objectForKey:@"words"];
-    NSLog(@"%@", dict);
+    
+    if(comm.tag == 199){
+        [comm setTag:255];
+        [comm createSharedNotes:[NSString stringWithFormat:@"%ld",(long)self.note_id] id_user:[[dict objectForKey:@"user"] objectForKey:@"id"]];
+        
+    } else if(comm.tag == 255){
+        UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Compartdio exitoso" message:@"La nota se ha compartido satisfactoriamente" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
+    }else{
+        assistedNotebook.text = [[dict objectForKey:@"note"] objectForKey:@"words"];
+        NSLog(@"%@", dict);
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -162,7 +172,9 @@
             //compartir
             UIAlertView * a = [[UIAlertView alloc] initWithTitle:@"compartir nota" message:@"Ingrese el nombre de usuario con el que quiere compartir la nota" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Compartir", nil];
             [a setAlertViewStyle:UIAlertViewStylePlainTextInput];
+            [a setTag:20];
             [a show];
+            
         }else if(buttonIndex == 2){
             //Volver privada
             CommunicationManager * cm = [CommunicationManager new];
@@ -176,6 +188,11 @@
             CommunicationManager * cm = [CommunicationManager new];
             [cm updateTagsByNoteId:self.note_id tags:[alertView textFieldAtIndex:0].text id_course:self.course_id];
         }
+    } else if(alertView.tag == 20){
+        CommunicationManager * cm = [CommunicationManager new];
+        [cm setDelegate:self];
+        [cm setTag:199];
+        [cm getUserIdByUsername:[alertView textFieldAtIndex:0].text];
     }
     
 }

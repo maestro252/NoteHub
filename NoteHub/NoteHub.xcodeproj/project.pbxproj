@@ -26,6 +26,7 @@
 		60EDDF3C19E73E4700746FD2 /* notebookListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EDDF3B19E73E4700746FD2 /* notebookListTableViewController.m */; };
 		60F7C34019C8DA7C003CE1BC /* NHAssistedNotebookView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F7C33F19C8DA7C003CE1BC /* NHAssistedNotebookView.m */; };
 		60F7C34319C8EC65003CE1BC /* NotebookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F7C34219C8EC65003CE1BC /* NotebookViewController.m */; };
+		970313A519FEDE4B00759619 /* reminderTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 970313A419FEDE4B00759619 /* reminderTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -88,6 +89,8 @@
 		60F7C33F19C8DA7C003CE1BC /* NHAssistedNotebookView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHAssistedNotebookView.m; sourceTree = "<group>"; };
 		60F7C34119C8EC65003CE1BC /* NotebookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotebookViewController.h; sourceTree = "<group>"; };
 		60F7C34219C8EC65003CE1BC /* NotebookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotebookViewController.m; sourceTree = "<group>"; };
+		970313A319FEDE4B00759619 /* reminderTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reminderTableViewController.h; sourceTree = "<group>"; };
+		970313A419FEDE4B00759619 /* reminderTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = reminderTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +143,7 @@
 			children = (
 				203E3EF219BF824A008C0379 /* AppDelegate.h */,
 				203E3EFB19BF824A008C0379 /* Main.storyboard */,
+				970313A219FEDE0400759619 /* remainder */,
 				60BC889319FC610900173D89 /* shareTable */,
 				203E3EF319BF824A008C0379 /* AppDelegate.m */,
 				6089E3BB19F8280B000D85A9 /* Home */,
@@ -264,6 +268,15 @@
 			name = LOGIN;
 			sourceTree = "<group>";
 		};
+		970313A219FEDE0400759619 /* remainder */ = {
+			isa = PBXGroup;
+			children = (
+				970313A319FEDE4B00759619 /* reminderTableViewController.h */,
+				970313A419FEDE4B00759619 /* reminderTableViewController.m */,
+			);
+			name = remainder;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -379,6 +392,7 @@
 				603B357B19E5D37A00392105 /* NewCourseViewController.m in Sources */,
 				60EDDF3C19E73E4700746FD2 /* notebookListTableViewController.m in Sources */,
 				602D376C19C78D0F00C986A0 /* ColorTableViewController.m in Sources */,
+				970313A519FEDE4B00759619 /* reminderTableViewController.m in Sources */,
 				60BC889219FC60F200173D89 /* shareTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

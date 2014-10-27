@@ -159,7 +159,7 @@
     [self send];
 }
 
--(void) getShareNote{
+-(void)getShareNote{
     [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
     
     [self.request setURL:[self makeURLWithService:[NSString stringWithFormat: @"api/v1/shares"]]];
@@ -209,6 +209,16 @@
     [self send];
 }
 
+
+-(void)getUserIdByUsername:(NSString *) username{
+    [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
+    
+    [self.request setURL:[self makeURLWithService:[NSString stringWithFormat: @"api/v1/users/usertoid/%@", username]]];
+    [self.request setHTTPMethod:@"GET"];
+    
+    [self send];
+
+}
 #pragma mark - Metodos privados de la clase
 
 - (NSData *)makeJSONWithDictionary:(NSDictionary *)dict {
@@ -222,6 +232,7 @@
 - (void)authorize {
     [self.request setValue:[NSString stringWithFormat:@"Token token=%@", self.auth] forHTTPHeaderField:@"Authorization"];
 }
+
 
 - (void)send {
     NSOperationQueue *queue = [NSOperationQueue mainQueue];
