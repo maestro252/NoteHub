@@ -7,6 +7,7 @@
 //
 
 #import "shareTableViewController.h"
+#import "NotebookViewController.h"
 
 @interface shareTableViewController ()
 
@@ -49,7 +50,8 @@
     
     // Configure the cell...
     
-    cell.textLabel.text = [[[data objectAtIndex:indexPath.row] objectForKey:@"note"] objectForKey:@"title"];
+    cell.textLabel.text = [[data objectAtIndex:indexPath.row] objectForKey:@"title"];
+    cell.accessoryType = UITableViewCellAccessoryCheckmark;
     
     return cell;
 }
@@ -59,7 +61,6 @@
     CommunicationManager * cm = [CommunicationManager new];
     [cm setDelegate:self];
     [cm getShareNote];
-    
     [super viewWillAppear:animated];
 }
 
@@ -68,11 +69,30 @@
     
     NSLog(@"este es el que necesitamo papiririiiiiis %@", dict);
     
-//    for (NSDictionary * inner in [dict objectForKey:@"share"]) {
-//        [data addObject:[inner objectForKey:@"note"]];
-//    }
-//    
-//    [self.tableView reloadData];
+    for (NSDictionary * inner in [dict objectForKey:@"share"]) {
+        [data addObject:[inner objectForKey:@"note"]];
+    }
+    
+    [self.tableView reloadData];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    @try {
+        UIStoryboard * sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        
+        UINavigationController * nav = (UINavigationController *)[sb instantiateViewControllerWithIdentifier:@"notebook_storyboard"];
+        
+        NotebookViewController * n = (NotebookViewController *)[nav topViewController];
+        
+        //[n setText:[[data objectAtIndex:indexPath.row] objectForKey:@"words"]];
+        [n setPattern:[[data objectAtIndex:indexPath.row] objectForKey:@"pattern"]];
+        [n setNote_id:[[[data objectAtIndex:indexPath.row]objectForKey:@"id"] integerValue]];
+        //[n setCourse_id:[[self.course objectForKey:@"id"] integerValue]];
+        
+        [[self splitViewController] showDetailViewController:nav sender:nil];
+    }
+    @catch (NSException *exception) { }
+    @finally { }
 }
 
 /*

@@ -7,7 +7,7 @@ class Api::V1::SharesController < ApplicationController
     @shares = Share.where user: current_user
 
     render json: {succes: true, share: @shares},
-          include: :note, 
+          include: :note,
           except: [:user_id, :note_id, :id]
   end
 

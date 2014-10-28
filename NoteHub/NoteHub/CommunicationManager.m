@@ -219,6 +219,49 @@
     [self send];
 
 }
+
+-(void)getReminders{
+    [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
+    
+    [self.request setURL:[self makeURLWithService:[NSString stringWithFormat: @"api/v1/reminders"]]];
+    
+    [self.request setHTTPMethod:@"GET"];
+    
+    [self send];
+}
+
+-(void)updateReminderState:(Boolean)state id_reminder: (NSInteger) id_reminder{
+    [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
+    
+    [self.request setURL:[self makeURLWithService:[NSString stringWithFormat: @"api/v1/reminders/%ld", (long)id_reminder]]];
+    
+    [self.request setHTTPMethod:@"PUT"];
+    
+    if (!state) {
+        [self.request setHTTPBody:[self makeJSONWithDictionary:@{
+                                                                 @"reminder":@{
+                                                                         @"done":@false
+                                                                         }
+                                                                 }
+                                   
+                                   ]];
+        
+        [self send];
+    }else{
+        [self.request setHTTPBody:[self makeJSONWithDictionary:@{
+                                                                 @"reminder":@{
+                                                                         @"done":@true
+                                                                         }
+                                                                 }
+                                   
+                                   ]];
+        
+        [self send];
+    }
+    
+    
+
+}
 #pragma mark - Metodos privados de la clase
 
 - (NSData *)makeJSONWithDictionary:(NSDictionary *)dict {
@@ -229,8 +272,28 @@
     return [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/%@", ADDRESS, service]];
 }
 
+
+
 - (void)authorize {
     [self.request setValue:[NSString stringWithFormat:@"Token token=%@", self.auth] forHTTPHeaderField:@"Authorization"];
+}
+
+-(void) createReminder: (NSString *) title deadline: (NSString *) deadline{
+    [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
+    
+    [self.request setURL:[self makeURLWithService:[NSString stringWithFormat: @"api/v1/reminders"]]];
+    [self.request setHTTPBody:[self makeJSONWithDictionary: @{
+                                                              @"reminder":
+                                                                  @{
+                                                                      
+                                                                      @"title": title,
+                                                                      @"deadline": deadline
+                                                                      }
+                                                              }]];
+    
+    [self.request setHTTPMethod:@"POST"];
+    
+    [self send];
 }
 
 
@@ -253,14 +316,17 @@
                     [lt setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZ"];
                     
                     NSString *lifetime = [auth objectForKey:@"expires"];
+                    NSString *username = [[dict objectForKey:@"user"] objectForKey:@"username"];
+                    
+                    NSLog(@"%@", username);
                     
                     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLogged"];
                     
-                    [[NSUserDefaults standardUserDefaults] setObject:[[auth objectForKey:@"user"] objectForKey:@"username"] forKey:@"username"];
+                    [[NSUserDefaults standardUserDefaults] setObject:username forKey:@"username"];
                     
-                    [[NSUserDefaults standardUserDefaults] setObject:[[auth objectForKey:@"user"] objectForKey:@"email"] forKey:@"email"];
+                    [[NSUserDefaults standardUserDefaults] setObject:[[dict objectForKey:@"user"] objectForKey:@"email"] forKey:@"email"];
                     
-                    [[NSUserDefaults standardUserDefaults] setObject:[[auth objectForKey:@"user"] objectForKey:@"id"] forKey:@"user_id"];
+                    [[NSUserDefaults standardUserDefaults] setObject:[[dict objectForKey:@"user"] objectForKey:@"id"] forKey:@"user_id"];
                     
                     [[NSUserDefaults standardUserDefaults] setObject:token forKey:@"token"];
                     

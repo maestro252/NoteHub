@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    data = [NSMutableArray new];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -32,36 +32,75 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [data count];
 }
 
-/*
+-(void)addReminder:(id)sender{
+    UIAlertView * aler = [[UIAlertView alloc]initWithTitle:@"Nuevo recordatorio" message:@"Escribar el recordatorio a añadir" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Ok", nil];
+    [aler setAlertViewStyle:UIAlertViewStylePlainTextInput];
+    [aler setTag:290];
+    [aler show];
+    
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(alertView.tag == 290){
+        if(buttonIndex == 1){
+            reminderTitle = [alertView textFieldAtIndex:0].text;
+            UIAlertView * aler = [[UIAlertView alloc]initWithTitle:@"Fecha limite" message:@"Digite la fecha en formato YYYY-MM-DD" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Crear", nil];
+            [aler setTag:893];
+            [aler setAlertViewStyle:UIAlertViewStylePlainTextInput];
+            [aler show];
+            //NSLog(@"crear reminder");
+        }
+    }else if(alertView.tag == 893){
+        if(buttonIndex == 1){
+              CommunicationManager * cm = [CommunicationManager new];
+              [cm createReminder:reminderTitle deadline:[alertView textFieldAtIndex:0].text];
+        }
+    }
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    CommunicationManager * cm = [CommunicationManager new];
+    [cm setDelegate:self];
+    [cm getReminders];
+}
+
+-(void)communication:(CommunicationManager *)comm didReceiveData:(NSDictionary *)dict{
+    for (NSDictionary *inn in [dict objectForKey:@"reminders"]) {
+        [data addObject:inn];
+    }
+    NSLog(@"%@ este me lo ppapapadar", dict);
+    [self.tableView reloadData];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    cell.textLabel.text = [[data objectAtIndex:indexPath.row] objectForKey:@"title"];
     
+    if ([[[data objectAtIndex:indexPath.row] objectForKey:@"done"] boolValue]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
     // Configure the cell...
-    
     return cell;
 }
-*/
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
+
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -71,7 +110,6 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
 
 /*
 // Override to support rearranging the table view.
@@ -79,13 +117,24 @@
 }
 */
 
-/*
+
 // Override to support conditional rearranging of the table view.
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the item to be re-orderable.
     return YES;
 }
-*/
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    CommunicationManager * cm = [CommunicationManager new];
+    if ([tableView cellForRowAtIndexPath:indexPath].accessoryType != UITableViewCellAccessoryCheckmark) {
+        [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+        [cm updateReminderState:true id_reminder:[[[data objectAtIndex:indexPath.row] objectForKey:@"id"] integerValue]];
+    } else  {
+        [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
+        [cm updateReminderState:false id_reminder:[[[data objectAtIndex:indexPath.row] objectForKey:@"id"] integerValue]];
+        
+    }
+}
 
 /*
 #pragma mark - Navigation
@@ -96,5 +145,6 @@
     // Pass the selected object to the new view controller.
 }
 */
+
 
 @end

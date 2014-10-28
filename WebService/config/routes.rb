@@ -10,9 +10,12 @@ Rails.application.routes.draw do
       get 'courses/:id/notes', to: 'notes#index'
       post 'courses/:id/notes', to: 'notes#create'
       put 'courses/:id/notes/:note_id', to: 'notes#update'
-      get 'users/usertoid/:id', to:'users#user_id_by_username' 
+      get 'users/usertoid/:id', to:'users#user_id_by_username'
       resources :users, only:[:index, :create, :update, :destroy, :show]
       resources :shares
+
+      resources :reminders
+      
 
       match 'login', to: 'users#login', via: :post
 

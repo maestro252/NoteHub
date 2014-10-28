@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface reminderTableViewController : UITableViewController
-
+#import "CommunicationManager.h"
+@interface reminderTableViewController : UITableViewController<UIAlertViewDelegate,CommunicationDelegate>
+{
+    NSString * reminderTitle;
+    NSMutableArray * data;
+    
+}
+- (IBAction)addReminder:(id)sender;
 @end

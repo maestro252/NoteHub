@@ -324,6 +324,30 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJ7-F1-LPf">
+                                <rect key="frame" x="401" y="480" width="252" height="237"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fre-YN-iZm">
+                                <rect key="frame" x="115" y="185" width="263" height="532"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Th-1V-Syf">
+                                <rect key="frame" x="401" y="185" width="252" height="243"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="Recordatorios">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="jjJ-QS-GZX" kind="push" id="pzk-Wr-AXb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -356,7 +380,7 @@
         <!--Compartidas-->
         <scene sceneID="4Ej-f7-qqi">
             <objects>
-                <tableViewController id="aeR-kE-SMe" sceneMemberID="viewController">
+                <tableViewController id="aeR-kE-SMe" customClass="shareTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="aDz-Fv-Awd">
                         <rect key="frame" x="0.0" y="0.0" width="308" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -506,16 +530,16 @@
             </objects>
             <point key="canvasLocation" x="-39" y="-465"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Title-->
         <scene sceneID="wU7-nC-Un7">
             <objects>
-                <tableViewController id="jjJ-QS-GZX" sceneMemberID="viewController">
+                <tableViewController id="jjJ-QS-GZX" customClass="reminderTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Liz-v3-6Hy">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="kg7-YB-5xI">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" id="kg7-YB-5xI">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kg7-YB-5xI" id="RaE-oU-WQn">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -527,10 +551,17 @@
                             <outlet property="delegate" destination="jjJ-QS-GZX" id="Eim-fQ-gT4"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="yH6-dO-1vU">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="R2c-dP-WYo">
+                            <connections>
+                                <action selector="addReminder:" destination="jjJ-QS-GZX" id="QUG-CZ-y1x"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m6R-Ch-aRC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1704" y="-1679"/>
+            <point key="canvasLocation" x="-96" y="2537"/>
         </scene>
         <!--New Course View Controller-->
         <scene sceneID="2q1-7d-8lJ">

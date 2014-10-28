@@ -38,4 +38,9 @@
 -(void) setPrivate:(NSInteger) id_note id_course:(NSInteger)id_course;
 -(void) getShareNote;
 -(void)getUserIdByUsername:(NSString *) username;
+-(void) createReminder: (NSString *) title deadline: (NSString *) deadline;
+-(void)getReminders;
+-(void)updateReminderState:(Boolean)state id_reminder: (NSInteger) id_reminder;
+
+
 @end
