@@ -18109,3 +18109,1730 @@ Processing by Api::V1::RemindersController#update as JSON
   [1m[35mSQL (0.3ms)[0m  UPDATE "reminders" SET "done" = ?, "updated_at" = ? WHERE "reminders"."id" = 3  [["done", "f"], ["updated_at", "2014-10-28 21:00:24.475617"]]
   [1m[36m (8.2ms)[0m  [1mcommit transaction[0m
 Completed 200 OK in 14ms (Views: 1.1ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 12:52:48 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[35mAuth Load (0.7ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'de154e5f9d2d3f740c3d30da1447dd53b0e290b98ea62211dfa3dd828cad043b7c084c8ea131305d4efd0fb8550a822cad30bf506ef691f280235abe658e11c5' LIMIT 1
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'de154e5f9d2d3f740c3d30da1447dd53b0e290b98ea62211dfa3dd828cad043b7c084c8ea131305d4efd0fb8550a822cad30bf506ef691f280235abe658e11c5' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mReminder Load (0.8ms)[0m  SELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 2
+Completed 200 OK in 80ms (Views: 10.3ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 12:52:53 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'de154e5f9d2d3f740c3d30da1447dd53b0e290b98ea62211dfa3dd828cad043b7c084c8ea131305d4efd0fb8550a822cad30bf506ef691f280235abe658e11c5' LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'de154e5f9d2d3f740c3d30da1447dd53b0e290b98ea62211dfa3dd828cad043b7c084c8ea131305d4efd0fb8550a822cad30bf506ef691f280235abe658e11c5' LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mReminder Load (0.3ms)[0m  [1mSELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 2[0m
+Completed 200 OK in 9ms (Views: 1.6ms | ActiveRecord: 1.0ms)
+
+
+Started PUT "/api/v1/reminders/4" for 127.0.0.1 at 2014-10-29 12:52:54 -0500
+Processing by Api::V1::RemindersController#update as JSON
+  Parameters: {"reminder"=>{"done"=>1}, "id"=>"4"}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'de154e5f9d2d3f740c3d30da1447dd53b0e290b98ea62211dfa3dd828cad043b7c084c8ea131305d4efd0fb8550a822cad30bf506ef691f280235abe658e11c5' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mReminder Load (0.1ms)[0m  SELECT  "reminders".* FROM "reminders"  WHERE "reminders"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "reminders" SET "done" = ?, "updated_at" = ? WHERE "reminders"."id" = 4  [["done", "t"], ["updated_at", "2014-10-29 17:52:54.552781"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 12:52:56 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'de154e5f9d2d3f740c3d30da1447dd53b0e290b98ea62211dfa3dd828cad043b7c084c8ea131305d4efd0fb8550a822cad30bf506ef691f280235abe658e11c5' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'de154e5f9d2d3f740c3d30da1447dd53b0e290b98ea62211dfa3dd828cad043b7c084c8ea131305d4efd0fb8550a822cad30bf506ef691f280235abe658e11c5' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mReminder Load (0.4ms)[0m  SELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 2
+Completed 200 OK in 8ms (Views: 2.1ms | ActiveRecord: 1.0ms)
+
+
+Started PUT "/api/v1/reminders/4" for 127.0.0.1 at 2014-10-29 12:52:59 -0500
+Processing by Api::V1::RemindersController#update as JSON
+  Parameters: {"reminder"=>{"done"=>0}, "id"=>"4"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'de154e5f9d2d3f740c3d30da1447dd53b0e290b98ea62211dfa3dd828cad043b7c084c8ea131305d4efd0fb8550a822cad30bf506ef691f280235abe658e11c5' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mReminder Load (0.1ms)[0m  [1mSELECT  "reminders".* FROM "reminders"  WHERE "reminders"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "reminders" SET "done" = ?, "updated_at" = ? WHERE "reminders"."id" = 4[0m  [["done", "f"], ["updated_at", "2014-10-29 17:52:59.409249"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Completed 200 OK in 9ms (Views: 0.5ms | ActiveRecord: 2.6ms)
+
+
+Started PUT "/api/v1/reminders/3" for 127.0.0.1 at 2014-10-29 12:53:00 -0500
+Processing by Api::V1::RemindersController#update as JSON
+  Parameters: {"reminder"=>{"done"=>1}, "id"=>"3"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'de154e5f9d2d3f740c3d30da1447dd53b0e290b98ea62211dfa3dd828cad043b7c084c8ea131305d4efd0fb8550a822cad30bf506ef691f280235abe658e11c5' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mReminder Load (0.1ms)[0m  [1mSELECT  "reminders".* FROM "reminders"  WHERE "reminders"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "reminders" SET "done" = ?, "updated_at" = ? WHERE "reminders"."id" = 3[0m  [["done", "t"], ["updated_at", "2014-10-29 17:53:00.180284"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 12:53:02 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[36mAuth Load (0.4ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'de154e5f9d2d3f740c3d30da1447dd53b0e290b98ea62211dfa3dd828cad043b7c084c8ea131305d4efd0fb8550a822cad30bf506ef691f280235abe658e11c5' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'de154e5f9d2d3f740c3d30da1447dd53b0e290b98ea62211dfa3dd828cad043b7c084c8ea131305d4efd0fb8550a822cad30bf506ef691f280235abe658e11c5' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mReminder Load (0.2ms)[0m  [1mSELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 2[0m
+Completed 200 OK in 9ms (Views: 1.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 12:53:10 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'de154e5f9d2d3f740c3d30da1447dd53b0e290b98ea62211dfa3dd828cad043b7c084c8ea131305d4efd0fb8550a822cad30bf506ef691f280235abe658e11c5' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'de154e5f9d2d3f740c3d30da1447dd53b0e290b98ea62211dfa3dd828cad043b7c084c8ea131305d4efd0fb8550a822cad30bf506ef691f280235abe658e11c5' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 2
+Completed 200 OK in 11ms (Views: 6.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/courses/2/notes" for 127.0.0.1 at 2014-10-29 12:53:12 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"id"=>"2", "note"=>{}}
+  [1m[36mAuth Load (0.4ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'de154e5f9d2d3f740c3d30da1447dd53b0e290b98ea62211dfa3dd828cad043b7c084c8ea131305d4efd0fb8550a822cad30bf506ef691f280235abe658e11c5' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'de154e5f9d2d3f740c3d30da1447dd53b0e290b98ea62211dfa3dd828cad043b7c084c8ea131305d4efd0fb8550a822cad30bf506ef691f280235abe658e11c5' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 2 AND "courses"."user_id" = 2 LIMIT 1[0m
+  [1m[35mNote Load (0.4ms)[0m  SELECT "notes".* FROM "notes"  WHERE "notes"."course_id" = ?  [["course_id", 2]]
+Completed 200 OK in 28ms (Views: 8.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 12:53:13 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'de154e5f9d2d3f740c3d30da1447dd53b0e290b98ea62211dfa3dd828cad043b7c084c8ea131305d4efd0fb8550a822cad30bf506ef691f280235abe658e11c5' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'de154e5f9d2d3f740c3d30da1447dd53b0e290b98ea62211dfa3dd828cad043b7c084c8ea131305d4efd0fb8550a822cad30bf506ef691f280235abe658e11c5' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 2[0m
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 12:53:30 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'token' LIMIT 1
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2014-10-29 12:53:43 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"santicarmo", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'santicarmo' LIMIT 1[0m
+  [1m[35mAuth Exists (0.3ms)[0m  SELECT  1 AS one FROM "auths"  WHERE "auths"."user_id" = 2 LIMIT 1
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."user_id" = 2 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAuth Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "auths"  WHERE "auths"."token" = '98451f0b3c2497966745b1d7d9dae68857af91b6e5384f0e9f638ace121b4947aa7fa8e1605b4cc2ddd0268db952f801a8ecb12a8b6cf505464b43ea17ec87fe' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "auths" SET "expires" = ?, "token" = ?, "updated_at" = ? WHERE "auths"."id" = 2  [["expires", "2015-10-24"], ["token", "98451f0b3c2497966745b1d7d9dae68857af91b6e5384f0e9f638ace121b4947aa7fa8e1605b4cc2ddd0268db952f801a8ecb12a8b6cf505464b43ea17ec87fe"], ["updated_at", "2014-10-29 17:53:44.025216"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+Completed 200 OK in 50ms (Views: 0.6ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 12:53:44 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '98451f0b3c2497966745b1d7d9dae68857af91b6e5384f0e9f638ace121b4947aa7fa8e1605b4cc2ddd0268db952f801a8ecb12a8b6cf505464b43ea17ec87fe' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '98451f0b3c2497966745b1d7d9dae68857af91b6e5384f0e9f638ace121b4947aa7fa8e1605b4cc2ddd0268db952f801a8ecb12a8b6cf505464b43ea17ec87fe' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 2[0m
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 12:53:46 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '98451f0b3c2497966745b1d7d9dae68857af91b6e5384f0e9f638ace121b4947aa7fa8e1605b4cc2ddd0268db952f801a8ecb12a8b6cf505464b43ea17ec87fe' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '98451f0b3c2497966745b1d7d9dae68857af91b6e5384f0e9f638ace121b4947aa7fa8e1605b4cc2ddd0268db952f801a8ecb12a8b6cf505464b43ea17ec87fe' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mReminder Load (0.3ms)[0m  SELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 2
+Completed 200 OK in 8ms (Views: 1.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 12:54:15 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'token' LIMIT 1[0m
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2014-10-29 12:54:22 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1
+  [1m[36mAuth Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "auths"  WHERE "auths"."user_id" = 1 LIMIT 1[0m
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."user_id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mAuth Exists (0.1ms)[0m  SELECT  1 AS one FROM "auths"  WHERE "auths"."token" = '6b7b7493c74fdbf3e6830cbb93aca5b11afc8de4036eeb62127cc6429a10f937e00fac092650e634d29280b943dc199f0d2ef149ce659c755556363e2d06d072' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "auths" SET "expires" = ?, "token" = ?, "updated_at" = ? WHERE "auths"."id" = 1[0m  [["expires", "2015-10-24"], ["token", "6b7b7493c74fdbf3e6830cbb93aca5b11afc8de4036eeb62127cc6429a10f937e00fac092650e634d29280b943dc199f0d2ef149ce659c755556363e2d06d072"], ["updated_at", "2014-10-29 17:54:22.788312"]]
+  [1m[35m (9.3ms)[0m  commit transaction
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 21ms (Views: 1.0ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 12:54:22 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '6b7b7493c74fdbf3e6830cbb93aca5b11afc8de4036eeb62127cc6429a10f937e00fac092650e634d29280b943dc199f0d2ef149ce659c755556363e2d06d072' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '6b7b7493c74fdbf3e6830cbb93aca5b11afc8de4036eeb62127cc6429a10f937e00fac092650e634d29280b943dc199f0d2ef149ce659c755556363e2d06d072' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1
+Completed 200 OK in 9ms (Views: 4.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 12:54:25 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[36mAuth Load (0.4ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '6b7b7493c74fdbf3e6830cbb93aca5b11afc8de4036eeb62127cc6429a10f937e00fac092650e634d29280b943dc199f0d2ef149ce659c755556363e2d06d072' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '6b7b7493c74fdbf3e6830cbb93aca5b11afc8de4036eeb62127cc6429a10f937e00fac092650e634d29280b943dc199f0d2ef149ce659c755556363e2d06d072' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReminder Load (0.4ms)[0m  [1mSELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1[0m
+Completed 200 OK in 7ms (Views: 1.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 12:54:52 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '6b7b7493c74fdbf3e6830cbb93aca5b11afc8de4036eeb62127cc6429a10f937e00fac092650e634d29280b943dc199f0d2ef149ce659c755556363e2d06d072' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '6b7b7493c74fdbf3e6830cbb93aca5b11afc8de4036eeb62127cc6429a10f937e00fac092650e634d29280b943dc199f0d2ef149ce659c755556363e2d06d072' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.3ms)[0m  SELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1
+Completed 200 OK in 8ms (Views: 1.0ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 12:55:11 -0500
+Processing by Api::V1::RemindersController#create as JSON
+  Parameters: {"reminder"=>{"title"=>"plop", "deadline"=>"adssifniw"}}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '6b7b7493c74fdbf3e6830cbb93aca5b11afc8de4036eeb62127cc6429a10f937e00fac092650e634d29280b943dc199f0d2ef149ce659c755556363e2d06d072' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '6b7b7493c74fdbf3e6830cbb93aca5b11afc8de4036eeb62127cc6429a10f937e00fac092650e634d29280b943dc199f0d2ef149ce659c755556363e2d06d072' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "reminders" ("created_at", "done", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-10-29 17:55:11.070670"], ["done", "f"], ["title", "plop"], ["updated_at", "2014-10-29 17:55:11.070670"], ["user_id", 1]]
+  [1m[36m (18.1ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 29ms (Views: 0.5ms | ActiveRecord: 19.5ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 12:58:12 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '6b7b7493c74fdbf3e6830cbb93aca5b11afc8de4036eeb62127cc6429a10f937e00fac092650e634d29280b943dc199f0d2ef149ce659c755556363e2d06d072' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '6b7b7493c74fdbf3e6830cbb93aca5b11afc8de4036eeb62127cc6429a10f937e00fac092650e634d29280b943dc199f0d2ef149ce659c755556363e2d06d072' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.3ms)[0m  SELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1
+Completed 200 OK in 8ms (Views: 3.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 12:58:15 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '6b7b7493c74fdbf3e6830cbb93aca5b11afc8de4036eeb62127cc6429a10f937e00fac092650e634d29280b943dc199f0d2ef149ce659c755556363e2d06d072' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '6b7b7493c74fdbf3e6830cbb93aca5b11afc8de4036eeb62127cc6429a10f937e00fac092650e634d29280b943dc199f0d2ef149ce659c755556363e2d06d072' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReminder Load (0.3ms)[0m  [1mSELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1[0m
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 13:00:23 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '6b7b7493c74fdbf3e6830cbb93aca5b11afc8de4036eeb62127cc6429a10f937e00fac092650e634d29280b943dc199f0d2ef149ce659c755556363e2d06d072' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '6b7b7493c74fdbf3e6830cbb93aca5b11afc8de4036eeb62127cc6429a10f937e00fac092650e634d29280b943dc199f0d2ef149ce659c755556363e2d06d072' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1
+Completed 200 OK in 6ms (Views: 2.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:00:27 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '6b7b7493c74fdbf3e6830cbb93aca5b11afc8de4036eeb62127cc6429a10f937e00fac092650e634d29280b943dc199f0d2ef149ce659c755556363e2d06d072' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '6b7b7493c74fdbf3e6830cbb93aca5b11afc8de4036eeb62127cc6429a10f937e00fac092650e634d29280b943dc199f0d2ef149ce659c755556363e2d06d072' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReminder Load (0.3ms)[0m  [1mSELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1[0m
+Completed 200 OK in 8ms (Views: 1.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 13:01:18 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '6b7b7493c74fdbf3e6830cbb93aca5b11afc8de4036eeb62127cc6429a10f937e00fac092650e634d29280b943dc199f0d2ef149ce659c755556363e2d06d072' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '6b7b7493c74fdbf3e6830cbb93aca5b11afc8de4036eeb62127cc6429a10f937e00fac092650e634d29280b943dc199f0d2ef149ce659c755556363e2d06d072' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1
+Completed 200 OK in 8ms (Views: 3.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:01:19 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '6b7b7493c74fdbf3e6830cbb93aca5b11afc8de4036eeb62127cc6429a10f937e00fac092650e634d29280b943dc199f0d2ef149ce659c755556363e2d06d072' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '6b7b7493c74fdbf3e6830cbb93aca5b11afc8de4036eeb62127cc6429a10f937e00fac092650e634d29280b943dc199f0d2ef149ce659c755556363e2d06d072' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReminder Load (0.3ms)[0m  [1mSELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1[0m
+Completed 200 OK in 32ms (Views: 2.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 13:02:38 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '6b7b7493c74fdbf3e6830cbb93aca5b11afc8de4036eeb62127cc6429a10f937e00fac092650e634d29280b943dc199f0d2ef149ce659c755556363e2d06d072' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '6b7b7493c74fdbf3e6830cbb93aca5b11afc8de4036eeb62127cc6429a10f937e00fac092650e634d29280b943dc199f0d2ef149ce659c755556363e2d06d072' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.4ms)[0m  SELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1
+Completed 200 OK in 18ms (Views: 12.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:02:52 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '6b7b7493c74fdbf3e6830cbb93aca5b11afc8de4036eeb62127cc6429a10f937e00fac092650e634d29280b943dc199f0d2ef149ce659c755556363e2d06d072' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '6b7b7493c74fdbf3e6830cbb93aca5b11afc8de4036eeb62127cc6429a10f937e00fac092650e634d29280b943dc199f0d2ef149ce659c755556363e2d06d072' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReminder Load (0.3ms)[0m  [1mSELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1[0m
+Completed 200 OK in 8ms (Views: 1.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:03:05 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '6b7b7493c74fdbf3e6830cbb93aca5b11afc8de4036eeb62127cc6429a10f937e00fac092650e634d29280b943dc199f0d2ef149ce659c755556363e2d06d072' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '6b7b7493c74fdbf3e6830cbb93aca5b11afc8de4036eeb62127cc6429a10f937e00fac092650e634d29280b943dc199f0d2ef149ce659c755556363e2d06d072' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.2ms)[0m  SELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1
+Completed 200 OK in 8ms (Views: 1.7ms | ActiveRecord: 0.8ms)
+  [1m[36mReminder Load (0.2ms)[0m  [1mSELECT  "reminders".* FROM "reminders"   ORDER BY "reminders"."id" DESC LIMIT 1[0m
+  [1m[35mSQL (1.5ms)[0m  DELETE FROM "reminders" WHERE "reminders"."id" = 5
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 13:14:51 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '6b7b7493c74fdbf3e6830cbb93aca5b11afc8de4036eeb62127cc6429a10f937e00fac092650e634d29280b943dc199f0d2ef149ce659c755556363e2d06d072' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '6b7b7493c74fdbf3e6830cbb93aca5b11afc8de4036eeb62127cc6429a10f937e00fac092650e634d29280b943dc199f0d2ef149ce659c755556363e2d06d072' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.4ms)[0m  SELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1
+Completed 200 OK in 67ms (Views: 6.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:14:53 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[36mAuth Load (0.4ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '6b7b7493c74fdbf3e6830cbb93aca5b11afc8de4036eeb62127cc6429a10f937e00fac092650e634d29280b943dc199f0d2ef149ce659c755556363e2d06d072' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '6b7b7493c74fdbf3e6830cbb93aca5b11afc8de4036eeb62127cc6429a10f937e00fac092650e634d29280b943dc199f0d2ef149ce659c755556363e2d06d072' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReminder Load (0.3ms)[0m  [1mSELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1[0m
+Completed 200 OK in 8ms (Views: 1.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:15:01 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[35mAuth Load (0.7ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '6b7b7493c74fdbf3e6830cbb93aca5b11afc8de4036eeb62127cc6429a10f937e00fac092650e634d29280b943dc199f0d2ef149ce659c755556363e2d06d072' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '6b7b7493c74fdbf3e6830cbb93aca5b11afc8de4036eeb62127cc6429a10f937e00fac092650e634d29280b943dc199f0d2ef149ce659c755556363e2d06d072' LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.3ms)[0m  SELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 13:15:21 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'token' LIMIT 1[0m
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2014-10-29 13:15:29 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1
+  [1m[36mAuth Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "auths"  WHERE "auths"."user_id" = 1 LIMIT 1[0m
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."user_id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mAuth Exists (0.2ms)[0m  SELECT  1 AS one FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "auths" SET "token" = ?, "updated_at" = ? WHERE "auths"."id" = 1[0m  [["token", "690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b"], ["updated_at", "2014-10-29 18:15:29.645047"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 32ms (Views: 0.8ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 13:15:29 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1
+Completed 200 OK in 11ms (Views: 5.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:15:30 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReminder Load (0.3ms)[0m  [1mSELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1[0m
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:15:58 -0500
+Processing by Api::V1::RemindersController#create as JSON
+  Parameters: {"reminder"=>{"title"=>"mateo pupa ma;ana", "deadline"=>"2013-12-11"}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "reminders" ("created_at", "deadline", "done", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-29 18:15:58.331645"], ["deadline", "2013-12-11"], ["done", "f"], ["title", "mateo pupa ma;ana"], ["updated_at", "2014-10-29 18:15:58.331645"], ["user_id", 1]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Completed 200 OK in 21ms (Views: 0.7ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:16:02 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReminder Load (0.2ms)[0m  [1mSELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1[0m
+Completed 200 OK in 9ms (Views: 1.3ms | ActiveRecord: 1.0ms)
+
+
+Started PUT "/api/v1/reminders/6" for 127.0.0.1 at 2014-10-29 13:16:12 -0500
+Processing by Api::V1::RemindersController#update as JSON
+  Parameters: {"reminder"=>{"done"=>1}, "id"=>"6"}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.1ms)[0m  SELECT  "reminders".* FROM "reminders"  WHERE "reminders"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "reminders" SET "done" = ?, "updated_at" = ? WHERE "reminders"."id" = 6  [["done", "t"], ["updated_at", "2014-10-29 18:16:12.434247"]]
+  [1m[36m (9.1ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 16ms (Views: 1.7ms | ActiveRecord: 10.0ms)
+
+
+Started PUT "/api/v1/reminders/6" for 127.0.0.1 at 2014-10-29 13:16:12 -0500
+Processing by Api::V1::RemindersController#update as JSON
+  Parameters: {"reminder"=>{"done"=>0}, "id"=>"6"}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.1ms)[0m  SELECT  "reminders".* FROM "reminders"  WHERE "reminders"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "reminders" SET "done" = ?, "updated_at" = ? WHERE "reminders"."id" = 6  [["done", "f"], ["updated_at", "2014-10-29 18:16:12.648637"]]
+  [1m[36m (9.4ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 17ms (Views: 1.5ms | ActiveRecord: 10.3ms)
+
+
+Started PUT "/api/v1/reminders/6" for 127.0.0.1 at 2014-10-29 13:16:13 -0500
+Processing by Api::V1::RemindersController#update as JSON
+  Parameters: {"reminder"=>{"done"=>1}, "id"=>"6"}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.1ms)[0m  SELECT  "reminders".* FROM "reminders"  WHERE "reminders"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "reminders" SET "done" = ?, "updated_at" = ? WHERE "reminders"."id" = 6  [["done", "t"], ["updated_at", "2014-10-29 18:16:13.288795"]]
+  [1m[36m (8.4ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 14ms (Views: 0.7ms | ActiveRecord: 9.2ms)
+
+
+Started PUT "/api/v1/reminders/6" for 127.0.0.1 at 2014-10-29 13:16:17 -0500
+Processing by Api::V1::RemindersController#update as JSON
+  Parameters: {"reminder"=>{"done"=>0}, "id"=>"6"}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.1ms)[0m  SELECT  "reminders".* FROM "reminders"  WHERE "reminders"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "reminders" SET "done" = ?, "updated_at" = ? WHERE "reminders"."id" = 6  [["done", "f"], ["updated_at", "2014-10-29 18:16:17.873254"]]
+  [1m[36m (8.3ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 14ms (Views: 0.7ms | ActiveRecord: 9.3ms)
+
+
+Started PUT "/api/v1/reminders/6" for 127.0.0.1 at 2014-10-29 13:16:18 -0500
+Processing by Api::V1::RemindersController#update as JSON
+  Parameters: {"reminder"=>{"done"=>1}, "id"=>"6"}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.1ms)[0m  SELECT  "reminders".* FROM "reminders"  WHERE "reminders"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "reminders" SET "done" = ?, "updated_at" = ? WHERE "reminders"."id" = 6  [["done", "t"], ["updated_at", "2014-10-29 18:16:18.685488"]]
+  [1m[36m (9.2ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 15ms (Views: 0.9ms | ActiveRecord: 9.9ms)
+
+
+Started DELETE "/api/v1/reminders/6" for 127.0.0.1 at 2014-10-29 13:16:24 -0500
+Processing by Api::V1::RemindersController#destroy as JSON
+  Parameters: {"id"=>"6", "reminder"=>{}}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.2ms)[0m  SELECT  "reminders".* FROM "reminders"  WHERE "reminders"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mSQL (10.0ms)[0m  [1mDELETE FROM "reminders" WHERE "reminders"."id" = 6[0m
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 10.7ms)
+
+
+Started POST "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:16:40 -0500
+Processing by Api::V1::RemindersController#create as JSON
+  Parameters: {"reminder"=>{"title"=>"hola", "deadline"=>"2012-12-12"}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "reminders" ("created_at", "deadline", "done", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-29 18:16:40.105580"], ["deadline", "2012-12-12"], ["done", "f"], ["title", "hola"], ["updated_at", "2014-10-29 18:16:40.105580"], ["user_id", 1]]
+  [1m[35m (8.0ms)[0m  commit transaction
+Completed 200 OK in 17ms (Views: 0.6ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:16:44 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReminder Load (0.2ms)[0m  [1mSELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1[0m
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/api/v1/reminders/7" for 127.0.0.1 at 2014-10-29 13:16:46 -0500
+Processing by Api::V1::RemindersController#update as JSON
+  Parameters: {"reminder"=>{"done"=>1}, "id"=>"7"}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.1ms)[0m  SELECT  "reminders".* FROM "reminders"  WHERE "reminders"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "reminders" SET "done" = ?, "updated_at" = ? WHERE "reminders"."id" = 7  [["done", "t"], ["updated_at", "2014-10-29 18:16:46.676589"]]
+  [1m[36m (9.2ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 15ms (Views: 0.7ms | ActiveRecord: 9.9ms)
+
+
+Started PUT "/api/v1/reminders/7" for 127.0.0.1 at 2014-10-29 13:17:01 -0500
+Processing by Api::V1::RemindersController#update as JSON
+  Parameters: {"reminder"=>{"done"=>0}, "id"=>"7"}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.1ms)[0m  SELECT  "reminders".* FROM "reminders"  WHERE "reminders"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "reminders" SET "done" = ?, "updated_at" = ? WHERE "reminders"."id" = 7  [["done", "f"], ["updated_at", "2014-10-29 18:17:01.624786"]]
+  [1m[36m (9.3ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 15ms (Views: 0.9ms | ActiveRecord: 10.1ms)
+
+
+Started DELETE "/api/v1/reminders/7" for 127.0.0.1 at 2014-10-29 13:17:11 -0500
+Processing by Api::V1::RemindersController#destroy as JSON
+  Parameters: {"id"=>"7", "reminder"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.1ms)[0m  SELECT  "reminders".* FROM "reminders"  WHERE "reminders"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mSQL (9.5ms)[0m  [1mDELETE FROM "reminders" WHERE "reminders"."id" = 7[0m
+Completed 200 OK in 15ms (Views: 0.5ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 13:22:30 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1
+Completed 200 OK in 7ms (Views: 3.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:22:31 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReminder Load (0.2ms)[0m  [1mSELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1[0m
+Completed 200 OK in 7ms (Views: 0.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:23:01 -0500
+Processing by Api::V1::RemindersController#create as JSON
+  Parameters: {"reminder"=>{"title"=>"hola lindos :)", "deadline"=>"2013-09-09"}}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "reminders" ("created_at", "deadline", "done", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-29 18:23:01.935539"], ["deadline", "2013-09-09"], ["done", "f"], ["title", "hola lindos :)"], ["updated_at", "2014-10-29 18:23:01.935539"], ["user_id", 1]]
+  [1m[35m (8.8ms)[0m  commit transaction
+Completed 200 OK in 17ms (Views: 0.5ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:23:01 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReminder Load (0.2ms)[0m  [1mSELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1[0m
+Completed 200 OK in 8ms (Views: 0.9ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:23:41 -0500
+Processing by Api::V1::RemindersController#create as JSON
+  Parameters: {"reminder"=>{"title"=>"Ir al gym", "deadline"=>"2014-10-29"}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "reminders" ("created_at", "deadline", "done", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-29 18:23:41.015027"], ["deadline", "2014-10-29"], ["done", "f"], ["title", "Ir al gym"], ["updated_at", "2014-10-29 18:23:41.015027"], ["user_id", 1]]
+  [1m[35m (10.4ms)[0m  commit transaction
+Completed 200 OK in 23ms (Views: 0.5ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:23:41 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[36mAuth Load (0.5ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReminder Load (0.3ms)[0m  [1mSELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1[0m
+Completed 200 OK in 10ms (Views: 2.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 13:24:03 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1
+Completed 200 OK in 8ms (Views: 3.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:24:08 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[36mAuth Load (0.5ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReminder Load (0.3ms)[0m  [1mSELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1[0m
+Completed 200 OK in 11ms (Views: 1.8ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:24:28 -0500
+Processing by Api::V1::RemindersController#create as JSON
+  Parameters: {"reminder"=>{"title"=>"hacer lo de organi", "deadline"=>"2014-09-09"}}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "reminders" ("created_at", "deadline", "done", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-29 18:24:28.307308"], ["deadline", "2014-09-09"], ["done", "f"], ["title", "hacer lo de organi"], ["updated_at", "2014-10-29 18:24:28.307308"], ["user_id", 1]]
+  [1m[35m (8.2ms)[0m  commit transaction
+Completed 200 OK in 30ms (Views: 0.6ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:24:28 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[36mAuth Load (0.4ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReminder Load (0.3ms)[0m  [1mSELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1[0m
+Completed 200 OK in 10ms (Views: 1.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 13:28:57 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.3ms)[0m  SELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1
+Completed 200 OK in 34ms (Views: 6.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:28:59 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReminder Load (0.3ms)[0m  [1mSELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1[0m
+Completed 200 OK in 17ms (Views: 10.6ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:29:08 -0500
+Processing by Api::V1::RemindersController#create as JSON
+  Parameters: {"reminder"=>{"title"=>"midmie", "deadline"=>"20134421"}}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 17ms
+
+ArgumentError (invalid date):
+  app/controllers/api/v1/reminders_controller.rb:9:in `parse'
+  app/controllers/api/v1/reminders_controller.rb:9:in `create'
+
+
+  Rendered /Users/santicarmo31/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.1ms)
+  Rendered /Users/santicarmo31/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/santicarmo31/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/santicarmo31/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (34.2ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:29:08 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.2ms)[0m  SELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 13:35:31 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1
+Completed 200 OK in 58ms (Views: 6.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:35:32 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReminder Load (0.3ms)[0m  [1mSELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1[0m
+Completed 200 OK in 16ms (Views: 9.4ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:35:39 -0500
+Processing by Api::V1::RemindersController#create as JSON
+  Parameters: {"reminder"=>{"title"=>"pupa", "deadline"=>"eff"}}
+  [1m[35mAuth Load (0.4ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 36ms
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/api/v1/reminders_controller.rb:18:in `create'
+
+
+  Rendered /Users/santicarmo31/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /Users/santicarmo31/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/santicarmo31/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/santicarmo31/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (28.5ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:35:39 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[35mAuth Load (0.5ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.2ms)[0m  SELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1
+Completed 200 OK in 8ms (Views: 1.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:38:00 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::RemindersController#create as JSON
+  Parameters: {"reminder"=>{"title"=>"sidfljsfkjsd", "deadline"=>"afsgdfgsdfg"}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 200 OK in 75ms (Views: 0.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:38:01 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.3ms)[0m  SELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1
+Completed 200 OK in 7ms (Views: 1.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 13:40:41 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.5ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.5ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1[0m
+Completed 200 OK in 19ms (Views: 12.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:40:42 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.3ms)[0m  SELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1
+Completed 200 OK in 10ms (Views: 2.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:40:50 -0500
+Processing by Api::V1::RemindersController#create as JSON
+  Parameters: {"reminder"=>{"title"=>"hkjahdkljshdf", "deadline"=>"nklasdfjlksad"}}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:40:50 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReminder Load (0.3ms)[0m  [1mSELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1[0m
+Completed 200 OK in 9ms (Views: 2.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:43:45 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.3ms)[0m  SELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1
+Completed 200 OK in 67ms (Views: 6.4ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:43:45 -0500
+Processing by Api::V1::RemindersController#create as JSON
+  Parameters: {"reminder"=>{"title"=>"sdgsdfgsdfg", "deadline"=>"rafasdfasdf"}}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 17ms
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/api/v1/reminders_controller.rb:19:in `create'
+
+
+  Rendered /Users/santicarmo31/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.3ms)
+  Rendered /Users/santicarmo31/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/santicarmo31/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/santicarmo31/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.6ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 13:50:37 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.1ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '690afa721e8dd3924439db31f642021b4045c033cda4f6c67cebc3fd19966bf0bdc0f56830a543979720b64bf419be0bd7411a33d2a285ca4d34bfd0aaac304b' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1[0m
+Completed 200 OK in 32ms (Views: 7.2ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2014-10-29 13:52:29 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (2.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1
+  [1m[36mAuth Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "auths"  WHERE "auths"."user_id" = 1 LIMIT 1[0m
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."user_id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mAuth Exists (0.7ms)[0m  SELECT  1 AS one FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mSQL (5.4ms)[0m  [1mUPDATE "auths" SET "token" = ?, "updated_at" = ? WHERE "auths"."id" = 1[0m  [["token", "80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0"], ["updated_at", "2014-10-29 18:52:29.156956"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 77ms (Views: 3.0ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 13:52:29 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1
+Completed 200 OK in 11ms (Views: 7.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 13:54:45 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1[0m
+Completed 200 OK in 7ms (Views: 3.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/courses" for 127.0.0.1 at 2014-10-29 13:56:22 -0500
+Processing by Api::V1::CoursesController#create as JSON
+  Parameters: {"course"=>{"end"=>"ertsert", "name"=>"erwert", "description"=>"ewrtwert", "start"=>"sdkfjhkjlsdf"}}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+Completed 200 OK in 19ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 13:57:03 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1
+Completed 200 OK in 8ms (Views: 4.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 13:57:09 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.7ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1[0m
+Completed 200 OK in 13ms (Views: 6.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:57:16 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.3ms)[0m  SELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1
+Completed 200 OK in 22ms (Views: 15.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:57:19 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReminder Load (0.3ms)[0m  [1mSELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1[0m
+Completed 200 OK in 7ms (Views: 1.9ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/api/v1/reminders/8" for 127.0.0.1 at 2014-10-29 13:57:20 -0500
+Processing by Api::V1::RemindersController#update as JSON
+  Parameters: {"reminder"=>{"done"=>1}, "id"=>"8"}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.2ms)[0m  SELECT  "reminders".* FROM "reminders"  WHERE "reminders"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "reminders" SET "done" = ?, "updated_at" = ? WHERE "reminders"."id" = 8  [["done", "t"], ["updated_at", "2014-10-29 18:57:20.932696"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 10ms (Views: 0.7ms | ActiveRecord: 2.5ms)
+
+
+Started PUT "/api/v1/reminders/8" for 127.0.0.1 at 2014-10-29 13:57:21 -0500
+Processing by Api::V1::RemindersController#update as JSON
+  Parameters: {"reminder"=>{"done"=>0}, "id"=>"8"}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.2ms)[0m  SELECT  "reminders".* FROM "reminders"  WHERE "reminders"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "reminders" SET "done" = ?, "updated_at" = ? WHERE "reminders"."id" = 8  [["done", "f"], ["updated_at", "2014-10-29 18:57:21.618323"]]
+  [1m[36m (9.2ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 21ms (Views: 0.8ms | ActiveRecord: 10.7ms)
+
+
+Started PUT "/api/v1/reminders/9" for 127.0.0.1 at 2014-10-29 13:57:22 -0500
+Processing by Api::V1::RemindersController#update as JSON
+  Parameters: {"reminder"=>{"done"=>1}, "id"=>"9"}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.2ms)[0m  SELECT  "reminders".* FROM "reminders"  WHERE "reminders"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "reminders" SET "done" = ?, "updated_at" = ? WHERE "reminders"."id" = 9  [["done", "t"], ["updated_at", "2014-10-29 18:57:22.378203"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 19ms (Views: 0.5ms | ActiveRecord: 2.3ms)
+
+
+Started PUT "/api/v1/reminders/9" for 127.0.0.1 at 2014-10-29 13:57:22 -0500
+Processing by Api::V1::RemindersController#update as JSON
+  Parameters: {"reminder"=>{"done"=>0}, "id"=>"9"}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.6ms)[0m  SELECT  "reminders".* FROM "reminders"  WHERE "reminders"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "reminders" SET "done" = ?, "updated_at" = ? WHERE "reminders"."id" = 9  [["done", "f"], ["updated_at", "2014-10-29 18:57:22.819279"]]
+  [1m[36m (9.4ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 23ms (Views: 1.6ms | ActiveRecord: 11.0ms)
+
+
+Started PUT "/api/v1/reminders/8" for 127.0.0.1 at 2014-10-29 13:57:27 -0500
+Processing by Api::V1::RemindersController#update as JSON
+  Parameters: {"reminder"=>{"done"=>1}, "id"=>"8"}
+  [1m[35mAuth Load (0.6ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.1ms)[0m  SELECT  "reminders".* FROM "reminders"  WHERE "reminders"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.5ms)[0m  UPDATE "reminders" SET "done" = ?, "updated_at" = ? WHERE "reminders"."id" = 8  [["done", "t"], ["updated_at", "2014-10-29 18:57:27.274932"]]
+  [1m[36m (9.5ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 21ms (Views: 0.6ms | ActiveRecord: 13.1ms)
+
+
+Started PUT "/api/v1/reminders/8" for 127.0.0.1 at 2014-10-29 13:57:28 -0500
+Processing by Api::V1::RemindersController#update as JSON
+  Parameters: {"reminder"=>{"done"=>0}, "id"=>"8"}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.2ms)[0m  SELECT  "reminders".* FROM "reminders"  WHERE "reminders"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "reminders" SET "done" = ?, "updated_at" = ? WHERE "reminders"."id" = 8  [["done", "f"], ["updated_at", "2014-10-29 18:57:28.096837"]]
+  [1m[36m (8.5ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 20ms (Views: 2.3ms | ActiveRecord: 9.7ms)
+
+
+Started PUT "/api/v1/reminders/8" for 127.0.0.1 at 2014-10-29 13:57:31 -0500
+Processing by Api::V1::RemindersController#update as JSON
+  Parameters: {"reminder"=>{"done"=>1}, "id"=>"8"}
+  [1m[35mAuth Load (0.4ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.2ms)[0m  SELECT  "reminders".* FROM "reminders"  WHERE "reminders"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "reminders" SET "done" = ?, "updated_at" = ? WHERE "reminders"."id" = 8  [["done", "t"], ["updated_at", "2014-10-29 18:57:31.723945"]]
+  [1m[36m (8.5ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 18ms (Views: 1.0ms | ActiveRecord: 10.0ms)
+
+
+Started PUT "/api/v1/reminders/8" for 127.0.0.1 at 2014-10-29 13:57:32 -0500
+Processing by Api::V1::RemindersController#update as JSON
+  Parameters: {"reminder"=>{"done"=>0}, "id"=>"8"}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.3ms)[0m  SELECT  "reminders".* FROM "reminders"  WHERE "reminders"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "reminders" SET "done" = ?, "updated_at" = ? WHERE "reminders"."id" = 8  [["done", "f"], ["updated_at", "2014-10-29 18:57:32.488453"]]
+  [1m[36m (9.1ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 18ms (Views: 0.9ms | ActiveRecord: 10.4ms)
+
+
+Started DELETE "/api/v1/reminders/8" for 127.0.0.1 at 2014-10-29 13:57:36 -0500
+Processing by Api::V1::RemindersController#destroy as JSON
+  Parameters: {"id"=>"8", "reminder"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.1ms)[0m  SELECT  "reminders".* FROM "reminders"  WHERE "reminders"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "reminders" WHERE "reminders"."id" = 8[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.5ms)
+
+
+Started PUT "/api/v1/reminders/10" for 127.0.0.1 at 2014-10-29 13:57:42 -0500
+Processing by Api::V1::RemindersController#update as JSON
+  Parameters: {"reminder"=>{"done"=>1}, "id"=>"10"}
+  [1m[35mAuth Load (0.4ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.2ms)[0m  SELECT  "reminders".* FROM "reminders"  WHERE "reminders"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "reminders" SET "done" = ?, "updated_at" = ? WHERE "reminders"."id" = 10  [["done", "t"], ["updated_at", "2014-10-29 18:57:42.951809"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 9ms (Views: 0.9ms | ActiveRecord: 2.1ms)
+
+
+Started PUT "/api/v1/reminders/10" for 127.0.0.1 at 2014-10-29 13:57:44 -0500
+Processing by Api::V1::RemindersController#update as JSON
+  Parameters: {"reminder"=>{"done"=>0}, "id"=>"10"}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.2ms)[0m  SELECT  "reminders".* FROM "reminders"  WHERE "reminders"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "reminders" SET "done" = ?, "updated_at" = ? WHERE "reminders"."id" = 10  [["done", "f"], ["updated_at", "2014-10-29 18:57:44.101016"]]
+  [1m[36m (9.1ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 20ms (Views: 0.7ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 13:58:13 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.2ms)[0m  SELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1
+Completed 200 OK in 9ms (Views: 1.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 13:58:48 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1[0m
+Completed 200 OK in 13ms (Views: 5.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 14:00:58 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[35mAuth Load (0.5ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.4ms)[0m  SELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1
+Completed 200 OK in 11ms (Views: 2.1ms | ActiveRecord: 1.2ms)
+
+
+Started PUT "/api/v1/reminders/9" for 127.0.0.1 at 2014-10-29 14:01:03 -0500
+Processing by Api::V1::RemindersController#update as JSON
+  Parameters: {"reminder"=>{"done"=>1}, "id"=>"9"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReminder Load (0.2ms)[0m  [1mSELECT  "reminders".* FROM "reminders"  WHERE "reminders"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "reminders" SET "done" = ?, "updated_at" = ? WHERE "reminders"."id" = 9[0m  [["done", "t"], ["updated_at", "2014-10-29 19:01:03.194998"]]
+  [1m[35m (8.4ms)[0m  commit transaction
+Completed 200 OK in 19ms (Views: 0.6ms | ActiveRecord: 9.9ms)
+
+
+Started PUT "/api/v1/reminders/9" for 127.0.0.1 at 2014-10-29 14:01:03 -0500
+Processing by Api::V1::RemindersController#update as JSON
+  Parameters: {"reminder"=>{"done"=>0}, "id"=>"9"}
+  [1m[36mAuth Load (0.5ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReminder Load (0.2ms)[0m  [1mSELECT  "reminders".* FROM "reminders"  WHERE "reminders"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "reminders" SET "done" = ?, "updated_at" = ? WHERE "reminders"."id" = 9[0m  [["done", "f"], ["updated_at", "2014-10-29 19:01:03.792822"]]
+  [1m[35m (8.8ms)[0m  commit transaction
+Completed 200 OK in 20ms (Views: 0.5ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 14:07:21 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.7ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1[0m
+Completed 200 OK in 13ms (Views: 7.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 14:07:25 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.4ms)[0m  SELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1
+Completed 200 OK in 16ms (Views: 2.0ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 14:07:48 -0500
+Processing by Api::V1::RemindersController#create as JSON
+  Parameters: {"reminder"=>{"title"=>"hola", "deadline"=>"2013-07-12"}}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "reminders" ("created_at", "deadline", "done", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-10-29 19:07:48.698755"], ["deadline", "2013-07-12"], ["done", "f"], ["title", "hola"], ["updated_at", "2014-10-29 19:07:48.698755"], ["user_id", 1]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 12ms (Views: 0.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 14:07:48 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[35mAuth Load (0.8ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (1.2ms)[0m  SELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1
+Completed 200 OK in 14ms (Views: 4.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 14:08:25 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (1.1ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1[0m
+Completed 200 OK in 18ms (Views: 7.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 14:08:26 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[35mAuth Load (0.6ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.6ms)[0m  SELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1
+Completed 200 OK in 12ms (Views: 3.5ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 14:08:42 -0500
+Processing by Api::V1::RemindersController#create as JSON
+  Parameters: {"reminder"=>{"title"=>"su mama", "deadline"=>"2014/5/5"}}
+  [1m[36mAuth Load (0.6ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "reminders" ("created_at", "deadline", "done", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-10-29 19:08:42.362249"], ["deadline", "2014-05-05"], ["done", "f"], ["title", "su mama"], ["updated_at", "2014-10-29 19:08:42.362249"], ["user_id", 1]]
+  [1m[36m (8.7ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 27ms (Views: 1.6ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 14:08:42 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[35mAuth Load (0.5ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.3ms)[0m  SELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1
+Completed 200 OK in 9ms (Views: 2.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 14:09:57 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1[0m
+Completed 200 OK in 9ms (Views: 4.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 14:09:58 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[35mAuth Load (2.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.3ms)[0m  SELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1
+Completed 200 OK in 14ms (Views: 2.8ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 14:10:12 -0500
+Processing by Api::V1::RemindersController#create as JSON
+  Parameters: {"reminder"=>{"title"=>"hola", "deadline"=>"2013/08/08"}}
+  [1m[36mAuth Load (0.4ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "reminders" ("created_at", "deadline", "done", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-10-29 19:10:12.238889"], ["deadline", "2013-08-08"], ["done", "f"], ["title", "hola"], ["updated_at", "2014-10-29 19:10:12.238889"], ["user_id", 1]]
+  [1m[36m (9.4ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 31ms (Views: 2.2ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 14:10:12 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[35mAuth Load (0.4ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.5ms)[0m  SELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1
+Completed 200 OK in 10ms (Views: 3.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 14:11:15 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1[0m
+Completed 200 OK in 8ms (Views: 2.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 14:11:17 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.3ms)[0m  SELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1
+Completed 200 OK in 11ms (Views: 2.8ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 14:11:33 -0500
+Processing by Api::V1::RemindersController#create as JSON
+  Parameters: {"reminder"=>{"title"=>"holi", "deadline"=>"2014/09/09"}}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "reminders" ("created_at", "deadline", "done", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-10-29 19:11:33.453965"], ["deadline", "2014-09-09"], ["done", "f"], ["title", "holi"], ["updated_at", "2014-10-29 19:11:33.453965"], ["user_id", 1]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 9ms (Views: 0.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 14:11:33 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.3ms)[0m  SELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1
+Completed 200 OK in 23ms (Views: 12.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 14:13:30 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1[0m
+Completed 200 OK in 10ms (Views: 6.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 14:13:31 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '80c85c9df17a7e8820fe1316e4bd2365a73386b63ab0c0194c5fd75838f28f849908c631b91f2231f04bb82c96792a41381cad18f31d72a7f4e87195a939d9e0' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.3ms)[0m  SELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1
+Completed 200 OK in 8ms (Views: 2.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 14:15:40 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (1.6ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '(null)' LIMIT 1[0m
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 10ms (Views: 1.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 14:15:55 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '(null)' LIMIT 1
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2014-10-29 14:16:12 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1[0m
+  [1m[35mAuth Exists (0.3ms)[0m  SELECT  1 AS one FROM "auths"  WHERE "auths"."user_id" = 1 LIMIT 1
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAuth Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "auths" SET "token" = ?, "updated_at" = ? WHERE "auths"."id" = 1  [["token", "1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c"], ["updated_at", "2014-10-29 19:16:12.443454"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 27ms (Views: 2.6ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 14:16:12 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.5ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1[0m
+Completed 200 OK in 12ms (Views: 6.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 14:16:15 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.3ms)[0m  SELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1
+Completed 200 OK in 15ms (Views: 3.0ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 14:16:35 -0500
+Processing by Api::V1::RemindersController#create as JSON
+  Parameters: {"reminder"=>{"title"=>":)", "deadline"=>"2013/06/06"}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "reminders" ("created_at", "deadline", "done", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-10-29 19:16:35.706663"], ["deadline", "2013-06-06"], ["done", "f"], ["title", ":)"], ["updated_at", "2014-10-29 19:16:35.706663"], ["user_id", 1]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 12ms (Views: 0.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 14:16:35 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.3ms)[0m  SELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1
+Completed 200 OK in 11ms (Views: 4.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 14:20:07 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[36mAuth Load (0.7ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReminder Load (0.3ms)[0m  [1mSELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1[0m
+Completed 200 OK in 11ms (Views: 3.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 14:20:19 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.3ms)[0m  SELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1
+Completed 200 OK in 11ms (Views: 5.4ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 14:20:39 -0500
+Processing by Api::V1::RemindersController#create as JSON
+  Parameters: {"reminder"=>{"title"=>"xazcs", "deadline"=>"20141010"}}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "reminders" ("created_at", "deadline", "done", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-10-29 19:20:39.165972"], ["deadline", "2014-10-10"], ["done", "f"], ["title", "xazcs"], ["updated_at", "2014-10-29 19:20:39.165972"], ["user_id", 1]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 24ms (Views: 0.9ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 14:20:39 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.3ms)[0m  SELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1
+Completed 200 OK in 13ms (Views: 4.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 14:39:24 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1[0m
+Completed 200 OK in 16ms (Views: 6.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 14:40:50 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (0.6ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1
+Completed 200 OK in 24ms (Views: 16.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 14:40:54 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.5ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1[0m
+Completed 200 OK in 19ms (Views: 12.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 14:42:31 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.3ms)[0m  SELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1
+Completed 200 OK in 14ms (Views: 7.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 14:42:48 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReminder Load (0.4ms)[0m  [1mSELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1[0m
+Completed 200 OK in 10ms (Views: 5.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 14:43:50 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.2ms)[0m  SELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1
+Completed 200 OK in 12ms (Views: 4.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 14:46:32 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1[0m
+Completed 200 OK in 8ms (Views: 3.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 14:47:59 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1
+Completed 200 OK in 7ms (Views: 3.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 14:48:05 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReminder Load (0.5ms)[0m  [1mSELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1[0m
+Completed 200 OK in 8ms (Views: 3.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 14:48:17 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.3ms)[0m  SELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1
+Completed 200 OK in 9ms (Views: 3.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 14:49:13 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1[0m
+Completed 200 OK in 7ms (Views: 3.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 14:49:48 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[35mAuth Load (0.4ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.3ms)[0m  SELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/api/v1/reminders/16" for 127.0.0.1 at 2014-10-29 14:49:52 -0500
+Processing by Api::V1::RemindersController#destroy as JSON
+  Parameters: {"id"=>"16", "reminder"=>{}}
+  [1m[36mAuth Load (0.5ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReminder Load (0.1ms)[0m  [1mSELECT  "reminders".* FROM "reminders"  WHERE "reminders"."id" = ? LIMIT 1[0m  [["id", 16]]
+  [1m[35mSQL (1.2ms)[0m  DELETE FROM "reminders" WHERE "reminders"."id" = 16
+Completed 200 OK in 10ms (Views: 0.9ms | ActiveRecord: 2.3ms)
+
+
+Started DELETE "/api/v1/reminders/15" for 127.0.0.1 at 2014-10-29 14:49:53 -0500
+Processing by Api::V1::RemindersController#destroy as JSON
+  Parameters: {"id"=>"15", "reminder"=>{}}
+  [1m[36mAuth Load (0.5ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReminder Load (0.4ms)[0m  [1mSELECT  "reminders".* FROM "reminders"  WHERE "reminders"."id" = ? LIMIT 1[0m  [["id", 15]]
+  [1m[35mSQL (10.2ms)[0m  DELETE FROM "reminders" WHERE "reminders"."id" = 15
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 11.5ms)
+
+
+Started DELETE "/api/v1/reminders/14" for 127.0.0.1 at 2014-10-29 14:49:55 -0500
+Processing by Api::V1::RemindersController#destroy as JSON
+  Parameters: {"id"=>"14", "reminder"=>{}}
+  [1m[36mAuth Load (0.9ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReminder Load (0.2ms)[0m  [1mSELECT  "reminders".* FROM "reminders"  WHERE "reminders"."id" = ? LIMIT 1[0m  [["id", 14]]
+  [1m[35mSQL (8.6ms)[0m  DELETE FROM "reminders" WHERE "reminders"."id" = 14
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 10.3ms)
+
+
+Started DELETE "/api/v1/reminders/13" for 127.0.0.1 at 2014-10-29 14:49:56 -0500
+Processing by Api::V1::RemindersController#destroy as JSON
+  Parameters: {"id"=>"13", "reminder"=>{}}
+  [1m[36mAuth Load (0.6ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReminder Load (0.2ms)[0m  [1mSELECT  "reminders".* FROM "reminders"  WHERE "reminders"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35mSQL (10.1ms)[0m  DELETE FROM "reminders" WHERE "reminders"."id" = 13
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 11.1ms)
+
+
+Started DELETE "/api/v1/reminders/12" for 127.0.0.1 at 2014-10-29 14:49:58 -0500
+Processing by Api::V1::RemindersController#destroy as JSON
+  Parameters: {"id"=>"12", "reminder"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReminder Load (0.2ms)[0m  [1mSELECT  "reminders".* FROM "reminders"  WHERE "reminders"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35mSQL (9.7ms)[0m  DELETE FROM "reminders" WHERE "reminders"."id" = 12
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 10.3ms)
+
+
+Started DELETE "/api/v1/reminders/11" for 127.0.0.1 at 2014-10-29 14:50:00 -0500
+Processing by Api::V1::RemindersController#destroy as JSON
+  Parameters: {"id"=>"11", "reminder"=>{}}
+  [1m[36mAuth Load (0.4ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReminder Load (0.7ms)[0m  [1mSELECT  "reminders".* FROM "reminders"  WHERE "reminders"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mSQL (9.2ms)[0m  DELETE FROM "reminders" WHERE "reminders"."id" = 11
+Completed 200 OK in 19ms (Views: 0.2ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-29 14:50:52 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.5ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1[0m
+Completed 200 OK in 7ms (Views: 2.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 14:54:06 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReminder Load (0.3ms)[0m  SELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1
+Completed 200 OK in 9ms (Views: 1.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-29 14:55:19 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '1a7a334320e44733cd54c78767bab433f253a45ef90d26d7c785cbd63d094b9084d1484ded4461452fa0526ceab48948fc65b63de05ceb72b0dfeda3bca2413c' LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReminder Load (0.4ms)[0m  [1mSELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1[0m
+Completed 200 OK in 11ms (Views: 2.4ms | ActiveRecord: 1.2ms)

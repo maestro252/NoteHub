@@ -11,7 +11,9 @@
 #import "searchTableTableViewController.h"
 
 @interface HomeViewController : UIViewController <CommunicationDelegate>
-
+@property (weak, nonatomic) IBOutlet UIButton *newsFeedButton;
+@property (weak, nonatomic) IBOutlet UIButton *calendarButton;
+@property (weak, nonatomic) IBOutlet UIButton *remindersButton;
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 - (IBAction)searchAction:(id)sender;
 - (IBAction)settingsAction:(id)sender;

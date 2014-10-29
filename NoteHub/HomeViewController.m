@@ -18,7 +18,9 @@
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"isLogged"]) {
         [self performSegueWithIdentifier:@"login_segue" sender:nil];
     }
-    
+    [[self.remindersButton layer] setCornerRadius:10];
+    [[self.calendarButton layer] setCornerRadius:10];
+    [[self.newsFeedButton layer] setCornerRadius:10];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }

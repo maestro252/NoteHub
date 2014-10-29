@@ -3,13 +3,19 @@ class Api::V1::RemindersController < ApplicationController
   respond_to :json
   before_action :authenticate!
   def create
+    exc = false
     @reminder = Reminder.new create_params
     @reminder.user = current_user
     @reminder.done = false
-
+    begin
+      @reminder.deadline = DateTime.parse create_params[:deadline]
+    rescue
+      exc = true
+      render json:{success: false, errors: ["Formato de fecha invalido"]}
+    end
     if @reminder.save
       render json:{success: true, reminder: @reminder}
-    else
+    elsif !exc
       render json:{success: false, errors: @reminder.errors}
     end
   end
@@ -20,6 +26,15 @@ class Api::V1::RemindersController < ApplicationController
       except: [:priority, :description]
 
 
+  end
+
+  def destroy
+    @reminder = Reminder.find params[:id]
+    if @reminder.delete
+      render json:{success: true}
+    else
+      render json:{success: false, errors: @reminder.errors}
+    end
   end
 
   def update

@@ -324,25 +324,27 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJ7-F1-LPf">
-                                <rect key="frame" x="401" y="480" width="252" height="237"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <state key="normal" title="Button">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJ7-F1-LPf">
+                                <rect key="frame" x="382" y="510" width="252" height="237"/>
+                                <color key="backgroundColor" red="0.0" green="0.76193576388888884" blue="0.0043588933469511267" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Calendario">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fre-YN-iZm">
-                                <rect key="frame" x="115" y="185" width="263" height="532"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <state key="normal" title="Button">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fre-YN-iZm">
+                                <rect key="frame" x="96" y="215" width="263" height="532"/>
+                                <color key="backgroundColor" red="0.14965179988373961" green="0.6364464331607933" blue="0.88932291666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="News Feed">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Th-1V-Syf">
-                                <rect key="frame" x="401" y="185" width="252" height="243"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Th-1V-Syf">
+                                <rect key="frame" x="382" y="215" width="252" height="246"/>
+                                <color key="backgroundColor" red="0.087750579274306753" green="0.72892992424242431" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Recordatorios">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="jjJ-QS-GZX" kind="push" id="pzk-Wr-AXb"/>
@@ -363,6 +365,9 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="calendarButton" destination="VJ7-F1-LPf" id="FS3-mq-b42"/>
+                        <outlet property="newsFeedButton" destination="Fre-YN-iZm" id="abS-e9-Fm8"/>
+                        <outlet property="remindersButton" destination="0Th-1V-Syf" id="wox-nV-86q"/>
                         <outlet property="searchTextField" destination="M5L-zR-mGc" id="4s4-Nn-Vb7"/>
                         <segue destination="QJv-RZ-30u" kind="modal" identifier="login_segue" id="KCi-4B-k2r"/>
                         <segue destination="yE8-xY-y5C" kind="popover" identifier="setting_segue" popoverAnchorBarButtonItem="hg1-bp-lLA" id="fje-a0-PN0">
@@ -539,10 +544,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" id="kg7-YB-5xI">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" textLabel="kS3-cP-Vgl" detailTextLabel="GQ6-ba-n8k" style="IBUITableViewCellStyleValue1" id="kg7-YB-5xI">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kg7-YB-5xI" id="RaE-oU-WQn">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kS3-cP-Vgl">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GQ6-ba-n8k">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>

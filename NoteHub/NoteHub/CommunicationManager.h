@@ -41,6 +41,7 @@
 -(void) createReminder: (NSString *) title deadline: (NSString *) deadline;
 -(void)getReminders;
 -(void)updateReminderState:(Boolean)state id_reminder: (NSInteger) id_reminder;
+-(void) deleteReminderById: (NSInteger) reminder_id;
 
 
 @end

@@ -230,6 +230,16 @@
     [self send];
 }
 
+-(void) deleteReminderById: (NSInteger) reminder_id{
+    [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
+    
+    [self.request setURL:[self makeURLWithService:[NSString stringWithFormat: @"api/v1/reminders/%ld", (long)reminder_id]]];
+    
+    [self.request setHTTPMethod:@"DELETE"];
+    [self send];
+    
+}
+
 -(void)updateReminderState:(Boolean)state id_reminder: (NSInteger) id_reminder{
     [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
     
