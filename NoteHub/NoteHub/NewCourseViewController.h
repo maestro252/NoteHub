@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CommunicationManager.h"
 #import "courseTableViewController.h"
-@interface NewCourseViewController : UIViewController <CommunicationDelegate>
+@interface NewCourseViewController : UIViewController <CommunicationDelegate, UITableViewDataSource, UITableViewDelegate>
 {
     __weak IBOutlet UITextField *courseNameTextField;
     
@@ -17,6 +17,7 @@
     __weak IBOutlet UITextField *startDateTextField;
     __weak IBOutlet UITextField *endDateTextField;
 }
+
 - (IBAction)saveButton:(id)sender;
 
 @end

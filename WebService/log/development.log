@@ -20549,3 +20549,149 @@ Processing by Api::V1::RemindersController#update as JSON
   [1m[35mSQL (0.2ms)[0m  UPDATE "reminders" SET "done" = ?, "updated_at" = ? WHERE "reminders"."id" = 18  [["done", "f"], ["updated_at", "2014-10-29 20:27:42.608797"]]
   [1m[36m (8.2ms)[0m  [1mcommit transaction[0m
 Completed 200 OK in 14ms (Views: 1.3ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-30 16:15:58 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (0.5ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'b6220abe6234292dd220b2b99c607cd8df334db9ce731b60f0f3368d5b09fbc8cc5afd749fa6c44b70f29207ead9b22959630e13db8245f909d217f0b4af2918' LIMIT 1
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'b6220abe6234292dd220b2b99c607cd8df334db9ce731b60f0f3368d5b09fbc8cc5afd749fa6c44b70f29207ead9b22959630e13db8245f909d217f0b4af2918' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCourse Load (1.0ms)[0m  SELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 3
+Completed 200 OK in 63ms (Views: 6.1ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-10-30 16:16:14 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'b6220abe6234292dd220b2b99c607cd8df334db9ce731b60f0f3368d5b09fbc8cc5afd749fa6c44b70f29207ead9b22959630e13db8245f909d217f0b4af2918' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'b6220abe6234292dd220b2b99c607cd8df334db9ce731b60f0f3368d5b09fbc8cc5afd749fa6c44b70f29207ead9b22959630e13db8245f909d217f0b4af2918' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mReminder Load (0.9ms)[0m  [1mSELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 3[0m
+Completed 200 OK in 17ms (Views: 10.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/v1/shares" for 127.0.0.1 at 2014-10-30 16:16:22 -0500
+Processing by Api::V1::SharesController#index as JSON
+  Parameters: {"share"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'b6220abe6234292dd220b2b99c607cd8df334db9ce731b60f0f3368d5b09fbc8cc5afd749fa6c44b70f29207ead9b22959630e13db8245f909d217f0b4af2918' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mShare Load (0.6ms)[0m  SELECT "shares".* FROM "shares"  WHERE "shares"."user_id" = 3
+  [1m[36mNote Load (0.6ms)[0m  [1mSELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mNote Load (0.2ms)[0m  SELECT  "notes".* FROM "notes"  WHERE "notes"."id" = ? LIMIT 1  [["id", 20]]
+Completed 200 OK in 24ms (Views: 17.9ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-30 16:16:23 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'b6220abe6234292dd220b2b99c607cd8df334db9ce731b60f0f3368d5b09fbc8cc5afd749fa6c44b70f29207ead9b22959630e13db8245f909d217f0b4af2918' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'b6220abe6234292dd220b2b99c607cd8df334db9ce731b60f0f3368d5b09fbc8cc5afd749fa6c44b70f29207ead9b22959630e13db8245f909d217f0b4af2918' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 3[0m
+Completed 200 OK in 8ms (Views: 1.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/courses/18/notes" for 127.0.0.1 at 2014-10-30 16:16:24 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"id"=>"18", "note"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'b6220abe6234292dd220b2b99c607cd8df334db9ce731b60f0f3368d5b09fbc8cc5afd749fa6c44b70f29207ead9b22959630e13db8245f909d217f0b4af2918' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'b6220abe6234292dd220b2b99c607cd8df334db9ce731b60f0f3368d5b09fbc8cc5afd749fa6c44b70f29207ead9b22959630e13db8245f909d217f0b4af2918' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCourse Load (0.3ms)[0m  SELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 18 AND "courses"."user_id" = 3 LIMIT 1
+  [1m[36mNote Load (0.7ms)[0m  [1mSELECT "notes".* FROM "notes"  WHERE "notes"."course_id" = ?[0m  [["course_id", 18]]
+Completed 200 OK in 17ms (Views: 2.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-30 16:16:25 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'b6220abe6234292dd220b2b99c607cd8df334db9ce731b60f0f3368d5b09fbc8cc5afd749fa6c44b70f29207ead9b22959630e13db8245f909d217f0b4af2918' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'b6220abe6234292dd220b2b99c607cd8df334db9ce731b60f0f3368d5b09fbc8cc5afd749fa6c44b70f29207ead9b22959630e13db8245f909d217f0b4af2918' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 3
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/courses/18/notes" for 127.0.0.1 at 2014-10-30 16:21:14 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"id"=>"18", "note"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'b6220abe6234292dd220b2b99c607cd8df334db9ce731b60f0f3368d5b09fbc8cc5afd749fa6c44b70f29207ead9b22959630e13db8245f909d217f0b4af2918' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'b6220abe6234292dd220b2b99c607cd8df334db9ce731b60f0f3368d5b09fbc8cc5afd749fa6c44b70f29207ead9b22959630e13db8245f909d217f0b4af2918' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 18 AND "courses"."user_id" = 3 LIMIT 1[0m
+  [1m[35mNote Load (0.2ms)[0m  SELECT "notes".* FROM "notes"  WHERE "notes"."course_id" = ?  [["course_id", 18]]
+Completed 200 OK in 9ms (Views: 2.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-30 16:21:26 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'b6220abe6234292dd220b2b99c607cd8df334db9ce731b60f0f3368d5b09fbc8cc5afd749fa6c44b70f29207ead9b22959630e13db8245f909d217f0b4af2918' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'b6220abe6234292dd220b2b99c607cd8df334db9ce731b60f0f3368d5b09fbc8cc5afd749fa6c44b70f29207ead9b22959630e13db8245f909d217f0b4af2918' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 3[0m
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-30 16:29:18 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'b6220abe6234292dd220b2b99c607cd8df334db9ce731b60f0f3368d5b09fbc8cc5afd749fa6c44b70f29207ead9b22959630e13db8245f909d217f0b4af2918' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'b6220abe6234292dd220b2b99c607cd8df334db9ce731b60f0f3368d5b09fbc8cc5afd749fa6c44b70f29207ead9b22959630e13db8245f909d217f0b4af2918' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 3
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-30 16:38:09 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'b6220abe6234292dd220b2b99c607cd8df334db9ce731b60f0f3368d5b09fbc8cc5afd749fa6c44b70f29207ead9b22959630e13db8245f909d217f0b4af2918' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'b6220abe6234292dd220b2b99c607cd8df334db9ce731b60f0f3368d5b09fbc8cc5afd749fa6c44b70f29207ead9b22959630e13db8245f909d217f0b4af2918' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 3[0m
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-30 16:38:22 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'b6220abe6234292dd220b2b99c607cd8df334db9ce731b60f0f3368d5b09fbc8cc5afd749fa6c44b70f29207ead9b22959630e13db8245f909d217f0b4af2918' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'b6220abe6234292dd220b2b99c607cd8df334db9ce731b60f0f3368d5b09fbc8cc5afd749fa6c44b70f29207ead9b22959630e13db8245f909d217f0b4af2918' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 3
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-30 17:57:13 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'b6220abe6234292dd220b2b99c607cd8df334db9ce731b60f0f3368d5b09fbc8cc5afd749fa6c44b70f29207ead9b22959630e13db8245f909d217f0b4af2918' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'b6220abe6234292dd220b2b99c607cd8df334db9ce731b60f0f3368d5b09fbc8cc5afd749fa6c44b70f29207ead9b22959630e13db8245f909d217f0b4af2918' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 3[0m
+Completed 200 OK in 9ms (Views: 1.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-10-30 17:57:24 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'b6220abe6234292dd220b2b99c607cd8df334db9ce731b60f0f3368d5b09fbc8cc5afd749fa6c44b70f29207ead9b22959630e13db8245f909d217f0b4af2918' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'b6220abe6234292dd220b2b99c607cd8df334db9ce731b60f0f3368d5b09fbc8cc5afd749fa6c44b70f29207ead9b22959630e13db8245f909d217f0b4af2918' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 3
+Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 0.5ms)
