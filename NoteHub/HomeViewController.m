@@ -50,6 +50,11 @@
     [self performSegueWithIdentifier:@"setting_segue" sender:nil];
 }
 
+- (IBAction)calendar_action:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"calshow://"]];
+
+}
+
 - (void)communication:(CommunicationManager *)comm didReceiveData:(NSDictionary *)dict{
     NSLog(@"%@",dict);
     [self performSegueWithIdentifier:@"search_segue" sender:dict];
@@ -67,4 +72,5 @@
         
     }
 }
+
 @end
