@@ -51,7 +51,7 @@
     // Configure the cell...
     
     cell.textLabel.text = [[data objectAtIndex:indexPath.row] objectForKey:@"title"];
-    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    cell.accessoryType = UITableViewCellAccessoryNone;
     
     return cell;
 }
