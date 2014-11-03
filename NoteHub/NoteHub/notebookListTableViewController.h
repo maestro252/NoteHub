@@ -14,6 +14,8 @@
     NSMutableArray * data;
     NSDictionary * database;
     NSString * title;
+    NSMutableString * days;
+    __weak IBOutlet UILabel *days_label;
 }
 @property (nonatomic, strong) NSDictionary * course;
 - (IBAction)createNote:(id)sender;

@@ -32,6 +32,11 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    CommunicationManager * c = [CommunicationManager new];
+    [c setDelegate:self];
+    [c setTag:10];
+    [c getWeekdays:[[self.course objectForKey:@"id"] integerValue]];
+    
     self.navigationItem.title = [self.course objectForKey:@"name"];
     
     [self reload];
@@ -53,6 +58,17 @@
 
 - (void)communication:(CommunicationManager *)comm didReceiveData:(NSDictionary *)dict {
     
+    if (comm.tag == 10) {
+        days = [NSMutableString new];
+        
+        for (NSDictionary * inner in [dict objectForKey:@"schedules"]) {
+            [days appendFormat:@"%@ ", [inner objectForKey:@"weekday"]];
+        }
+        
+        days_label.text = ([days isEqualToString:@""])? @"Sin horarios :'(" : days;
+        
+    } else {
+    
     @try {
         NSLog(@"%@", dict);
         
@@ -66,6 +82,7 @@
     }
     @catch (NSException *exception) { }
     @finally { }
+    }
     
 }
 

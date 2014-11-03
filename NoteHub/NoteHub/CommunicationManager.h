@@ -43,5 +43,6 @@
 -(void)updateReminderState:(Boolean)state id_reminder: (NSInteger) id_reminder;
 -(void) deleteReminderById: (NSInteger) reminder_id;
 -(void)createSchedule: (NSString *)id_course weekday: (NSString *) weekday time: (NSString *) time classroom: (NSString *) classroom;
+- (void)getWeekdays:(NSInteger)id_course;
 
 @end

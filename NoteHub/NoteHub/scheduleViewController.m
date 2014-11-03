@@ -25,8 +25,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    NSLog(@"%d", self.id_course);
+- (void)communication:(CommunicationManager *)comm didReceiveData:(NSDictionary *)dict {
+    NSLog(@"%@", dict);
 }
 
 /*
@@ -42,7 +42,7 @@
 - (IBAction)addSchedule_action:(id)sender {
     CommunicationManager * cm = [CommunicationManager new];
     [cm setDelegate:self];
-    [cm createSchedule:[NSString stringWithFormat:@"%d", self.id_course] weekday:[self.weekday titleForSegmentAtIndex:self.weekday.selectedSegmentIndex] time:@"3:00" classroom:self.classroom.text];
+    [cm createSchedule:[NSString stringWithFormat:@"%ld", (long)self.id_course] weekday:[self.weekday titleForSegmentAtIndex:self.weekday.selectedSegmentIndex] time:@"3:00" classroom:self.classroom.text];
     
     [self.navigationController popViewControllerAnimated:YES];
 }

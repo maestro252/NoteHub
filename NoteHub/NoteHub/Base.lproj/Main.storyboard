@@ -654,19 +654,21 @@
                             <rect key="frame" x="0.0" y="0.0" width="308" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPy-AN-YCb">
-                                    <rect key="frame" x="249" y="8" width="51" height="30"/>
-                                    <state key="normal" title="Ajustes"/>
-                                    <connections>
-                                        <action selector="settings:" destination="vOt-bD-Q2D" eventType="touchUpInside" id="6Tw-zk-NJT"/>
-                                    </connections>
-                                </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sin horarios :'(" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZS-QO-w8D">
-                                    <rect key="frame" x="14" y="12" width="227" height="29"/>
+                                    <rect key="frame" x="14" y="7" width="227" height="29"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="25"/>
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="STV-t1-gNq">
+                                    <rect key="frame" x="3" y="42" width="308" height="2"/>
+                                </progressView>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPy-AN-YCb">
+                                    <rect key="frame" x="278" y="11" width="22" height="22"/>
+                                    <connections>
+                                        <action selector="settings:" destination="vOt-bD-Q2D" eventType="touchUpInside" id="6Tw-zk-NJT"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
@@ -691,6 +693,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="days_label" destination="aZS-QO-w8D" id="mt4-TE-mLV"/>
                         <segue destination="GCg-Qm-WV1" kind="push" identifier="schedule_segue" id="tqO-2T-HDG"/>
                     </connections>
                 </tableViewController>
