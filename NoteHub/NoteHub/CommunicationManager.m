@@ -159,6 +159,34 @@
     [self send];
 }
 
+- (void)getWeekdays:(NSInteger)id_course {
+    [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
+    
+    [self.request setURL:[self makeURLWithService:[NSString stringWithFormat: @"api/v1/schedules/%ld", (long)id_course]]];
+    [self.request setHTTPMethod:@"GET"];
+    [self send];
+}
+
+-(void)createSchedule: (NSString *)id_course weekday: (NSString *) weekday time: (NSString *) time classroom: (NSString *) classroom{
+    
+    [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
+    
+    [self.request setURL:[self makeURLWithService:[NSString stringWithFormat: @"api/v1/schedules"]]];
+    [self.request setHTTPBody:[self makeJSONWithDictionary: @{
+                                                              @"schedule":
+                                                                  @{
+                                                                      @"course_id":id_course,
+                                                                      @"weekday": weekday,
+                                                                      @"time" : time,
+                                                                      @"classroom" : classroom
+                                                                      }
+                                                              }]];
+    
+    [self.request setHTTPMethod:@"POST"];
+    
+    [self send];
+}
+
 -(void)getShareNote{
     [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
     

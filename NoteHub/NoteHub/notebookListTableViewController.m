@@ -7,12 +7,16 @@
 //
 
 #import "notebookListTableViewController.h"
+#import "scheduleViewController.h"
 
 @interface notebookListTableViewController ()
 
 @end
 
 @implementation notebookListTableViewController
+- (IBAction)settings:(id)sender {
+    [self performSegueWithIdentifier:@"schedule_segue" sender:nil];
+}
 
 - (void)viewDidLoad {
     data = [NSMutableArray new];
@@ -206,6 +210,14 @@
         [c setDelegate:self];
         [c getNotesForCourse:[[self.course objectForKey:@"id"] integerValue]];
         
+    }
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"schedule_segue"]){
+        scheduleViewController * svc = (scheduleViewController *)segue.destinationViewController;
+        
+        [svc setId_course:[[self.course objectForKey:@"id"] integerValue]];
     }
 }
 @end

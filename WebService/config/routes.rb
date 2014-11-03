@@ -13,9 +13,10 @@ Rails.application.routes.draw do
       get 'users/usertoid/:id', to:'users#user_id_by_username'
       resources :users, only:[:index, :create, :update, :destroy, :show]
       resources :shares
+      resources :schedules
 
       resources :reminders
-      
+
 
       match 'login', to: 'users#login', via: :post
 

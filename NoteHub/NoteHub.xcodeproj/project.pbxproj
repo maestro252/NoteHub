@@ -21,6 +21,7 @@
 		603B357B19E5D37A00392105 /* NewCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 603B357A19E5D37A00392105 /* NewCourseViewController.m */; };
 		6051675319F6E556008AB5AE /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6051675219F6E556008AB5AE /* HomeViewController.m */; };
 		6051675619F6EECD008AB5AE /* searchTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6051675519F6EECD008AB5AE /* searchTableTableViewController.m */; };
+		6053F1F41A07FC6D001AD7B5 /* scheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6053F1F31A07FC6D001AD7B5 /* scheduleViewController.m */; };
 		60BC889219FC60F200173D89 /* shareTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BC889119FC60F200173D89 /* shareTableViewController.m */; };
 		60EDDF3919E7286900746FD2 /* courseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EDDF3819E7286900746FD2 /* courseTableViewController.m */; };
 		60EDDF3C19E73E4700746FD2 /* notebookListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EDDF3B19E73E4700746FD2 /* notebookListTableViewController.m */; };
@@ -79,6 +80,8 @@
 		6051675219F6E556008AB5AE /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		6051675419F6EECD008AB5AE /* searchTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchTableTableViewController.h; sourceTree = "<group>"; };
 		6051675519F6EECD008AB5AE /* searchTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchTableTableViewController.m; sourceTree = "<group>"; };
+		6053F1F21A07FC6D001AD7B5 /* scheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scheduleViewController.h; sourceTree = "<group>"; };
+		6053F1F31A07FC6D001AD7B5 /* scheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = scheduleViewController.m; sourceTree = "<group>"; };
 		60BC889019FC60F200173D89 /* shareTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shareTableViewController.h; sourceTree = "<group>"; };
 		60BC889119FC60F200173D89 /* shareTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shareTableViewController.m; sourceTree = "<group>"; };
 		60EDDF3719E7286900746FD2 /* courseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = courseTableViewController.h; sourceTree = "<group>"; };
@@ -143,6 +146,7 @@
 			children = (
 				203E3EF219BF824A008C0379 /* AppDelegate.h */,
 				203E3EFB19BF824A008C0379 /* Main.storyboard */,
+				6053F1F51A07FC7B001AD7B5 /* Schedule */,
 				970313A219FEDE0400759619 /* remainder */,
 				60BC889319FC610900173D89 /* shareTable */,
 				203E3EF319BF824A008C0379 /* AppDelegate.m */,
@@ -185,6 +189,15 @@
 				203E3F0919BF824A008C0379 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6053F1F51A07FC7B001AD7B5 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				6053F1F31A07FC6D001AD7B5 /* scheduleViewController.m */,
+				6053F1F21A07FC6D001AD7B5 /* scheduleViewController.h */,
+			);
+			name = Schedule;
 			sourceTree = "<group>";
 		};
 		6089E3BA19F827C2000D85A9 /* Search */ = {
@@ -380,6 +393,7 @@
 				6051675619F6EECD008AB5AE /* searchTableTableViewController.m in Sources */,
 				60EDDF3919E7286900746FD2 /* courseTableViewController.m in Sources */,
 				20CE89C519E485A900D20DA9 /* RegisterViewController.m in Sources */,
+				6053F1F41A07FC6D001AD7B5 /* scheduleViewController.m in Sources */,
 				2009924719DDF94000EA9953 /* CommunicationManager.m in Sources */,
 				60F7C34019C8DA7C003CE1BC /* NHAssistedNotebookView.m in Sources */,
 				203E3EF419BF824A008C0379 /* AppDelegate.m in Sources */,

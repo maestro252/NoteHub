@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141023202008) do
+ActiveRecord::Schema.define(version: 20141103192205) do
 
   create_table "auths", force: true do |t|
     t.string   "token"
@@ -86,16 +86,13 @@ ActiveRecord::Schema.define(version: 20141023202008) do
   add_index "reminders", ["user_id", "priority"], name: "r_user_index"
 
   create_table "schedules", force: true do |t|
-    t.string   "course_id"
+    t.integer  "course_id"
     t.string   "weekday"
     t.time     "time"
     t.string   "classroom"
-    t.string   "recurrence"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "schedules", ["course_id"], name: "course_index"
 
   create_table "shares", force: true do |t|
     t.integer  "note_id"

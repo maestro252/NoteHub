@@ -20,13 +20,6 @@
     // Do any additional setup after loading the view.
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 0;
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
