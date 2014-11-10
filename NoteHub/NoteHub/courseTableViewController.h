@@ -13,6 +13,7 @@
     
     NSMutableArray * data;
     NSDictionary * database;
+    int contCourses;
     
 }
 

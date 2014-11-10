@@ -14,6 +14,7 @@
 		203E3EFD19BF824A008C0379 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 203E3EFB19BF824A008C0379 /* Main.storyboard */; };
 		203E3EFF19BF824A008C0379 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 203E3EFE19BF824A008C0379 /* Images.xcassets */; };
 		203E3F0B19BF824A008C0379 /* NoteHubTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 203E3F0A19BF824A008C0379 /* NoteHubTests.m */; };
+		206735F11A1141620007D648 /* newsFeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 206735F01A1141620007D648 /* newsFeedTableViewController.m */; };
 		20AEBDF319DCB79D0018F44F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AEBDF219DCB79D0018F44F /* LoginViewController.m */; };
 		20B5DCB219BF90E70041C4E1 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B5DCB119BF90E70041C4E1 /* SettingsTableViewController.m */; };
 		20CE89C519E485A900D20DA9 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CE89C419E485A900D20DA9 /* RegisterViewController.m */; };
@@ -66,6 +67,8 @@
 		203E3F0419BF824A008C0379 /* NoteHubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteHubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		203E3F0919BF824A008C0379 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		203E3F0A19BF824A008C0379 /* NoteHubTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteHubTests.m; sourceTree = "<group>"; };
+		206735EF1A1141620007D648 /* newsFeedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newsFeedTableViewController.h; sourceTree = "<group>"; };
+		206735F01A1141620007D648 /* newsFeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = newsFeedTableViewController.m; sourceTree = "<group>"; };
 		20AEBDF119DCB79D0018F44F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		20AEBDF219DCB79D0018F44F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		20B5DCB019BF90E70041C4E1 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
@@ -146,6 +149,7 @@
 			children = (
 				203E3EF219BF824A008C0379 /* AppDelegate.h */,
 				203E3EFB19BF824A008C0379 /* Main.storyboard */,
+				206735F21A11416A0007D648 /* NewsFeed */,
 				6053F1F51A07FC7B001AD7B5 /* Schedule */,
 				970313A219FEDE0400759619 /* remainder */,
 				60BC889319FC610900173D89 /* shareTable */,
@@ -189,6 +193,15 @@
 				203E3F0919BF824A008C0379 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		206735F21A11416A0007D648 /* NewsFeed */ = {
+			isa = PBXGroup;
+			children = (
+				206735F01A1141620007D648 /* newsFeedTableViewController.m */,
+				206735EF1A1141620007D648 /* newsFeedTableViewController.h */,
+			);
+			name = NewsFeed;
 			sourceTree = "<group>";
 		};
 		6053F1F51A07FC7B001AD7B5 /* Schedule */ = {
@@ -396,6 +409,7 @@
 				6053F1F41A07FC6D001AD7B5 /* scheduleViewController.m in Sources */,
 				2009924719DDF94000EA9953 /* CommunicationManager.m in Sources */,
 				60F7C34019C8DA7C003CE1BC /* NHAssistedNotebookView.m in Sources */,
+				206735F11A1141620007D648 /* newsFeedTableViewController.m in Sources */,
 				203E3EF419BF824A008C0379 /* AppDelegate.m in Sources */,
 				203E3EF119BF824A008C0379 /* main.m in Sources */,
 				60F7C34319C8EC65003CE1BC /* NotebookViewController.m in Sources */,

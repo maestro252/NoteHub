@@ -44,5 +44,6 @@
 -(void) deleteReminderById: (NSInteger) reminder_id;
 -(void)createSchedule: (NSString *)id_course weekday: (NSString *) weekday time: (NSString *) time classroom: (NSString *) classroom;
 - (void)getWeekdays:(NSInteger)id_course;
+- (void)addFriendByUsername: (NSInteger) id_user username: (NSString *) username;
 
 @end

@@ -300,6 +300,25 @@
     
 
 }
+
+- (void)addFriendByUsername: (NSInteger) id_user username: (NSString *) username{
+    [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
+    
+    [self.request setURL:[self makeURLWithService:[NSString stringWithFormat: @"api/v1/friends"]]];
+    [self.request setHTTPBody:[self makeJSONWithDictionary: @{
+                                                              @"friends":
+                                                                  @{
+                                                                      @"user_id":[NSString stringWithFormat:@"%ld", id_user],
+                                                                      @"username": username
+                                                                                      }
+                                                              }]];
+    
+    [self.request setHTTPMethod:@"POST"];
+    
+    [self send];
+
+}
+
 #pragma mark - Metodos privados de la clase
 
 - (NSData *)makeJSONWithDictionary:(NSDictionary *)dict {

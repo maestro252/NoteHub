@@ -1,23 +1,20 @@
 //
-//  courseTableViewController.m
+//  newsFeedTableViewController.m
 //  NoteHub
 //
-//  Created by Jonathan Eidelman on 9/10/14.
+//  Created by Mateo Olaya Bernal on 11/10/14.
 //  Copyright (c) 2014 Mateo Olaya Bernal. All rights reserved.
 //
 
-#import "courseTableViewController.h"
-#import "notebookListTableViewController.h"
+#import "newsFeedTableViewController.h"
 
-@interface courseTableViewController ()
+@interface newsFeedTableViewController ()
 
 @end
 
-@implementation courseTableViewController
+@implementation newsFeedTableViewController
 
 - (void)viewDidLoad {
-    data = [NSMutableArray new];
-    
     [super viewDidLoad];
     
     // Uncomment the following line to preserve selection between presentations.
@@ -27,130 +24,54 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-
-- (void)viewWillAppear:(BOOL)animated {
-    [self reload];
-    [super viewWillAppear:animated];
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    if (section == 1) {
-        return @"Mis Notas";
-    }
-    
-    return nil;
-}
-
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 2;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    if (section == 0) return 1;
-    return [data count];
+    return 0;
 }
 
-
+/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
     // Configure the cell...
-    if (indexPath.section == 1) {
-        cell.textLabel.text = [data objectAtIndex:indexPath.row];
-    }
-    
-    if (indexPath.section == 0 && indexPath.row == 0) {
-        cell.textLabel.text = @"Notas Compartidas";
-    }
-    
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
 }
+*/
 
-- (void)communication:(CommunicationManager *)comm didReceiveData:(NSDictionary *)dict {
-    @try {
-        NSLog(@"%@", dict);
-        
-        database = dict;
-        for (NSDictionary * inner in dict) {
-            [data addObject:[inner objectForKey:@"name"]];
-        }
-        
-        [self.tableView reloadData];
-    }
-    @catch (NSException *exception) { }
-    @finally { }
-}
-
-- (void)reload {
-    [data removeAllObjects];
-    [self.tableView reloadData];
-    
-    CommunicationManager *cm = [CommunicationManager new];
-    
-    [cm setDelegate:self];
-    [cm getCourses];
-}
-
-
+/*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
+*/
 
-
-
+/*
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        
-        
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 1){
-        [self performSegueWithIdentifier:@"notebooks_segue" sender:indexPath];
-    } else if (indexPath.section == 0 && indexPath.row == 0) {
-        [self performSegueWithIdentifier:@"shared_segue" sender:nil];
-    }
-    
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"notebooks_segue"]) {
-        notebookListTableViewController * c = (notebookListTableViewController *)segue.destinationViewController;
-        
-        NSLog(@"%@ HOLA", database);
-        
-        NSMutableArray * array = [NSMutableArray new];
-        
-        for (NSDictionary * d in database) {
-            [array addObject:d];
-        }
-        
-        NSIndexPath * path = (NSIndexPath *)sender;
-        
-        [c setCourse:[array objectAtIndex:path.row]];
-    }
-}
-
+*/
 
 /*
 // Override to support rearranging the table view.
@@ -158,13 +79,13 @@
 }
 */
 
-
+/*
 // Override to support conditional rearranging of the table view.
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the item to be re-orderable.
     return YES;
 }
-
+*/
 
 /*
 #pragma mark - Navigation
@@ -176,4 +97,18 @@
 }
 */
 
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(buttonIndex == 1){
+        //agregar
+        CommunicationManager * cm = [CommunicationManager new];
+        [cm addFriendByUsername:[[[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"] integerValue] username:[alertView textFieldAtIndex:0].text];
+    }
+    
+}
+
+- (IBAction)addFriends:(id)sender {
+    UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Agregar amigo" message:@"Introduzca el nombre de usuario a agregar" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
+    [alert setAlertViewStyle:UIAlertViewStylePlainTextInput];
+    [alert show];
+}
 @end

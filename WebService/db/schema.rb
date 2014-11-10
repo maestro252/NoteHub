@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141103192205) do
+ActiveRecord::Schema.define(version: 20141110190455) do
 
   create_table "auths", force: true do |t|
     t.string   "token"
@@ -49,9 +49,9 @@ ActiveRecord::Schema.define(version: 20141103192205) do
 
   create_table "friends", force: true do |t|
     t.integer  "user_id"
-    t.integer  "event_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "username"
   end
 
   add_index "friends", ["user_id"], name: "f_user_index"
