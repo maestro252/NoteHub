@@ -2,6 +2,7 @@ class Api::V1::RemindersController < ApplicationController
   skip_before_filter :verify_authenticity_token
   respond_to :json
   before_action :authenticate!
+  
   def create
     exc = false
     @reminder = Reminder.new create_params

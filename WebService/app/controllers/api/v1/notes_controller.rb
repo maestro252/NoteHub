@@ -2,18 +2,22 @@ class Api::V1::NotesController < ApplicationController
 
 	skip_before_filter :verify_authenticity_token
 	respond_to :json
-	before_action :authenticate!
+	before_action :authenticate!, except: [:index]
 
-	def index
-		has_many = false
+def index
+	has_many = false
 
+	if params[:friends]
+		@notes = Note.where published: true
+		render json: {success: true, notes: @notes}
+	else
 		if params[:search]
 			course = Note.where ["tags LIKE ?", "%#{params[:search]}%"]
 			has_many = true
 		else
 			course = Course.find_by id: params[:id], user: current_user
 		end
-	  #	puts course
+		#	puts course
 
 		if course
 			unless has_many
@@ -25,6 +29,7 @@ class Api::V1::NotesController < ApplicationController
 			unauthorized
 		end
 	end
+end
 
 	def create
 		course = Course.find_by id: params[:id], user: current_user

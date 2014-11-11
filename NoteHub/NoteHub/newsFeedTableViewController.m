@@ -15,6 +15,7 @@
 @implementation newsFeedTableViewController
 
 - (void)viewDidLoad {
+    self.data = [NSMutableArray new];
     [super viewDidLoad];
     
     // Uncomment the following line to preserve selection between presentations.
@@ -22,6 +23,14 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    CommunicationManager * cm = [CommunicationManager new];
+    [cm setDelegate:self];
+    [cm setTag:44];
+    [cm getFriendsPublished];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,26 +41,29 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.data count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     // Configure the cell...
     
+    [[cell textLabel]setText:[[self.data objectAtIndex:indexPath.row] objectForKey:@"title"]];
+    
+    //[[cell detailTextLabel] setText:[[self.data objectAtIndex:indexPath.row] objectForKey:@"course_id"]];
+    
+    
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -97,11 +109,31 @@
 }
 */
 
+- (void)communication:(CommunicationManager *)comm didReceiveData:(NSDictionary *)dict{
+    if (comm.tag == 63) {
+        
+        if([[dict objectForKey:@"success"]integerValue] == 0){
+            UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Error al agregar amigo" message:[[dict objectForKey:@"errors"] objectAtIndex:0] delegate:nil cancelButtonTitle:@"Ok"  otherButtonTitles:nil, nil];
+            [alert show];
+        }
+    }else if(comm.tag == 44){
+        NSLog(@"ESTE ES EL DICT QUE QUEREMOS VER!!! %@", dict);
+        for (NSDictionary * inner in [dict objectForKey:@"notes"]) {
+            [self.data addObject:inner];
+        }
+        
+        [self.tableView reloadData];
+    }
+}
+
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if(buttonIndex == 1){
         //agregar
         CommunicationManager * cm = [CommunicationManager new];
+        [cm setDelegate:self];
+        [cm setTag:63];
         [cm addFriendByUsername:[[[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"] integerValue] username:[alertView textFieldAtIndex:0].text];
+        
     }
     
 }

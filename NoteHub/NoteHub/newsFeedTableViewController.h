@@ -10,5 +10,5 @@
 #import "CommunicationManager.h"
 @interface newsFeedTableViewController : UITableViewController<CommunicationDelegate, UIAlertViewDelegate>
 - (IBAction)addFriends:(id)sender;
-
+@property (nonatomic, strong) NSMutableArray * data;
 @end

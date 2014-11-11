@@ -304,11 +304,11 @@
 - (void)addFriendByUsername: (NSInteger) id_user username: (NSString *) username{
     [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
     
-    [self.request setURL:[self makeURLWithService:[NSString stringWithFormat: @"api/v1/friends"]]];
+    [self.request setURL:[self makeURLWithService:[NSString stringWithFormat: @"api/v1/pals"]]];
     [self.request setHTTPBody:[self makeJSONWithDictionary: @{
-                                                              @"friends":
+                                                              @"friend":
                                                                   @{
-                                                                      @"user_id":[NSString stringWithFormat:@"%ld", id_user],
+                                                                      @"user_id":[NSString stringWithFormat:@"%ld", (long)id_user],
                                                                       @"username": username
                                                                                       }
                                                               }]];
@@ -317,6 +317,16 @@
     
     [self send];
 
+}
+
+- (void)getFriendsPublished{
+    [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
+    
+    [self.request setURL:[self makeURLWithService:[NSString stringWithFormat: @"api/v1/notes?friends=1233"]]];
+    
+    [self.request setHTTPMethod:@"GET"];
+    
+    [self send];
 }
 
 #pragma mark - Metodos privados de la clase
