@@ -386,7 +386,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Svh-hv-e1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-106" y="1223"/>
+            <point key="canvasLocation" x="-242" y="1435"/>
         </scene>
         <!--Compartidas-->
         <scene sceneID="4Ej-f7-qqi">
@@ -535,11 +535,45 @@
                     <connections>
                         <segue destination="vOt-bD-Q2D" kind="push" identifier="notebooks_segue" id="SLX-KY-2OH"/>
                         <segue destination="aeR-kE-SMe" kind="push" identifier="shared_segue" id="JTJ-pc-0G2"/>
+                        <segue destination="KMZ-G2-q5H" kind="push" identifier="group_segue" id="yL9-UP-2gP"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X5u-f2-hp4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-39" y="-465"/>
+        </scene>
+        <!--Grupos-->
+        <scene sceneID="xNV-kv-8zl">
+            <objects>
+                <tableViewController id="KMZ-G2-q5H" customClass="groupTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="IJ2-Ww-crl">
+                        <rect key="frame" x="0.0" y="0.0" width="308" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="f73-it-voJ">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f73-it-voJ" id="kY9-zr-nFe">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="KMZ-G2-q5H" id="Po6-Ed-vSD"/>
+                            <outlet property="delegate" destination="KMZ-G2-q5H" id="ymU-UW-hC3"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Grupos" id="VHl-KE-G8b">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="oCH-Wo-DJi">
+                            <connections>
+                                <action selector="createGroup:" destination="KMZ-G2-q5H" id="zGu-dR-2fO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HMs-vL-er7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-82" y="752"/>
         </scene>
         <!--Item-->
         <scene sceneID="dAs-K4-jOe">

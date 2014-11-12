@@ -46,5 +46,9 @@
 - (void)getWeekdays:(NSInteger)id_course;
 - (void)addFriendByUsername: (NSInteger) id_user username: (NSString *) username;
 - (void)getFriendsPublished;
+-(void)createGroup: (NSString *) title;
+-(void)getGroups;
+
+
 
 @end

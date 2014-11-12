@@ -12,7 +12,7 @@
 {
     NSString * reminderTitle;
     NSMutableArray * data;
-    
+    NSDate * date;
 }
 - (IBAction)addReminder:(id)sender;
 @end

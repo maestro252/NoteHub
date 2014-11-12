@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141112210029) do
+ActiveRecord::Schema.define(version: 20141112222004) do
 
   create_table "auths", force: true do |t|
     t.string   "token"
@@ -56,6 +56,20 @@ ActiveRecord::Schema.define(version: 20141112210029) do
 
   add_index "friends", ["user_id"], name: "f_user_index"
 
+  create_table "groups", force: true do |t|
+    t.string   "name"
+    t.integer  "admin"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "notegroups", force: true do |t|
+    t.integer  "group_id"
+    t.integer  "note_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "notes", force: true do |t|
     t.string   "title"
     t.date     "date"
@@ -98,6 +112,13 @@ ActiveRecord::Schema.define(version: 20141112210029) do
   create_table "shares", force: true do |t|
     t.integer  "note_id"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "usergroups", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "group_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

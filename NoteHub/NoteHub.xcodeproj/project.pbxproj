@@ -18,6 +18,7 @@
 		20AEBDF319DCB79D0018F44F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AEBDF219DCB79D0018F44F /* LoginViewController.m */; };
 		20B5DCB219BF90E70041C4E1 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B5DCB119BF90E70041C4E1 /* SettingsTableViewController.m */; };
 		20CE89C519E485A900D20DA9 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CE89C419E485A900D20DA9 /* RegisterViewController.m */; };
+		20D0E8B01A141B4E00782C49 /* groupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D0E8AF1A141B4E00782C49 /* groupTableViewController.m */; };
 		602D376C19C78D0F00C986A0 /* ColorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602D376B19C78D0F00C986A0 /* ColorTableViewController.m */; };
 		603B357B19E5D37A00392105 /* NewCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 603B357A19E5D37A00392105 /* NewCourseViewController.m */; };
 		6051675319F6E556008AB5AE /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6051675219F6E556008AB5AE /* HomeViewController.m */; };
@@ -75,6 +76,8 @@
 		20B5DCB119BF90E70041C4E1 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		20CE89C319E485A900D20DA9 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		20CE89C419E485A900D20DA9 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		20D0E8AE1A141B4E00782C49 /* groupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = groupTableViewController.h; sourceTree = "<group>"; };
+		20D0E8AF1A141B4E00782C49 /* groupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = groupTableViewController.m; sourceTree = "<group>"; };
 		602D376A19C78D0F00C986A0 /* ColorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorTableViewController.h; sourceTree = "<group>"; };
 		602D376B19C78D0F00C986A0 /* ColorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorTableViewController.m; sourceTree = "<group>"; };
 		603B357919E5D37A00392105 /* NewCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewCourseViewController.h; sourceTree = "<group>"; };
@@ -149,9 +152,10 @@
 			children = (
 				203E3EF219BF824A008C0379 /* AppDelegate.h */,
 				203E3EFB19BF824A008C0379 /* Main.storyboard */,
+				20D0E8B11A141B6100782C49 /* Group */,
 				206735F21A11416A0007D648 /* NewsFeed */,
 				6053F1F51A07FC7B001AD7B5 /* Schedule */,
-				970313A219FEDE0400759619 /* remainder */,
+				970313A219FEDE0400759619 /* Reminder */,
 				60BC889319FC610900173D89 /* shareTable */,
 				203E3EF319BF824A008C0379 /* AppDelegate.m */,
 				6089E3BB19F8280B000D85A9 /* Home */,
@@ -202,6 +206,15 @@
 				206735EF1A1141620007D648 /* newsFeedTableViewController.h */,
 			);
 			name = NewsFeed;
+			sourceTree = "<group>";
+		};
+		20D0E8B11A141B6100782C49 /* Group */ = {
+			isa = PBXGroup;
+			children = (
+				20D0E8AE1A141B4E00782C49 /* groupTableViewController.h */,
+				20D0E8AF1A141B4E00782C49 /* groupTableViewController.m */,
+			);
+			name = Group;
 			sourceTree = "<group>";
 		};
 		6053F1F51A07FC7B001AD7B5 /* Schedule */ = {
@@ -294,13 +307,13 @@
 			name = LOGIN;
 			sourceTree = "<group>";
 		};
-		970313A219FEDE0400759619 /* remainder */ = {
+		970313A219FEDE0400759619 /* Reminder */ = {
 			isa = PBXGroup;
 			children = (
 				970313A319FEDE4B00759619 /* reminderTableViewController.h */,
 				970313A419FEDE4B00759619 /* reminderTableViewController.m */,
 			);
-			name = remainder;
+			name = Reminder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -404,6 +417,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6051675619F6EECD008AB5AE /* searchTableTableViewController.m in Sources */,
+				20D0E8B01A141B4E00782C49 /* groupTableViewController.m in Sources */,
 				60EDDF3919E7286900746FD2 /* courseTableViewController.m in Sources */,
 				20CE89C519E485A900D20DA9 /* RegisterViewController.m in Sources */,
 				6053F1F41A07FC6D001AD7B5 /* scheduleViewController.m in Sources */,

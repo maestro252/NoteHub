@@ -239,6 +239,17 @@
 }
 
 
+-(void)getGroups{
+    [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
+    
+    [self.request setURL:[self makeURLWithService:[NSString stringWithFormat: @"api/v1/groups"]]];
+    
+    [self.request setHTTPMethod:@"GET"];
+    
+    [self send];
+
+}
+
 -(void)getUserIdByUsername:(NSString *) username{
     [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
     
@@ -300,6 +311,22 @@
     
     
 
+}
+
+-(void)createGroup: (NSString *) title{
+    [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
+    
+    [self.request setURL:[self makeURLWithService:[NSString stringWithFormat: @"api/v1/groups"]]];
+    [self.request setHTTPBody:[self makeJSONWithDictionary: @{
+                                                              @"group":
+                                                                  @{
+                                                                      @"name":title
+                                                                      }
+                                                              }]];
+    
+    [self.request setHTTPMethod:@"POST"];
+    
+    [self send];
 }
 
 - (void)addFriendByUsername: (NSInteger) id_user username: (NSString *) username{

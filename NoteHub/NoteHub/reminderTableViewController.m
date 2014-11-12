@@ -63,10 +63,12 @@
         if(buttonIndex == 1){
               CommunicationManager * cm = [CommunicationManager new];
               [cm createReminder:reminderTitle deadline:[alertView textFieldAtIndex:0].text];
-            
+            NSDateFormatter * dated = [NSDateFormatter new];
+            date = [dated dateFromString:[alertView textFieldAtIndex:0].text];
             UILocalNotification* localNotification = [[UILocalNotification alloc] init];
-            localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:60];
-            localNotification.alertBody = @"Your alert message";
+            
+            localNotification.fireDate = [date dateByAddingTimeInterval:-86400];
+            localNotification.alertBody = reminderTitle;
             localNotification.timeZone = [NSTimeZone defaultTimeZone];
             [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
 
