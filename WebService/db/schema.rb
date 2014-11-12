@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141110190455) do
+ActiveRecord::Schema.define(version: 20141112210029) do
 
   create_table "auths", force: true do |t|
     t.string   "token"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20141110190455) do
     t.datetime "updated_at"
   end
 
-  add_index "events", ["user_id", "date"], name: "user_index"
+  add_index "events", ["user_id", "date"], name: "e_user_index"
 
   create_table "friends", force: true do |t|
     t.integer  "user_id"
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20141110190455) do
     t.string   "pattern"
     t.string   "tags"
     t.boolean  "published"
+    t.string   "username"
   end
 
   add_index "notes", ["course_id"], name: "n_course_index"

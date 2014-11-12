@@ -8,8 +8,20 @@ def index
 	has_many = false
 
 	if params[:friends]
+		friends = Friend.where user_id: current_user.id
+
 		@notes = Note.where published: true
-		render json: {success: true, notes: @notes}
+		@notes2 = []
+		@notes.each do |x|
+			usrname = x.username
+			friends.each do |y|
+				if y.username == usrname
+					@notes2 << x
+				end
+			end
+		end
+		p @notes2
+		render json: {success: true, notes: @notes2}
 	else
 		if params[:search]
 			course = Note.where ["tags LIKE ?", "%#{params[:search]}%"]
@@ -36,7 +48,7 @@ end
 
 		if course
 			@note = Note.new create_params
-
+			@note.username = current_user.username
 			@note.course_id = course.id
 			@note.published = false
 			if @note.save!

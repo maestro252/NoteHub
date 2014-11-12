@@ -87,7 +87,8 @@
                                                              @"note": @{
                                                                      @"title": title,
                                            @"pattern": pattern,
-                                            @"words": @""
+                                            @"words": @"",
+                                            @"username": [[NSUserDefaults standardUserDefaults] objectForKey:@"username"]
                                                                      }
                                                              }]];
     

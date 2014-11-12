@@ -58,7 +58,7 @@
     
     [[cell textLabel]setText:[[self.data objectAtIndex:indexPath.row] objectForKey:@"title"]];
     
-    //[[cell detailTextLabel] setText:[[self.data objectAtIndex:indexPath.row] objectForKey:@"course_id"]];
+    [[cell detailTextLabel] setText:[[self.data objectAtIndex:indexPath.row] objectForKey:@"username"]];
     
     
     return cell;
