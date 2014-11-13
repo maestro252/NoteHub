@@ -280,6 +280,10 @@
     
 }
 
+-(void) addNoteToGroup{
+    
+}
+
 -(void)updateReminderState:(Boolean)state id_reminder: (NSInteger) id_reminder{
     [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
     
@@ -356,6 +360,7 @@
     
     [self send];
 }
+
 
 #pragma mark - Metodos privados de la clase
 

@@ -15,7 +15,7 @@ class Api::V1::GroupsController < ApplicationController
 
   def index
     @groups = Usergroup.where user: current_user
-    render json:{success: true, groups: @groups}
+    render json:{success: true, groups: @groups}, include: :group 
   end
 
   def show

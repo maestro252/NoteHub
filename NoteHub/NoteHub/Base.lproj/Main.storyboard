@@ -386,7 +386,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Svh-hv-e1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-242" y="1435"/>
+            <point key="canvasLocation" x="-310" y="1975"/>
         </scene>
         <!--Compartidas-->
         <scene sceneID="4Ej-f7-qqi">
@@ -570,10 +570,46 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="VWT-lr-s0L" kind="push" identifier="group_notes_segue" id="fEE-sD-iB8"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HMs-vL-er7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-82" y="752"/>
+            <point key="canvasLocation" x="-832" y="754"/>
+        </scene>
+        <!--Notas del grupo-->
+        <scene sceneID="0lC-dm-1pY">
+            <objects>
+                <tableViewController id="VWT-lr-s0L" customClass="groupNotesTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="QhR-gg-UfP">
+                        <rect key="frame" x="0.0" y="0.0" width="308" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="soi-Jt-9Vx">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="soi-Jt-9Vx" id="KU9-3T-REm">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="VWT-lr-s0L" id="SC6-1I-x0R"/>
+                            <outlet property="delegate" destination="VWT-lr-s0L" id="tWh-5M-2fc"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Notas del grupo" id="foP-kS-kJ5">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8m4-O5-paO">
+                            <connections>
+                                <action selector="createGroupNote:" destination="VWT-lr-s0L" id="bzB-zZ-CRi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CTD-8l-TMD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-151" y="753"/>
         </scene>
         <!--Item-->
         <scene sceneID="dAs-K4-jOe">
@@ -622,7 +658,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cm4-da-7Ic" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-997" y="2456"/>
+            <point key="canvasLocation" x="-1359" y="2952"/>
         </scene>
         <!--Title-->
         <scene sceneID="wU7-nC-Un7">
@@ -669,7 +705,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m6R-Ch-aRC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-96" y="2537"/>
+            <point key="canvasLocation" x="407" y="3097"/>
         </scene>
         <!--New Course View Controller-->
         <scene sceneID="2q1-7d-8lJ">

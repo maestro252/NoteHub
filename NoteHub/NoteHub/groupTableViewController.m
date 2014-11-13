@@ -15,6 +15,7 @@
 @implementation groupTableViewController
 
 - (void)viewDidLoad {
+    data = [NSMutableArray new];
     [super viewDidLoad];
     
     // Uncomment the following line to preserve selection between presentations.
@@ -43,7 +44,7 @@
         
         database = dict;
         for (NSDictionary * inner in [dict objectForKey:@"groups"]) {
-            [data addObject:[inner objectForKey:@"name"]];
+            [data addObject:inner];
         }
         
         [self.tableView reloadData];
@@ -71,13 +72,21 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
+    NSLog(@"esteeeeeeeee eessss coutnnnnn       %i", [data count]);
     return [data count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.textLabel.text = [data objectAtIndex:indexPath.row];
+    @try{
+        cell.textLabel.text = [[[data objectAtIndex:indexPath.row]objectForKey:@"group"]objectForKey:@"name"];
+    }@catch (NSException *exception) {
+        
+    }@finally{
+    
+    }
+    
     // Configure the cell...
     
     return cell;
@@ -139,7 +148,11 @@
     [alert setAlertViewStyle:UIAlertViewStylePlainTextInput];
     [alert show];
     
-   
-    
+}
+
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0){
+        [self performSegueWithIdentifier:@"group_notes_segue" sender:nil];
+    }
 }
 @end

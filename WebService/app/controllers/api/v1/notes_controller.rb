@@ -45,8 +45,9 @@ end
 
 	def create
 		course = Course.find_by id: params[:id], user: current_user
-
-		if course
+		ok = false
+		ok = true if params[:id] == 0
+		if course || ok
 			@note = Note.new create_params
 			@note.username = current_user.username
 			@note.course_id = course.id
@@ -57,7 +58,15 @@ end
 				render json: { success: false, errors: @note.errors }
 			end
 		else
-			unauthorized
+			@note = Note.new create_params
+			@note.username = current_user.username
+			@note.course_id = 0
+			@note.published = false
+			if @note.save!
+				render json: { success: true, note: @note }
+			else
+				render json: { success: false, errors: @note.errors }
+			end
 		end
 	end
 

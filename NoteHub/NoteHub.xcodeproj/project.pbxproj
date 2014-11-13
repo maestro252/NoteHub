@@ -25,6 +25,7 @@
 		6051675619F6EECD008AB5AE /* searchTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6051675519F6EECD008AB5AE /* searchTableTableViewController.m */; };
 		6053F1F41A07FC6D001AD7B5 /* scheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6053F1F31A07FC6D001AD7B5 /* scheduleViewController.m */; };
 		60BC889219FC60F200173D89 /* shareTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BC889119FC60F200173D89 /* shareTableViewController.m */; };
+		60D742461A1544C80097FDD5 /* groupNotesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D742451A1544C80097FDD5 /* groupNotesTableViewController.m */; };
 		60EDDF3919E7286900746FD2 /* courseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EDDF3819E7286900746FD2 /* courseTableViewController.m */; };
 		60EDDF3C19E73E4700746FD2 /* notebookListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EDDF3B19E73E4700746FD2 /* notebookListTableViewController.m */; };
 		60F7C34019C8DA7C003CE1BC /* NHAssistedNotebookView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F7C33F19C8DA7C003CE1BC /* NHAssistedNotebookView.m */; };
@@ -90,6 +91,8 @@
 		6053F1F31A07FC6D001AD7B5 /* scheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = scheduleViewController.m; sourceTree = "<group>"; };
 		60BC889019FC60F200173D89 /* shareTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shareTableViewController.h; sourceTree = "<group>"; };
 		60BC889119FC60F200173D89 /* shareTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shareTableViewController.m; sourceTree = "<group>"; };
+		60D742441A1544C80097FDD5 /* groupNotesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = groupNotesTableViewController.h; sourceTree = "<group>"; };
+		60D742451A1544C80097FDD5 /* groupNotesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = groupNotesTableViewController.m; sourceTree = "<group>"; };
 		60EDDF3719E7286900746FD2 /* courseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = courseTableViewController.h; sourceTree = "<group>"; };
 		60EDDF3819E7286900746FD2 /* courseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = courseTableViewController.m; sourceTree = "<group>"; };
 		60EDDF3A19E73E4700746FD2 /* notebookListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = notebookListTableViewController.h; sourceTree = "<group>"; };
@@ -213,6 +216,8 @@
 			children = (
 				20D0E8AE1A141B4E00782C49 /* groupTableViewController.h */,
 				20D0E8AF1A141B4E00782C49 /* groupTableViewController.m */,
+				60D742441A1544C80097FDD5 /* groupNotesTableViewController.h */,
+				60D742451A1544C80097FDD5 /* groupNotesTableViewController.m */,
 			);
 			name = Group;
 			sourceTree = "<group>";
@@ -422,6 +427,7 @@
 				20CE89C519E485A900D20DA9 /* RegisterViewController.m in Sources */,
 				6053F1F41A07FC6D001AD7B5 /* scheduleViewController.m in Sources */,
 				2009924719DDF94000EA9953 /* CommunicationManager.m in Sources */,
+				60D742461A1544C80097FDD5 /* groupNotesTableViewController.m in Sources */,
 				60F7C34019C8DA7C003CE1BC /* NHAssistedNotebookView.m in Sources */,
 				206735F11A1141620007D648 /* newsFeedTableViewController.m in Sources */,
 				203E3EF419BF824A008C0379 /* AppDelegate.m in Sources */,
