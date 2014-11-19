@@ -99,35 +99,71 @@
 
 
 - (IBAction)createGroupNote:(id)sender {
-    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Nueva nota:"
-                                                     message:nil
-                                                    delegate:self
-                                           cancelButtonTitle:@"Cancelar"
-                                           otherButtonTitles:@"Crear", nil];
-    
-    
-    [alert setAlertViewStyle:UIAlertViewStylePlainTextInput];
-    
-    UITextField * field = [alert textFieldAtIndex:0];
-    [field setPlaceholder:@"Titulo de nota"];
-    [alert setTag:2];
-    [alert show];
+//    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Nueva nota:"
+//                                                     message:nil
+//                                                    delegate:self
+//                                           cancelButtonTitle:@"Cancelar"
+//                                           otherButtonTitles:@"Crear", nil];
+//    
+//    
+//    [alert setAlertViewStyle:UIAlertViewStylePlainTextInput];
+//    
+//    UITextField * field = [alert textFieldAtIndex:0];
+//    [field setPlaceholder:@"Titulo de nota"];
+//    [alert setTag:2];
+//    [alert show];
+    if(true){ // si el usuario que clickeo es el admin aparecen las dos opciones, sino solo la de agregar nota.
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Que desea hacer?" message:nil delegate:self cancelButtonTitle:@"Agregar Nota" otherButtonTitles:@"Agregar Usuario", nil];
+        [alert setTag:133];
+        [alert show];
+    }else{
+            UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Nueva nota:"
+                                                             message:nil
+                                                            delegate:self
+                                                   cancelButtonTitle:@"Cancelar"
+                                                   otherButtonTitles:@"Crear", nil];
+        
+        
+            [alert setAlertViewStyle:UIAlertViewStylePlainTextInput];
+        
+            UITextField * field = [alert textFieldAtIndex:0];
+            [field setPlaceholder:@"Titulo de nota"];
+            [alert setTag:2];
+            [alert show];
+    }
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (alertView.tag == 2) {
-        if (buttonIndex == 1) {
-            title = [[alertView textFieldAtIndex:0] text];
+    if (alertView.tag == 133) {
+        if (buttonIndex == 0) {
+            UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Nueva nota:"
+                                                             message:nil
+                                                            delegate:self
+                                                   cancelButtonTitle:@"Cancelar"
+                                                   otherButtonTitles:@"Crear", nil];
             
-            if (![title isEqual:@""]) {
-                UIAlertView * patternChoice = [[UIAlertView alloc]initWithTitle:@"Tipo de cuaderno" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"Rayado", @"Cuadriculado", @"Blanco", nil];
-                [patternChoice setTag:3];
-                [patternChoice show];
-            } else {
-                [[[UIAlertView alloc] initWithTitle:@"Error" message:@"No es posible crear una nota sin titulo." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
-            }
+            
+            [alert setAlertViewStyle:UIAlertViewStylePlainTextInput];
+            
+            UITextField * field = [alert textFieldAtIndex:0];
+            [field setPlaceholder:@"Titulo de nota"];
+            [alert setTag:2];
+            [alert show];
+
+          
+//            title = [[alertView textFieldAtIndex:0] text];
+//            
+//            if (![title isEqual:@""]) {
+//                UIAlertView * patternChoice = [[UIAlertView alloc]initWithTitle:@"Tipo de cuaderno" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"Rayado", @"Cuadriculado", @"Blanco", nil];
+//                [patternChoice setTag:3];
+//                [patternChoice show];
+//            } else {
+//                [[[UIAlertView alloc] initWithTitle:@"Error" message:@"No es posible crear una nota sin titulo." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+//            }
             
             NSLog(@"Se crea %@", title);
+        }else if(buttonIndex == 1){
+            
         }
     }else if(alertView.tag == 3){
         NSString * toSend = [NSString new];
@@ -141,10 +177,24 @@
             toSend = @"plain";
         }
         [[CommunicationManager new] createNoteForCourse:0 withTitle:title pattern:toSend];
-        CommunicationManager * c = [CommunicationManager new];
-        [c setDelegate:self];
-        [c createNoteForCourse:0 withTitle:title pattern:toSend];
+//        CommunicationManager * c = [CommunicationManager new];
+//        [c setDelegate:self];
+//        [c createNoteForCourse:0 withTitle:title pattern:toSend];
         
+    }else if(alertView.tag == 2){
+        if (buttonIndex == 1) {
+            title = [[alertView textFieldAtIndex:0] text];
+            
+            if (![title isEqual:@""]) {
+                UIAlertView * patternChoice = [[UIAlertView alloc]initWithTitle:@"Tipo de cuaderno" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"Rayado", @"Cuadriculado", @"Blanco", nil];
+                [patternChoice setTag:3];
+                [patternChoice show];
+            } else {
+                [[[UIAlertView alloc] initWithTitle:@"Error" message:@"No es posible crear una nota sin titulo." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+            }
+            
+            NSLog(@"Se crea %@", title);
+        }
     }
 }
 
