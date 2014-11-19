@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       resources :groups
       resources :pals
       resources :reminders
+      resources :usergroups
 
 
       match 'login', to: 'users#login', via: :post

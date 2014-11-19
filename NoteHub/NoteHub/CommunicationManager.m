@@ -331,6 +331,20 @@
     [self.request setHTTPMethod:@"POST"];
     
     [self send];
+    [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
+    
+    [self.request setURL:[self makeURLWithService:[NSString stringWithFormat: @"api/v1/usergroups"]]];
+    [self.request setHTTPBody:[self makeJSONWithDictionary: @{
+                                                              @"usergroup":
+                                                                  @{
+                                                                      @"user_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"]
+                                                                      }
+                                                              }]];
+    
+    [self.request setHTTPMethod:@"POST"];
+    
+    [self send];
+
 }
 
 - (void)addFriendByUsername: (NSInteger) id_user username: (NSString *) username{
@@ -360,6 +374,29 @@
     
     [self send];
 }
+
+- (void)createNoteForGroup:(NSInteger)course withTitle:(NSString *)title pattern: (NSString *)pattern groupId: (NSInteger *) groupId{
+    [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
+    
+    [self.request setURL:[self makeURLWithService:[NSString stringWithFormat: @"api/v1/courses/%ld/notes", (long)course]]];
+    
+    [self.request setHTTPMethod:@"POST"];
+    
+    
+    [self.request setHTTPBody:[self makeJSONWithDictionary:@{
+                                                             @"note": @{
+                                                                     @"title": title,
+                                                                     @"pattern": pattern,
+                                                                     @"words": @"",
+                                                                     @"username": [[NSUserDefaults standardUserDefaults] objectForKey:@"username"],
+                                                                     @"group_id": [NSString stringWithFormat: @"%ld", (long)groupId]
+                                                                     
+                                                                     }
+                                                             }]];
+    
+    [self send];
+}
+
 
 
 #pragma mark - Metodos privados de la clase

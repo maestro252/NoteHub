@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141112222004) do
+ActiveRecord::Schema.define(version: 20141119194810) do
 
   create_table "auths", force: true do |t|
     t.string   "token"
@@ -82,6 +82,7 @@ ActiveRecord::Schema.define(version: 20141112222004) do
     t.string   "tags"
     t.boolean  "published"
     t.string   "username"
+    t.integer  "group_id"
   end
 
   add_index "notes", ["course_id"], name: "n_course_index"

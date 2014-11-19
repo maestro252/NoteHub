@@ -140,6 +140,7 @@
     if (buttonIndex == 1){
         CommunicationManager * cm = [CommunicationManager new];
         [cm createGroup:[alertView textFieldAtIndex:0].text];
+         [self reload];
     }
 }
 
