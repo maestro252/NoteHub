@@ -28514,3 +28514,587 @@ Unpermitted parameters: username
   [1m[35mSQL (0.4ms)[0m  INSERT INTO "notes" ("course_id", "created_at", "pattern", "published", "title", "updated_at", "username", "words") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["course_id", 0], ["created_at", "2014-11-19 22:00:30.333300"], ["pattern", "stripped"], ["published", "f"], ["title", "santiago es un marica"], ["updated_at", "2014-11-19 22:00:30.333300"], ["username", "molayab"], ["words", ""]]
   [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
 Completed 200 OK in 26ms (Views: 1.3ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-11-20 16:07:22 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (3.5ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '839887db17bd34a0754a962d5a3c072f965d691f2f8e294e2e9050fd0e0cc4abe1f55e24f3e61820aa0c6cdec4fa92a5e2d69208d2224ed0e402663bf22b433b' LIMIT 1
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 50ms (Views: 1.0ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/api/v1/groups" for 127.0.0.1 at 2014-11-20 16:07:26 -0500
+Processing by Api::V1::GroupsController#index as JSON
+  Parameters: {"group"=>{}}
+  [1m[36mAuth Load (0.7ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '839887db17bd34a0754a962d5a3c072f965d691f2f8e294e2e9050fd0e0cc4abe1f55e24f3e61820aa0c6cdec4fa92a5e2d69208d2224ed0e402663bf22b433b' LIMIT 1[0m
+  [1m[35mUsergroup Load (0.5ms)[0m  SELECT "usergroups".* FROM "usergroups"  WHERE "usergroups"."user_id" IS NULL
+Completed 200 OK in 14ms (Views: 1.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-11-20 16:07:28 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = '839887db17bd34a0754a962d5a3c072f965d691f2f8e294e2e9050fd0e0cc4abe1f55e24f3e61820aa0c6cdec4fa92a5e2d69208d2224ed0e402663bf22b433b' LIMIT 1[0m
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-11-20 16:07:39 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (0.6ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'token' LIMIT 1
+Filter chain halted as :authenticate! rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2014-11-20 16:07:47 -0500
+Processing by Api::V1::UsersController#login as JSON
+  Parameters: {"user"=>{"key"=>"molayab", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1[0m
+  [1m[35mAuth Exists (0.7ms)[0m  SELECT  1 AS one FROM "auths"  WHERE "auths"."user_id" = 1 LIMIT 1
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."user_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAuth Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1[0m
+  [1m[35mSQL (2.8ms)[0m  UPDATE "auths" SET "expires" = ?, "token" = ?, "updated_at" = ? WHERE "auths"."id" = 1  [["expires", "2015-11-15"], ["token", "aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3"], ["updated_at", "2014-11-20 21:07:47.431941"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 83ms (Views: 0.7ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-11-20 16:07:47 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (1.6ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1[0m
+Completed 200 OK in 13ms (Views: 0.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/v1/groups" for 127.0.0.1 at 2014-11-20 16:07:49 -0500
+Processing by Api::V1::GroupsController#index as JSON
+  Parameters: {"group"=>{}}
+  [1m[35mAuth Load (0.6ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUsergroup Load (0.3ms)[0m  SELECT "usergroups".* FROM "usergroups"  WHERE "usergroups"."user_id" = 1
+  [1m[36mGroup Load (1.3ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mGroup Load (0.2ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 4]]
+Completed 200 OK in 29ms (Views: 22.7ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-11-20 16:09:58 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.5ms)[0m  SELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1
+Completed 200 OK in 10ms (Views: 1.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-11-20 16:11:21 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1[0m
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/groups" for 127.0.0.1 at 2014-11-20 16:11:22 -0500
+Processing by Api::V1::GroupsController#index as JSON
+  Parameters: {"group"=>{}}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUsergroup Load (0.4ms)[0m  SELECT "usergroups".* FROM "usergroups"  WHERE "usergroups"."user_id" = 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mGroup Load (0.1ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 4]]
+Completed 200 OK in 9ms (Views: 5.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-11-20 16:13:55 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/groups" for 127.0.0.1 at 2014-11-20 16:13:56 -0500
+Processing by Api::V1::GroupsController#index as JSON
+  Parameters: {"group"=>{}}
+  [1m[36mAuth Load (0.5ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUsergroup Load (0.5ms)[0m  [1mSELECT "usergroups".* FROM "usergroups"  WHERE "usergroups"."user_id" = 1[0m
+  [1m[35mGroup Load (0.4ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mGroup Load (0.2ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 4]]
+Completed 200 OK in 16ms (Views: 9.7ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/api/v1/groups" for 127.0.0.1 at 2014-11-20 16:14:00 -0500
+Processing by Api::V1::GroupsController#create as JSON
+  Parameters: {"group"=>{"name"=>""}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "groups" ("admin", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)  [["admin", 1], ["created_at", "2014-11-20 21:14:00.904455"], ["name", ""], ["updated_at", "2014-11-20 21:14:00.904455"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 24ms (Views: 0.7ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/api/v1/groups" for 127.0.0.1 at 2014-11-20 16:14:00 -0500
+Processing by Api::V1::GroupsController#index as JSON
+  Parameters: {"group"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUsergroup Load (0.6ms)[0m  SELECT "usergroups".* FROM "usergroups"  WHERE "usergroups"."user_id" = 1
+  [1m[36mGroup Load (0.5ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mGroup Load (0.2ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 4]]
+Completed 200 OK in 14ms (Views: 8.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/api/v1/usergroups" for 127.0.0.1 at 2014-11-20 16:14:00 -0500
+Processing by Api::V1::UsergroupsController#create as JSON
+  Parameters: {"usergroup"=>{"user_id"=>1}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mGroup Load (0.2ms)[0m  SELECT  "groups".* FROM "groups"   ORDER BY "groups"."id" DESC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "usergroups" ("created_at", "group_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", "2014-11-20 21:14:00.964159"], ["group_id", 5], ["updated_at", "2014-11-20 21:14:00.964159"], ["user_id", 1]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 17ms (Views: 0.8ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/api/v1/groups" for 127.0.0.1 at 2014-11-20 16:14:04 -0500
+Processing by Api::V1::GroupsController#index as JSON
+  Parameters: {"group"=>{}}
+  [1m[35mAuth Load (0.6ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUsergroup Load (0.7ms)[0m  SELECT "usergroups".* FROM "usergroups"  WHERE "usergroups"."user_id" = 1
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mGroup Load (0.2ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mGroup Load (0.3ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 5]]
+Completed 200 OK in 18ms (Views: 11.1ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/api/v1/groups" for 127.0.0.1 at 2014-11-20 16:14:06 -0500
+Processing by Api::V1::GroupsController#index as JSON
+  Parameters: {"group"=>{}}
+  [1m[36mAuth Load (0.6ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUsergroup Load (0.7ms)[0m  [1mSELECT "usergroups".* FROM "usergroups"  WHERE "usergroups"."user_id" = 1[0m
+  [1m[35mGroup Load (0.8ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mGroup Load (0.2ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 19ms (Views: 11.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/api/v1/groups" for 127.0.0.1 at 2014-11-20 16:14:09 -0500
+Processing by Api::V1::GroupsController#index as JSON
+  Parameters: {"group"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUsergroup Load (0.4ms)[0m  SELECT "usergroups".* FROM "usergroups"  WHERE "usergroups"."user_id" = 1
+  [1m[36mGroup Load (0.4ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mGroup Load (0.2ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mGroup Load (0.2ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 5]]
+Completed 200 OK in 41ms (Views: 30.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-11-20 16:22:46 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.4ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1[0m
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/groups" for 127.0.0.1 at 2014-11-20 16:22:49 -0500
+Processing by Api::V1::GroupsController#index as JSON
+  Parameters: {"group"=>{}}
+  [1m[35mAuth Load (0.8ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUsergroup Load (0.6ms)[0m  SELECT "usergroups".* FROM "usergroups"  WHERE "usergroups"."user_id" = 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mGroup Load (0.1ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mGroup Load (0.2ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 5]]
+Completed 200 OK in 18ms (Views: 9.0ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/api/v1/courses/0/notes" for 127.0.0.1 at 2014-11-20 16:23:13 -0500
+Processing by Api::V1::NotesController#create as JSON
+  Parameters: {"note"=>{"pattern"=>"plain", "words"=>"", "title"=>"MAteo", "username"=>"molayab"}, "id"=>"0"}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 0 AND "courses"."user_id" = 1 LIMIT 1[0m
+Unpermitted parameters: username
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "notes" ("course_id", "created_at", "pattern", "published", "title", "updated_at", "username", "words") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["course_id", 0], ["created_at", "2014-11-20 21:23:13.807802"], ["pattern", "plain"], ["published", "f"], ["title", "MAteo"], ["updated_at", "2014-11-20 21:23:13.807802"], ["username", "molayab"], ["words", ""]]
+  [1m[35m (1.7ms)[0m  commit transaction
+Completed 200 OK in 32ms (Views: 1.5ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-11-20 16:25:58 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1[0m
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/groups" for 127.0.0.1 at 2014-11-20 16:26:00 -0500
+Processing by Api::V1::GroupsController#index as JSON
+  Parameters: {"group"=>{}}
+  [1m[35mAuth Load (0.4ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUsergroup Load (0.2ms)[0m  SELECT "usergroups".* FROM "usergroups"  WHERE "usergroups"."user_id" = 1
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mGroup Load (0.2ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mGroup Load (0.1ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 5]]
+Completed 200 OK in 14ms (Views: 8.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-11-20 16:27:56 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1[0m
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/groups" for 127.0.0.1 at 2014-11-20 16:27:58 -0500
+Processing by Api::V1::GroupsController#index as JSON
+  Parameters: {"group"=>{}}
+  [1m[35mAuth Load (0.5ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUsergroup Load (0.3ms)[0m  SELECT "usergroups".* FROM "usergroups"  WHERE "usergroups"."user_id" = 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mGroup Load (0.1ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mGroup Load (0.2ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 5]]
+Completed 200 OK in 16ms (Views: 10.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-11-21 13:33:32 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (1.1ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.3ms)[0m  SELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1
+Completed 200 OK in 93ms (Views: 1.2ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/api/v1/groups" for 127.0.0.1 at 2014-11-21 13:34:15 -0500
+Processing by Api::V1::GroupsController#index as JSON
+  Parameters: {"group"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUsergroup Load (0.3ms)[0m  [1mSELECT "usergroups".* FROM "usergroups"  WHERE "usergroups"."user_id" = 1[0m
+  [1m[35mGroup Load (0.6ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mGroup Load (0.3ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 34ms (Views: 23.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/api/v1/groups" for 127.0.0.1 at 2014-11-21 13:34:20 -0500
+Processing by Api::V1::GroupsController#index as JSON
+  Parameters: {"group"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUsergroup Load (0.2ms)[0m  SELECT "usergroups".* FROM "usergroups"  WHERE "usergroups"."user_id" = 1
+  [1m[36mGroup Load (0.4ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mGroup Load (0.2ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mGroup Load (0.3ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 5]]
+Completed 200 OK in 12ms (Views: 7.4ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/api/v1/courses/0/notes" for 127.0.0.1 at 2014-11-21 13:34:38 -0500
+Processing by Api::V1::NotesController#create as JSON
+  Parameters: {"note"=>{"pattern"=>"stripped", "words"=>"", "title"=>"hola", "username"=>"molayab"}, "id"=>"0"}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses"  WHERE "courses"."id" = 0 AND "courses"."user_id" = 1 LIMIT 1[0m
+Unpermitted parameters: username
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "notes" ("course_id", "created_at", "pattern", "published", "title", "updated_at", "username", "words") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["course_id", 0], ["created_at", "2014-11-21 18:34:38.693517"], ["pattern", "stripped"], ["published", "f"], ["title", "hola"], ["updated_at", "2014-11-21 18:34:38.693517"], ["username", "molayab"], ["words", ""]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Completed 200 OK in 35ms (Views: 0.9ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/api/v1/groups" for 127.0.0.1 at 2014-11-21 13:39:01 -0500
+Processing by Api::V1::GroupsController#index as JSON
+  Parameters: {"group"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUsergroup Load (0.2ms)[0m  [1mSELECT "usergroups".* FROM "usergroups"  WHERE "usergroups"."user_id" = 1[0m
+  [1m[35mGroup Load (0.2ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mGroup Load (0.1ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 12ms (Views: 7.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/v1/groups" for 127.0.0.1 at 2014-11-21 13:39:07 -0500
+Processing by Api::V1::GroupsController#index as JSON
+  Parameters: {"group"=>{}}
+  [1m[35mAuth Load (0.4ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUsergroup Load (0.3ms)[0m  SELECT "usergroups".* FROM "usergroups"  WHERE "usergroups"."user_id" = 1
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mGroup Load (0.2ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mGroup Load (0.1ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 5]]
+Completed 200 OK in 16ms (Views: 10.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-11-21 13:39:10 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1[0m
+Completed 200 OK in 9ms (Views: 0.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-11-21 14:15:25 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.3ms)[0m  SELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1
+Completed 200 OK in 37ms (Views: 1.5ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/api/v1/groups" for 127.0.0.1 at 2014-11-21 14:16:11 -0500
+Processing by Api::V1::GroupsController#index as JSON
+  Parameters: {"group"=>{}}
+  [1m[36mAuth Load (0.3ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUsergroup Load (0.3ms)[0m  [1mSELECT "usergroups".* FROM "usergroups"  WHERE "usergroups"."user_id" = 1[0m
+  [1m[35mGroup Load (0.5ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mGroup Load (0.2ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 36ms (Views: 23.7ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/api/v1/usergroups/3/add" for 127.0.0.1 at 2014-11-21 14:16:29 -0500
+Processing by Api::V1::GroupsController#add_user as JSON
+  Parameters: {"username"=>"molayab", "id"=>"3", "group"=>{}}
+  [1m[35mAuth Load (0.7ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "usergroups" ("created_at", "group_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", "2014-11-21 19:16:29.496770"], ["group_id", 3], ["updated_at", "2014-11-21 19:16:29.496770"], ["user_id", 1]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 15ms (Views: 0.5ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/api/v1/groups" for 127.0.0.1 at 2014-11-21 14:22:13 -0500
+Processing by Api::V1::GroupsController#index as JSON
+  Parameters: {"group"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUsergroup Load (0.3ms)[0m  SELECT "usergroups".* FROM "usergroups"  WHERE "usergroups"."user_id" = 1
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mGroup Load (0.4ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mGroup Load (0.1ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 20ms (Views: 14.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/v1/groups" for 127.0.0.1 at 2014-11-21 14:25:04 -0500
+Processing by Api::V1::GroupsController#index as JSON
+  Parameters: {"group"=>{}}
+  [1m[35mAuth Load (0.5ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUsergroup Load (0.4ms)[0m  SELECT "usergroups".* FROM "usergroups"  WHERE "usergroups"."user_id" = 1
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mGroup Load (0.2ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mGroup Load (0.2ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 18ms (Views: 10.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-11-21 14:25:36 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.3ms)[0m  SELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1
+Completed 200 OK in 7ms (Views: 1.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/groups" for 127.0.0.1 at 2014-11-21 14:25:37 -0500
+Processing by Api::V1::GroupsController#index as JSON
+  Parameters: {"group"=>{}}
+  [1m[36mAuth Load (0.4ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUsergroup Load (0.4ms)[0m  [1mSELECT "usergroups".* FROM "usergroups"  WHERE "usergroups"."user_id" = 1[0m
+  [1m[35mGroup Load (1.3ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mGroup Load (0.2ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 3]]
+Completed 200 OK in 24ms (Views: 14.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/v1/groups" for 127.0.0.1 at 2014-11-21 14:26:41 -0500
+Processing by Api::V1::GroupsController#index as JSON
+  Parameters: {"group"=>{}}
+  [1m[36mAuth Load (0.5ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUsergroup Load (1.0ms)[0m  [1mSELECT "usergroups".* FROM "usergroups"  WHERE "usergroups"."user_id" = 1[0m
+  [1m[35mGroup Load (0.2ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mGroup Load (0.4ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 3]]
+Completed 200 OK in 20ms (Views: 12.8ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/api/v1/groups" for 127.0.0.1 at 2014-11-21 14:26:43 -0500
+Processing by Api::V1::GroupsController#index as JSON
+  Parameters: {"group"=>{}}
+  [1m[36mAuth Load (0.5ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUsergroup Load (0.6ms)[0m  [1mSELECT "usergroups".* FROM "usergroups"  WHERE "usergroups"."user_id" = 1[0m
+  [1m[35mGroup Load (0.2ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mGroup Load (0.3ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 3]]
+Completed 200 OK in 20ms (Views: 12.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-11-21 14:26:57 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.5ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1[0m
+Completed 200 OK in 9ms (Views: 1.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/groups" for 127.0.0.1 at 2014-11-21 14:26:59 -0500
+Processing by Api::V1::GroupsController#index as JSON
+  Parameters: {"group"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUsergroup Load (0.4ms)[0m  SELECT "usergroups".* FROM "usergroups"  WHERE "usergroups"."user_id" = 1
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mGroup Load (0.2ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mGroup Load (0.2ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 17ms (Views: 10.9ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/api/v1/usergroups/3/add" for 127.0.0.1 at 2014-11-21 14:29:02 -0500
+Processing by Api::V1::GroupsController#add_user as JSON
+  Parameters: {"username"=>"molayab", "id"=>"3", "group"=>{}}
+  [1m[35mAuth Load (0.3ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'molayab' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "usergroups" ("created_at", "group_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", "2014-11-21 19:29:02.062695"], ["group_id", 3], ["updated_at", "2014-11-21 19:29:02.062695"], ["user_id", 1]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 15ms (Views: 0.6ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/api/v1/groups" for 127.0.0.1 at 2014-11-21 14:29:03 -0500
+Processing by Api::V1::GroupsController#index as JSON
+  Parameters: {"group"=>{}}
+  [1m[35mAuth Load (0.4ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUsergroup Load (0.5ms)[0m  SELECT "usergroups".* FROM "usergroups"  WHERE "usergroups"."user_id" = 1
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mGroup Load (0.3ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mGroup Load (0.2ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 3]]
+Completed 200 OK in 22ms (Views: 16.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/v1/courses" for 127.0.0.1 at 2014-11-21 15:52:20 -0500
+Processing by Api::V1::CoursesController#index as JSON
+  Parameters: {"course"=>{}}
+  [1m[36mAuth Load (0.1ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.5ms)[0m  [1mSELECT "courses".* FROM "courses"  WHERE "courses"."user_id" = 1[0m
+Completed 200 OK in 46ms (Views: 5.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/api/v1/notes?friends=1233" for 127.0.0.1 at 2014-11-21 15:52:22 -0500
+Processing by Api::V1::NotesController#index as JSON
+  Parameters: {"friends"=>"1233", "note"=>{}}
+  [1m[35mAuth Load (0.2ms)[0m  SELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mNote Load (0.3ms)[0m  SELECT "notes".* FROM "notes"  WHERE "notes"."published" = 't'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/reminders" for 127.0.0.1 at 2014-11-21 15:52:25 -0500
+Processing by Api::V1::RemindersController#index as JSON
+  Parameters: {"reminder"=>{}}
+  [1m[36mAuth Load (0.2ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "auths".* FROM "auths"  WHERE "auths"."token" = 'aaaa11b4b7536ec9f8e5f584a13de9109431e9918088c01c01ace825cf93cd0783fd666a6d85c01806ec09481d1449caf619c366ec6962e6611eaedb34432be3' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReminder Load (0.2ms)[0m  [1mSELECT "reminders".* FROM "reminders"  WHERE "reminders"."user_id" = 1[0m
+Completed 200 OK in 7ms (Views: 0.7ms | ActiveRecord: 1.3ms)

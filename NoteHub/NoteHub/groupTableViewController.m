@@ -72,7 +72,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    NSLog(@"esteeeeeeeee eessss coutnnnnn       %i", [data count]);
     return [data count];
 }
 
@@ -153,7 +152,15 @@
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0){
-        [self performSegueWithIdentifier:@"group_notes_segue" sender:nil];
+        [self performSegueWithIdentifier:@"group_notes_segue" sender:indexPath];
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"group_notes_segue"]) {
+        groupNotesTableViewController * n = (groupNotesTableViewController *)segue.destinationViewController;
+        
+        [n setGroup:[[[[data objectAtIndex:((NSIndexPath *)sender).row]objectForKey:@"group"]objectForKey:@"id"] integerValue]];
     }
 }
 @end

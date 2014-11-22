@@ -15,6 +15,7 @@
     NSString * title;
 }
 @property (nonatomic, strong) NSDictionary * course;
+@property (nonatomic) NSInteger group;
 - (IBAction)createGroupNote:(id)sender;
 
 @end

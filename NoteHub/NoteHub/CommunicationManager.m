@@ -238,6 +238,21 @@
     [self send];
 }
 
+- (void)addUserToGroup:(NSInteger)group username:(NSString *)username {
+    [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
+    
+    [self.request setURL:[self makeURLWithService:[NSString stringWithFormat: @"api/v1/usergroups/%ld/add", (long)group]]];
+    
+    [self.request setHTTPMethod:@"POST"];
+    
+    [self.request setHTTPBody:[self makeJSONWithDictionary:@{
+                                                             @"username": username
+                                                             }
+                               
+                               ]];
+    
+    [self send];
+}
 
 -(void)getGroups{
     [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];

@@ -19,6 +19,7 @@ Rails.application.routes.draw do
       resources :reminders
       resources :usergroups
 
+      post 'usergroups/:id/add', to: 'groups#add_user'
 
       match 'login', to: 'users#login', via: :post
 

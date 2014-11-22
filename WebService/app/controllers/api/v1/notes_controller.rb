@@ -101,7 +101,7 @@ end
 
 	private
 		def create_params
-			params.require(:note).permit(:title, :date, :words, :lines, :pattern, :tags, :published)
+			params.require(:note).permit(:title, :date, :words, :lines, :pattern, :tags, :published, :group_id)
 		end
 
 		def unauthorized

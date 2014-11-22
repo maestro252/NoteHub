@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CommunicationManager.h"
+#import "groupNotesTableViewController.h"
 
 
 @interface groupTableViewController : UITableViewController<CommunicationDelegate, UIAlertViewDelegate>{

@@ -48,7 +48,7 @@
 - (void)getFriendsPublished;
 -(void)createGroup: (NSString *) title;
 -(void)getGroups;
-
+- (void)addUserToGroup:(NSInteger)group username:(NSString *)username;
 
 
 @end

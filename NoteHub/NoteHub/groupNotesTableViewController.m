@@ -163,7 +163,12 @@
             
             NSLog(@"Se crea %@", title);
         }else if(buttonIndex == 1){
-            
+            UIAlertView * alerta = [[UIAlertView alloc]initWithTitle:@"Agregar Usuario" message:@"Introduzca el nombre de usuario" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Agregar", nil];
+            [alerta setAlertViewStyle:UIAlertViewStylePlainTextInput];
+            UITextField * field = [alerta textFieldAtIndex:0];
+            [field setPlaceholder:@"Amigo nuevo"];
+            [alerta setTag:256];
+            [alerta show];
         }
     }else if(alertView.tag == 3){
         NSString * toSend = [NSString new];
@@ -195,6 +200,12 @@
             
             NSLog(@"Se crea %@", title);
         }
+    } else if(alertView.tag == 256){
+        NSLog(@"maimitmiamiamiamiamaimaim");
+        CommunicationManager * c = [CommunicationManager new];
+        
+        [c addUserToGroup:self.group username:[alertView textFieldAtIndex:0].text];
+        
     }
 }
 
