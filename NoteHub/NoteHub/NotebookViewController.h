@@ -22,5 +22,7 @@
 @property (nonatomic) NSInteger note_id;
 - (IBAction)published_action:(id)sender;
 @property (nonatomic) NSInteger course_id;
+@property (nonatomic) NSInteger group_id;
 - (IBAction)writing:(id)sender;
+
 @end

@@ -49,6 +49,8 @@
 -(void)createGroup: (NSString *) title;
 -(void)getGroups;
 - (void)addUserToGroup:(NSInteger)group username:(NSString *)username;
-
+- (void)createNoteForGroup:(NSInteger)course withTitle:(NSString *)title pattern: (NSString *)pattern groupId: (NSInteger) groupId;
+-(void)getNotesGroups:(NSInteger) groupId;
+- (void) deleteUserFromGroup:(NSString *) username group_id: (NSInteger) group_id;
 
 @end

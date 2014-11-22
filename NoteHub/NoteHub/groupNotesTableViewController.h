@@ -16,6 +16,7 @@
 }
 @property (nonatomic, strong) NSDictionary * course;
 @property (nonatomic) NSInteger group;
+@property (nonatomic) NSInteger admin;
 - (IBAction)createGroupNote:(id)sender;
 
 @end

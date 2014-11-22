@@ -71,6 +71,19 @@ end
 	end
 
 	def update
+			@note = Note.find params[:note_id]
+
+			@note.update create_params
+			@note.course_id = course.id
+
+			if @note.save!
+				render json: { success: true, note: @note }
+			else
+				render json: { success: false, errors: @note.errors }
+			end
+	end
+
+	def update2
 		course = Course.find_by id: params[:id], user: current_user
 
 		if course
@@ -97,6 +110,15 @@ end
 			@note = Note.find params[:id]
 
 			render json:{success: true, note: @note}
+	end
+
+	def index_group
+		@notes = Note.where group_id: params[:id]
+		if @notes
+			render json: {success: true, notes: @notes}
+		else
+			render json: {success: false, errors: @notes.errors}
+		end
 	end
 
 	private

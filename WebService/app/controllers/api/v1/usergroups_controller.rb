@@ -12,6 +12,19 @@ class Api::V1::UsergroupsController < ApplicationController
     end
   end
 
+  def destroy_2
+    @user = User.find_by username: params[:username]
+    if @user
+      @group = Usergroup.find_by user_id: @user.id, group_id: params[:id]
+      if @group.delete
+        render json: {success: true}
+      else
+        render json: {success: false}
+      end
+    else
+      render json: {success: false, errors: ['El usario a eliminar no se encuentra en el grupo']}
+    end
+  end
 
   private
     def create_params

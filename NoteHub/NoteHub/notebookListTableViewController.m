@@ -65,7 +65,7 @@
             [days appendFormat:@"%@ ", [inner objectForKey:@"weekday"]];
         }
         
-        days_label.text = ([days isEqualToString:@""])? @"Sin horarios :'(" : days;
+        days_label.text = ([days isEqualToString:@""]) ? @"Sin horarios :'(" : days;
         
     } else {
     

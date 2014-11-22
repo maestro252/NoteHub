@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       post 'courses/:id/notes', to: 'notes#create'
       put 'courses/:id/notes/:note_id', to: 'notes#update'
       get 'users/usertoid/:id', to:'users#user_id_by_username'
+
       resources :users, only:[:index, :create, :update, :destroy, :show]
       resources :shares
       resources :schedules
@@ -20,7 +21,10 @@ Rails.application.routes.draw do
       resources :usergroups
 
       post 'usergroups/:id/add', to: 'groups#add_user'
+      get 'notes/group/:id', to: 'notes#index_group'
 
+      put 'notes/:id/edit', to: 'notes#update2'
+      delete 'usergroups/:id/:username', to: 'usergroups#destroy_2'
       match 'login', to: 'users#login', via: :post
 
     end

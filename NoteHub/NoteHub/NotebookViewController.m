@@ -62,6 +62,8 @@
                                                           @"lines": @""
                                                           }
                                                   } noteID:self.note_id courseID:self.course_id];
+    
+    NSLog(@"HOOOOOOOOOOOOOOOOOOOOOLI %@", assistedNotebook.text);
 }
 
 - (void)viewWillAppear:(BOOL)animated{

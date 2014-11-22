@@ -197,6 +197,15 @@
     [self send];
 }
 
+- (void) deleteUserFromGroup:(NSString *) username group_id: (NSInteger) group_id{
+    [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
+    
+    [self.request setURL:[self makeURLWithService:[NSString stringWithFormat: @"api/v1/usergroups/%ld/%@", (long)group_id, username]]];
+    
+    [self.request setHTTPMethod:@"DELETE"];
+    [self send];
+}
+
 -(void) setPrivate:(NSInteger) id_note id_course:(NSInteger)id_course{
     [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
     
@@ -390,7 +399,7 @@
     [self send];
 }
 
-- (void)createNoteForGroup:(NSInteger)course withTitle:(NSString *)title pattern: (NSString *)pattern groupId: (NSInteger *) groupId{
+- (void)createNoteForGroup:(NSInteger)course withTitle:(NSString *)title pattern: (NSString *)pattern groupId: (NSInteger)groupId {
     [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
     
     [self.request setURL:[self makeURLWithService:[NSString stringWithFormat: @"api/v1/courses/%ld/notes", (long)course]]];
@@ -412,7 +421,15 @@
     [self send];
 }
 
-
+-(void)getNotesGroups:(NSInteger) groupId{
+    [self.request setValue:[NSString stringWithFormat:@"Token token=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]] forHTTPHeaderField:@"Authorization"];
+    
+    [self.request setURL:[self makeURLWithService:[NSString stringWithFormat: @"api/v1/notes/group/%ld", (long)groupId]]];
+    
+    [self.request setHTTPMethod:@"GET"];
+    
+    [self send];
+}
 
 #pragma mark - Metodos privados de la clase
 

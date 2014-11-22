@@ -161,6 +161,7 @@
         groupNotesTableViewController * n = (groupNotesTableViewController *)segue.destinationViewController;
         
         [n setGroup:[[[[data objectAtIndex:((NSIndexPath *)sender).row]objectForKey:@"group"]objectForKey:@"id"] integerValue]];
+        [n setAdmin:[[[[data objectAtIndex:((NSIndexPath *)sender).row]objectForKey:@"group"]objectForKey:@"admin"] integerValue]];
     }
 }
 @end
